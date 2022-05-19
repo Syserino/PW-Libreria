@@ -1,1 +1,0 @@
-cd "C:\xampp\mysql\data" && mklink /D libreria "C:\Users\NOMEPC\Documents\GitHub\PW-Libreria\Database\libreria"
