@@ -21,7 +21,12 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/register.jsp" />
 	</definition>
-
+	
+	<definition name="book-form" extends="baseLayout">
+		<put-attribute name="title" value="Book-form" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/book-form.jsp" />
+	</definition>
 
 
 </tiles-definitions>

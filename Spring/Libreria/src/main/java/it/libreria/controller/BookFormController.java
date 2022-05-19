@@ -11,33 +11,30 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.libreria.model.User;
-import it.libreria.dao.UserDao;
+import it.libreria.dao.BookDao;
+import it.libreria.model.Book;
+//import it.libreria.model.Category;
 
 @Controller
-@RequestMapping("/register")
-public class RegisterController {
+@RequestMapping("book-form")
+public class BookFormController {
 	@Autowired
-	UserDao userDao;
+	BookDao bookDao;
 	
 	@GetMapping()
-	public String getPage(Model model)
-	{
-		model.addAttribute(new User());
-		
-		return "register";
+	public String getPage(Model model) {
+		model.addAttribute(new Book());
+		return "book-form";
 	}
-	
+
 	@PostMapping
-	public String customerCreate(@Valid @ModelAttribute("user") User user, BindingResult result) {
+	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book, BindingResult result) {
 		if (result.hasErrors())
-			return "register";
-
-		//user.setAnagraphic(anagraphic);
-
-		userDao.save(user);
-
-		return "redirect:/";
+			return "book-form";
+		
+		book.setCategory(1);
+		bookDao.save(book);
+		
+		return "book-form";
 	}
-
 }

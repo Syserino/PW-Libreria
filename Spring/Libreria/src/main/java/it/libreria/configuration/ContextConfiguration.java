@@ -45,7 +45,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:application.properties" })
 @EnableJpaRepositories(basePackages = {
-		"it.esercitazione.dao" }, entityManagerFactoryRef = "emf", transactionManagerRef = "tmf")
+		"it.libreria.dao" }, entityManagerFactoryRef = "emf", transactionManagerRef = "tmf")
 public class ContextConfiguration implements WebMvcConfigurer {
 
 	@Autowired
@@ -117,7 +117,7 @@ public class ContextConfiguration implements WebMvcConfigurer {
 	@Bean
 	public JpaVendorAdapter getJpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-		adapter.setShowSql(false);
+		adapter.setShowSql(true);
 		adapter.setGenerateDdl(false);
 		adapter.setDatabasePlatform(environment.getRequiredProperty("hibernate.dialect"));
 		return adapter;
@@ -128,7 +128,7 @@ public class ContextConfiguration implements WebMvcConfigurer {
 		LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
 		bean.setJpaVendorAdapter(getJpaVendorAdapter());
 		bean.setDataSource(getDataSource());
-		bean.setPackagesToScan("it.esercitazione.model");
+		bean.setPackagesToScan("it.libreria.model");
 		bean.setJpaProperties(getJpaProperties());
 		bean.setSharedCacheMode(SharedCacheMode.ENABLE_SELECTIVE);
 		bean.setValidationMode(ValidationMode.NONE);

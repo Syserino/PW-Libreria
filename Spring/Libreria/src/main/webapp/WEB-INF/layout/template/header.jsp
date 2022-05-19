@@ -17,7 +17,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="#">Home</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/articles"/>'>Articoli</a></li>
+					href='<spring:url value="/articles"/>'>Lista libri</a></li>
 				<c:if test="${!sessionScope.loginSuccess}">
 					<li class="nav-item"><a class="nav-link"
 						href='<c:url value="/login"/>'>Accedi</a></li>
@@ -53,11 +53,3 @@
 	</div>
 
 </nav>
-
-<div class="card bg-dark text-white">
-	<img src='<c:url value="/static/images/banneralto.png"/>' height='400'
-		alt="ehm" />
-	<div class="card-img-overlay">
-		<h2 class="card-title">Benvenuto in Cuddy Octopus</h2>
-	</div>
-</div>

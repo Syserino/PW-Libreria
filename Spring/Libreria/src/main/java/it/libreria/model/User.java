@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User  implements Serializable
+public class User implements Serializable
 {
 	private static final long serialVersionUID = 8769999019709863198L;
 
@@ -28,10 +28,7 @@ public class User  implements Serializable
 	@Column(name = "password", length = 255, nullable = false)
 	private String password;
 	
-	// da invertire
-	@Column(name = "id_privileges", length = 255, nullable = false)
-	private String type;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "anagraphic_id")
 	private Anagraphic anagraphic;
@@ -60,14 +57,6 @@ public class User  implements Serializable
 		this.password = password;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public Anagraphic getAnagraphic() {
 		return anagraphic;
 	}
@@ -75,5 +64,6 @@ public class User  implements Serializable
 	public void setAnagraphic(Anagraphic anagraphic) {
 		this.anagraphic = anagraphic;
 	}
+
 
 }
