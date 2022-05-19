@@ -1,0 +1,1 @@
+mklink /D libreria "C:\Users\NOMEDELPC\Documents\GitHub\PW-Libreria\Database\formazione"
