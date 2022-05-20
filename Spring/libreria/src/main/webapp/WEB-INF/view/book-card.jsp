@@ -7,7 +7,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<jsp:include page="/static/WEB-INF/layout/template/header.jsp" />
 
 <!-- QUESTI SONO PER BOOTSTRAP E ELEMENTI CUORE E STELLE-->
 
