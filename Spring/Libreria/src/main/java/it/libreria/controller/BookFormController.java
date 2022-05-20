@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.BookDao;
+import it.libreria.dao.CategoryDao;
 import it.libreria.model.Book;
 
 @Controller
@@ -19,6 +20,8 @@ import it.libreria.model.Book;
 public class BookFormController {
 	@Autowired
 	BookDao bookDao;
+	@Autowired
+	CategoryDao categoryDao;
 	
 	@GetMapping()
 	public String getPage(Model model) {
@@ -31,7 +34,7 @@ public class BookFormController {
 		if (result.hasErrors())
 			return "book-form";
 		
-		book.setCategory(1);
+		book.setCategory(categoryDao.findById(1).get());
 		bookDao.save(book);
 		
 		return "book-form";

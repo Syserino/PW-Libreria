@@ -1,6 +1,7 @@
 package it.libreria.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,22 +32,24 @@ public class Book implements Serializable
 	@Column(name = "description", length = 255, nullable = false)
 	private String description;
 	
-	@Column(name = "price", length = 255, nullable = false)
+	@Column(name = "price", nullable = false)
 	private Double price;
+	
+	@Column(name = "public_year", nullable = false)
+	private Date public_year;
 
+	@Column(name = "quantity", nullable = false)
+	private int quantity;
+ 	
+	@ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name="category_id", referencedColumnName = "id")
+	private Category category;
 	
-//	@ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="category_id", referencedColumnName = "id")
-	@Column(name = "category_id", length = 255, nullable = false)
-    private int category;
-	
-	
-
-	public int getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 
@@ -88,6 +91,22 @@ public class Book implements Serializable
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	public Date getPublic_year() {
+		return public_year;
+	}
+
+	public void setPublic_year(Date public_year) {
+		this.public_year = public_year;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	
