@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="container">
 
     <div class="row g-5">
@@ -9,28 +10,16 @@
                 <span class="text-primary">Il tuo carrello</span>
                 <span class="badge bg-primary rounded-pill">#</span>
             </h4>
-            <ul class="list-group mb-3">
+              <c:forEach items="${books}" var="book">
+             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                     <div>
-                        <h6 class="my-0">ID</h6>
-                        <small class="text-muted">Titolo</small>
+                        <h6 class="my-0">${book.id}</h6>
+                        <small class="text-muted">${book.title}</small>
                     </div>
-                    <span class="text-muted">Prezzo</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                        <h6 class="my-0">ID2</h6>
-                        <small class="text-muted">Titolo2</small>
-                    </div>
-                    <span class="text-muted">Prezzo2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                        <h6 class="my-0">ID3</h6>
-                        <small class="text-muted">Titolo3</small>
-                    </div>
-                    <span class="text-muted">Prezzo3</span>
-                </li>
+                    <span class="text-muted">${book.price}</span>
+                </li>     
+                 </c:forEach>
                 <li class="list-group-item d-flex justify-content-between bg-light">
                     <div class="text-success">
                         <h6 class="my-0">Codice Promo</h6>
