@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="row">
 	<div class="col text-center">
-		<h4>Registra il tuo account</h4>
+		<br><h4>Registra il tuo account</h4> 
 	</div>
 </div>
 <div class="row justify-content-center">
@@ -13,7 +13,7 @@
 		<form:form method="POST" modelAttribute="user"
 			acceptCharset="ISO-8859-1">
 			<div class="row">
-				<div class="col-7">
+				<div class="col-6">
 					<label for="username">Username:</label>
 					<form:input path="username" id="username" type="text"
 						cssClass="form-control" required="required"
@@ -22,7 +22,7 @@
 					<form:errors path="username" id="usernameError"
 						cssClass="text-danger" />
 				</div>
-				<div class="col-7">
+				<div class="col-6">
 					<label for="password">Password:</label>
 					<form:input path="password" id="password" type="text"
 						cssClass="form-control" required="required"

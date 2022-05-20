@@ -22,6 +22,6 @@ public class Category implements Serializable {
 	@Column(name = "name", length = 255, nullable = false)
 	private String name;
 	
-	@Column(name = "desc", length = 255, nullable = false)
-	private String desc;
+	@Column(name = "description", length = 255, nullable = false)
+	private String description;
 }

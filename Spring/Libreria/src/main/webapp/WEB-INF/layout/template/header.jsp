@@ -3,10 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-	<div class="container-fluid">
+	<div class="container-fluid alert-danger">
 		<a class="navbar-brand" href="#"> <img
-			src='<c:url value="/static/images/homeIcon.png"/>' alt="home" />
+			class="navbar-toggler-icon" src='<c:url value="/static/images/header/home_icona.png"/>' alt="home" />
 		</a>
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -17,13 +16,9 @@
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="#">Home</a></li>
+					aria-current="page" href='<c:url value="/home"/>'>Home</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/articles"/>'>Lista libri</a></li>
-				<c:if test="${!sessionScope.loginSuccess}">
-					<li class="nav-item"><a class="nav-link"
-						href='<c:url value="/login"/>'>Accedi</a></li>
-				</c:if>
+					href='<spring:url value="/articles"/>'>In offerta</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
@@ -49,30 +44,25 @@
 						</ul></li>
 				</c:if>
 
+				<c:if test="${!sessionScope.loginSuccess}">
+					<li class="nav-item"><a class="nav-link"
+						href='<c:url value="/login"/>'>Accedi</a></li>
+				</c:if>
+
 				<c:if test="${sessionScope.loginSuccess}">
 					<li class="nav-item"><a class="nav-link"
 						href='<c:url value="/logout"/>'>Logout</a></li>
 				</c:if>
 
-
 			</ul>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/books"/>'>Libri</a></li>
-			</ul>
 			<form class="d-flex" action="books" method="GET">
 				<input class="form-control me-2" type="search" placeholder="Search"
 					aria-label="Search" name="searchText">
 				<button class="btn btn-outline-success" type="submit">Search</button>
-
-
 			</form>
-
-
 		</div>
-
 	</div>
 	<div class="d-flex justify-content-right">
 		<c:if test="${cartnum > 0}">
@@ -82,5 +72,12 @@
 			</a>
 		</c:if>
 	</div>
-
 </nav>
+	<div class="card bg-dark text-white container-fluid">
+		<img src='<c:url value="/static/images/header/banner.png"/>'
+			alt="ehm" />
+		<div class="card-img-overlay">
+			<h2 class="card-title"></h2>
+		</div>
+	</div>
+
