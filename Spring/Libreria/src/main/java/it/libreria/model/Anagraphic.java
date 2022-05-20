@@ -31,8 +31,8 @@ public class Anagraphic implements Serializable {
 	@Column(name = "mail", length = 255, nullable = false)
 	private String mail;
 
-	@Column(name = "sex", length = 10, nullable = false)
-	private String sex;
+	@Column(name = "gender", length = 10, nullable = false)
+	private String gender;
 
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s'.-]{1,255}", message = "{customer.form.error.general}")
 	@Column(name = "street", length = 255, nullable = false)
@@ -41,6 +41,10 @@ public class Anagraphic implements Serializable {
 	@Pattern(regexp = "[a-zA-Z0-9/.-]{1,10}", message = "{customer.form.error.general}")
 	@Column(name = "cn", length = 10, nullable = false)
 	private String civicNumber;
+	
+	@Pattern(regexp = "[a-zA-Z0-9/.-]{1,10}", message = "{customer.form.error.general}")
+	@Column(name = "phone", length = 15, nullable = false)
+	private String phone;
 
 	@Pattern(regexp = "[0-9]{5}", message = "{customer.form.error.general}")
 	@Column(name = "cap", length = 10, nullable = false)
@@ -82,12 +86,13 @@ public class Anagraphic implements Serializable {
 		this.mail = mail;
 	}
 
-	public String getSex() {
-		return sex;
+	
+	public String getGender() {
+		return gender;
 	}
 
-	public void setSex(String sex) {
-		this.sex = sex;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getStreet() {
@@ -121,4 +126,13 @@ public class Anagraphic implements Serializable {
 	public void setTown(String town) {
 		this.town = town;
 	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
 }

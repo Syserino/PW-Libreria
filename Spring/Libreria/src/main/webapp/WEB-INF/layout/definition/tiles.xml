@@ -39,6 +39,17 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/book-form.jsp" />
 	</definition>
+	
+	<definition name="book-card" extends="baseLayout">
+		<put-attribute name="title" value="Scheda libro" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/book-card.jsp" />
+	</definition>
 
+	<definition name="admin-panel" extends="baseLayout">
+		<put-attribute name="title" value="Pannello Admin" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/pannelloAdmin.jsp" />
+	</definition>
 
 </tiles-definitions>

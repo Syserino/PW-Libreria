@@ -30,14 +30,10 @@ public class User implements Serializable
 	
 	@Column(name = "privileges", length = 255, nullable = false)
 	private int privileges;
-	
-	@Column(name = "anagraphic_id", length = 255, nullable = false)
-	private int anagraphic_id;
-
-	
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "anagraphic_id")
-//	private Anagraphic anagraphic;
+		
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "anagraphic_id")
+	private Anagraphic anagraphic;
 
 	public int getId() {
 		return id;
@@ -63,13 +59,13 @@ public class User implements Serializable
 		this.password = password;
 	}
 
-//	public Anagraphic getAnagraphic() {
-//		return anagraphic;
-//	}
-//
-//	public void setAnagraphic(Anagraphic anagraphic) {
-//		this.anagraphic = anagraphic;
-//	}
+	public Anagraphic getAnagraphic() {
+		return anagraphic;
+	}
+
+	public void setAnagraphic(Anagraphic anagraphic) {
+		this.anagraphic = anagraphic;
+	}
 
 	public int getPrivileges() {
 		return privileges;
