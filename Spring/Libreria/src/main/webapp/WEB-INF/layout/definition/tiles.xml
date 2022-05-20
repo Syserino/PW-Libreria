@@ -21,6 +21,16 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/register.jsp" />
 	</definition>
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/login.jsp" />
+	</definition>
+	<definition name="checkout" extends="baseLayout">
+		<put-attribute name="title" value="Checkout" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/checkout.jsp" />
+	</definition>
 	
 	<definition name="book-form" extends="baseLayout">
 		<put-attribute name="title" value="Book-form" />
