@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.BookDao;
 import it.libreria.model.Book;
-//import it.libreria.model.Category;
 
 @Controller
-@RequestMapping("book-form")
+@RequestMapping("/book-form")
 public class BookFormController {
 	@Autowired
 	BookDao bookDao;

@@ -3,17 +3,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#"> <img
 			src='<c:url value="/static/images/homeIcon.png"/>' alt="home" />
 		</a>
+
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="#">Home</a></li>
 				<li class="nav-item"><a class="nav-link"
@@ -22,15 +24,28 @@
 					<li class="nav-item"><a class="nav-link"
 						href='<c:url value="/login"/>'>Accedi</a></li>
 				</c:if>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+					aria-expanded="false"> Catagolo </a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<li><a class="dropdown-item"
+							href='<spring:url value="/adminpanel"/>'>Avventura</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/adminpanel-form"/>'>Azione</a></li>
+					</ul></li>
+
 				<c:if test="${isAdmin}">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#"
 						id="navbarDropdownMenuLink" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> Admin Panel
-					</a>
+						data-bs-toggle="dropdown" aria-expanded="false"> Admin Panel </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href='<spring:url value="/adminpanel"/>'>Lista articoli</a></li>
-							<li><a class="dropdown-item" href='<spring:url value="/adminpanel-form"/>'>Aggiungi articolo</a></li>
+							<li><a class="dropdown-item"
+								href='<spring:url value="/adminpanel"/>'>Lista articoli</a></li>
+							<li><a class="dropdown-item"
+								href='<spring:url value="/adminpanel-form"/>'>Aggiungi
+									articolo</a></li>
 						</ul></li>
 				</c:if>
 
@@ -42,6 +57,22 @@
 
 			</ul>
 		</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a class="nav-link"
+					href='<spring:url value="/books"/>'>Libri</a></li>
+			</ul>
+			<form class="d-flex" action="books" method="GET">
+				<input class="form-control me-2" type="search" placeholder="Search"
+					aria-label="Search" name="searchText">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+
+
+			</form>
+
+
+		</div>
+
 	</div>
 	<div class="d-flex justify-content-right">
 		<c:if test="${cartnum > 0}">
