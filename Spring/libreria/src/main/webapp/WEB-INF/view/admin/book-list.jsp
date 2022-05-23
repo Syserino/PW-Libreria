@@ -16,13 +16,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${users}" var="user">
+		<c:forEach items="${books}" var="book">
 			<tr>
-				<th scope="row">${user.id}</th>
+				<th scope="row">${book.id}</th>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
-				<td>${book.publishyear}</td>
-				<td>${book.price}</td>
+				<td>${book.public_year}</td>
+				<td>${book.price_flexiblecover}</td>
 				<td>
 					<button class="btn-sm btn-group btn-danger" type="submit">Modifica</button>&nbsp;&nbsp;&nbsp;
 					<button class="btn-sm btn-group btn-danger" type="submit">Elimina</button>

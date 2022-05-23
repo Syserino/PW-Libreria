@@ -69,9 +69,7 @@
 						cssClass="form-control" required="required" />
 					<form:errors path="price_hardcover" id="price_hardcoverSpError" cssClass="text-danger" />
 				</div>
-				
-				
-				
+							
 				<div class="col-6">
 				    <label for="quantitySp">Disponibilità in magazzino:</label>
 					<form:input path="quantity" id="quantitySp" type="number"

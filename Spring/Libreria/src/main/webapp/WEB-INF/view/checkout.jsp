@@ -17,7 +17,7 @@
 						<div>
 							<h6 class="my-0">${book.id}</h6>
 							<small class="text-muted">${book.title}</small>
-						</div> <span class="text-muted">${book.price}</span>
+						</div> <span class="text-muted">${book.price_flexiblecover}</span>
 					</li>
 			</c:forEach>
 			<li class="list-group-item d-flex justify-content-between bg-light">

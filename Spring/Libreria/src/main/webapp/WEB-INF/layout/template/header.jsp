@@ -32,7 +32,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href='<c:url value="/home"/>'>Home</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/articles"/>'>In offerta</a></li>
+					href='<spring:url value="/home"/>'>In offerta</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
@@ -51,10 +51,9 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Admin Panel </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item"
-								href='<spring:url value="/adminpanel"/>'>Lista articoli</a></li>
+								href='<spring:url value="admin-panel/user-list"/>'>Lista utenti</a></li>
 							<li><a class="dropdown-item"
-								href='<spring:url value="/adminpanel-form"/>'>Aggiungi
-									articolo</a></li>
+								href='<spring:url value="admin-panel/book-list"/>'>Lista libri</a></li>
 						</ul></li>
 				</c:if>
 

@@ -52,7 +52,13 @@
 	<definition name="admin-panel" extends="baseLayout">
 		<put-attribute name="title" value="Pannello Admin" />
 		<put-attribute name="content"
-			value="/WEB-INF/view/pannelloAdmin.jsp" />
+			value="/WEB-INF/view/admin/user-list.jsp" />
+	</definition>
+	
+	<definition name="book-list" extends="baseLayout">
+		<put-attribute name="title" value="Pannello Admin" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/admin/book-list.jsp" />
 	</definition>
 
 </tiles-definitions>
