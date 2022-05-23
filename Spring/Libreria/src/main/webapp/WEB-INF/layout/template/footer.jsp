@@ -7,17 +7,17 @@
         <section class="mb-4">
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
                 <i class="fab fa-facebook-f"><img class="navbar-toggler-icon"
-                                                  src="fb_icona.png"></i></a>
+                                                  src="/static/images/header/fb_icona.png"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-twitter"><img class="navbar-toggler-icon" src="twitter_icona.png"></i
+            ><i class="fab fa-twitter"><img class="navbar-toggler-icon" src="/static/images/header/twitter_icona.png"></i
             ></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"><img class="navbar-toggler-icon" src="google_icona.png"></i
+            ><i class="fab fa-google"><img class="navbar-toggler-icon" src="/static/images/header/google_icona.png"></i
             ></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><img class="navbar-toggler-icon" src="ig_icona.png"><i class="fab fa-instagram"></i
+            ><img class="navbar-toggler-icon" src="/static/images/header/ig_icona.png"><i class="fab fa-instagram"></i
             ></a>
         </section>
         <section class="mb-4">
