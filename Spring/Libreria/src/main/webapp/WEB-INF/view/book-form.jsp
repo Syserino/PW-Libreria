@@ -54,9 +54,6 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-	priceFlexibleCover
-	priceHardCover
-	publicYear
 
 			<div class="col-6">
 				<label for="priceFlexibleCoverSp">Prezzo copertina
