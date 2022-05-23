@@ -54,14 +54,24 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
+			
+			<div class="col-6">
+					<label for="price_flexiblecoverSp">Prezzo copertina flessibile:</label>
+					<form:input path="price_flexiblecover" id="price_flexiblecoverSp" type="number" step="any"
+						cssClass="form-control" required="required" />
+					<form:errors path="price_flexiblecover" id="price_flexiblecoverSpError" cssClass="text-danger" />
+				</div>
 
 			<div class="row">
 				<div class="col-6">
-					<label for="priceSp">Prezzo:</label>
-					<form:input path="price" id="priceSp" type="number" step="any"
+					<label for="price_hardcoverSp">Prezzo copertina rigida:</label>
+					<form:input path="price_hardcover" id="price_hardcoverSp" type="number" step="any"
 						cssClass="form-control" required="required" />
-					<form:errors path="price" id="priceSpError" cssClass="text-danger" />
+					<form:errors path="price_hardcover" id="price_hardcoverSpError" cssClass="text-danger" />
 				</div>
+				
+				
+				
 				<div class="col-6">
 				    <label for="quantitySp">Disponibilità in magazzino:</label>
 					<form:input path="quantity" id="quantitySp" type="number"
