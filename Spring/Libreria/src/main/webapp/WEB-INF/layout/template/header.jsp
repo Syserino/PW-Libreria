@@ -19,8 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
 		<a class="navbar-brand" href="#"> <img class="navbar-toggler-icon"
-			src='<c:url value="/static/images/header/home_icona.png"/>'
-			alt="home" />
+			src='<c:url value="/static/images/header/home_icona.png"/>' />
 		</a>
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
