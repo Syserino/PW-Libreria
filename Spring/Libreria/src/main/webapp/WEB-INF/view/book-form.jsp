@@ -47,13 +47,12 @@
 
 				<div class="col-6">
 					<label for="descriptionSp">Anno di pubblicazione:</label>
-					<form:input path="public_year" id="public_yearnSp"
-						cssClass="form-control" rows="3" style="resize:none;"
+					<form:input path="public_year" id="public_yearnSp" type="number"
+						step="any" cssClass="form-control" rows="3" style="resize:none;"
 						required="required" />
 					<form:errors path="public_year" id="public_yearSpError"
 						cssClass="text-danger" />
 				</div>
-
 			</div>
 
 			<div class="row">
@@ -64,6 +63,7 @@
 					<form:errors path="price" id="priceSpError" cssClass="text-danger" />
 				</div>
 				<div class="col-6">
+				    <label for="quantitySp">Disponibilità in magazzino:</label>
 					<form:input path="quantity" id="quantitySp" type="number"
 						step="any" cssClass="form-control" required="required" />
 					<form:errors path="quantity" id="quantitySpError"
