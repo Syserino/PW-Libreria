@@ -46,23 +46,26 @@
 				</div>
 
 				<div class="col-6">
-					<label for="descriptionSp">Anno di pubblicazione:</label>
-					<form:input path="public_year" id="public_yearnSp" type="number"
+					<label for="publicYearSp">Anno di pubblicazione:</label>
+					<form:input path="publicYear" id="publicYearSp" type="number"
 						step="any" cssClass="form-control" rows="3" style="resize:none;"
 						required="required" />
-					<form:errors path="public_year" id="public_yearSpError"
+					<form:errors path="publicYear" id="publicYearSpError"
 						cssClass="text-danger" />
 				</div>
 			</div>
+	priceFlexibleCover
+	priceHardCover
+	publicYear
 
 			<div class="col-6">
-				<label for="price_flexiblecoverSp">Prezzo copertina
+				<label for="priceFlexibleCoverSp">Prezzo copertina
 					flessibile:</label>
-				<form:input path="price_flexiblecover" id="price_flexiblecoverSp"
+				<form:input path="priceFlexibleCover" id="priceFlexibleCoverSp"
 					type="number" step="any" cssClass="form-control"
 					required="required" />
-				<form:errors path="price_flexiblecover"
-					id="price_flexiblecoverSpError" cssClass="text-danger" />
+				<form:errors path="priceFlexibleCover"
+					id="priceFlexibleCoverSpError" cssClass="text-danger" />
 			</div>
 
 			<div class="row">

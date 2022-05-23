@@ -26,10 +26,18 @@
 					aria-expanded="false"> Catagolo </a>
 
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<c:forEach items="${categories}" var="category">
-							<li><a class="dropdown-item"
-								href='<spring:url value="/search?idCategory=${category.id}"/>'>${category.name}</a></li>
-						</c:forEach>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=1"/>'>Avventura</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=2"/>'>Storico</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=3"/>'>Fantasy</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=4"/>'>Horror</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=5"/>'>Saggistica</a></li>
+						<li><a class="dropdown-item"
+							href='<spring:url value="/search?idCategory=6"/>'>Romantico</a></li>
 					</ul></li>
 
 				<c:if test="${isAdmin}">

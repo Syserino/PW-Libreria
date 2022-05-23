@@ -11,18 +11,21 @@
 			<th scope="col">Nome libro</th>
 			<th scope="col">Autore</th>
 			<th scope="col">Anno di pubblicazione</th>
-			<th scope="col">Prezzo</th>
+			<th scope="col">Prezzo1</th>
+			<th scope="col">Prezzo2</th>
 			<th scope="col">Azioni</th>
 		</tr>
 	</thead>
+	
 	<tbody>
 		<c:forEach items="${books}" var="book">
 			<tr>
 				<th scope="row">${book.id}</th>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
-				<td>${book.public_year}</td>
-				<td>${book.price_flexiblecover}</td>
+				<td>${book.publicYear}</td>
+				<td>${book.priceFlexibleCover}</td>
+				<td>${book.priceHardCover}</td>
 				<td>
 					<button class="btn-sm btn-group btn-danger" type="submit">Modifica</button>&nbsp;&nbsp;&nbsp;
 					<button class="btn-sm btn-group btn-danger" type="submit">Elimina</button>

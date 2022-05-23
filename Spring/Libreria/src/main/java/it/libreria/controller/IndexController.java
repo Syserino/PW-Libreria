@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
-import it.libreria.model.Category;
 
 // http://localhost:8080/libreria
 @Controller
@@ -21,8 +20,7 @@ public class IndexController {
 	
 	@GetMapping
 	public String getPage(Model model)
-	{
-		model.addAttribute("categories", categoryDao.findAll());
+	{		
 		model.addAttribute("books", bookDao.findAll());
 		return "index";
 	}
