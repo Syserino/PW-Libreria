@@ -1,0 +1,1 @@
+cd "C:\Users\giuse\Desktop\corso_spring\workspace" && mklink /D libreria "C:\Users\giuse\Documents\GitHub\PW-Libreria\Database\libreria"
