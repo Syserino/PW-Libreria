@@ -19,7 +19,7 @@ public class AdminPanelController {
 	@Autowired
 	BookDao bookDao;
 
-	@GetMapping()
+	@GetMapping
 	public String getPage(Model model) {
 		model.addAttribute("users", userDao.findAll());
 		return "admin-panel";
@@ -27,7 +27,7 @@ public class AdminPanelController {
 
 	@GetMapping("/user-list")
 	public String userList(Model model) {
-		model.addAttribute("books", bookDao.findAll());
+		model.addAttribute("users", userDao.findAll());
 
 		return "user-list";
 	}

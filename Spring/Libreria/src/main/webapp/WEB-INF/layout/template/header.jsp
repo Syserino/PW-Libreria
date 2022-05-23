@@ -4,8 +4,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
-		<a class="navbar-brand" href="#"> <img
-			class="navbar-toggler-icon" src='<c:url value="/static/images/header/home_icona.png"/>' alt="home" />
+		<a class="navbar-brand" href="#"> <img class="navbar-toggler-icon"
+			src='<c:url value="/static/images/header/home_icona.png"/>'
+			alt="home" />
 		</a>
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -23,11 +24,12 @@
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false"> Catagolo </a>
+
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item"
-							href='<spring:url value="/adminpanel"/>'>Avventura</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/adminpanel-form"/>'>Azione</a></li>
+						<c:forEach items="${categories}" var="category">
+							<li><a class="dropdown-item"
+								href='<spring:url value="/search?idCategory=${category.id}"/>'>${category.name}</a></li>
+						</c:forEach>
 					</ul></li>
 
 				<c:if test="${isAdmin}">
@@ -37,10 +39,11 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Admin Panel </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item"
-								href='<spring:url value="/adminpanel"/>'>Lista articoli</a></li>
+								href='<spring:url value="/admin-panel/user-list"/>'>Lista
+									utenti</a></li>
 							<li><a class="dropdown-item"
-								href='<spring:url value="/adminpanel-form"/>'>Aggiungi
-									articolo</a></li>
+								href='<spring:url value="/admin-panel/book-list"/>'>Lista
+									libri</a></li>
 						</ul></li>
 				</c:if>
 
@@ -73,11 +76,10 @@
 		</c:if>
 	</div>
 </nav>
-	<div class="card bg-dark text-white container-fluid">
-		<img src='<c:url value="/static/images/header/banner.png"/>'
-			alt="ehm" />
-		<div class="card-img-overlay">
-			<h2 class="card-title"></h2>
-		</div>
+<div class="card bg-dark text-white container-fluid">
+	<img src='<c:url value="/static/images/header/banner.png"/>' alt="ehm" />
+	<div class="card-img-overlay">
+		<h2 class="card-title"></h2>
 	</div>
+</div>
 

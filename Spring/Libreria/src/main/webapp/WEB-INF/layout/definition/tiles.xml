@@ -54,11 +54,16 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/user-list.jsp" />
 	</definition>
-	
+
 	<definition name="book-list" extends="baseLayout">
 		<put-attribute name="title" value="Pannello Admin" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/book-list.jsp" />
 	</definition>
-
+	
+	<definition name="search" extends="baseLayout">
+		<put-attribute name="title" value="Ricerca" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/search.jsp" />
+	</definition>
 </tiles-definitions>

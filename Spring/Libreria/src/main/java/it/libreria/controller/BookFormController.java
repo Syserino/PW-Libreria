@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
 import it.libreria.model.Book;
+import it.libreria.model.Category;
 
 @Controller
 @RequestMapping("/book-form")
@@ -25,7 +26,8 @@ public class BookFormController {
 	
 	@GetMapping()
 	public String getPage(Model model) {
-		model.addAttribute(new Book());
+		model.addAttribute("book", new Book());
+		
 		return "book-form";
 	}
 
