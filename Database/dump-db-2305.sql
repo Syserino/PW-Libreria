@@ -51,13 +51,13 @@ CREATE TABLE IF NOT EXISTS `books` (
   `price_hardcover` double DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_book`),
+  PRIMARY KEY (`id`),
   KEY `FK_books_categories` (`category_id`) USING BTREE,
   CONSTRAINT `FK_books_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella libreria.books: ~4 rows (circa)
-INSERT INTO `books` (`id_book`, `title`, `author`, `public_year`, `description`, `price_flexiblecover`, `price_hardcover`, `quantity`, `category_id`) VALUES
+INSERT INTO `books` (`id`, `title`, `author`, `public_year`, `description`, `price_flexiblecover`, `price_hardcover`, `quantity`, `category_id`) VALUES
 	(1, 'La mappa dei desideri', 'Carrie Ryan , John Parke Davis', 2003, 'Chi possiede la Mappa dei Desideri può arrivare ovunque voglia. Per il momento però nessuno può servirsi dei suoi poteri, perché è stata divisa in brandelli: il primo, la Rosa dei Venti, appare all\'improvviso nel parcheggio di un supermercato insieme a un\'onda d\'acqua solcata da un vascello di corsari, sotto lo sguardo incredulo della dodicenne Marrill. Intenta a inseguire il suo gatto, Marrill si trova catapultata nella Corrente Pirata, un mondo popolato da foreste parlanti, farfalle di spuma di mare e crostacei con le piume. Soltanto la mappa può ricondurla nel suo mondo. E Marrill non è l\'unica a cercarla: Fin, cresciuto nella Corrente Pirata, a dodici anni è già il Maestro dei Ladri grazie a un raro potere: chiunque lo incontri ben presto si dimentica di lui. Guidato da una misteriosa profezia, Fin vuole la mappa per ritrovare la madre scomparsa. Quando i destini di Marrill e Fin incrociano la rotta di una ciurma di temibili pirati, la ricerca della mappa si trasforma in una questione di vita o di morte. Età di lettura: da 11 anni.', 30.5, NULL, 10, 1),
 	(2, 'Lavorare con intelligenza emotiva', 'Daniel Goleman, ', 1998, 'Saper gestire le proprie emozioni nelle varie situazioni a cui la vita ci mette di fronte, può essere una qualità determinante per raggiungere risultati importanti sia nel lavoro, che nella sfera personale.', 17.5, NULL, 15, 5),
 	(3, 'Harry Potter e la Pietra filosofale', 'J.K.Rowling', 1997, 'Harry Potter è un predestinato: ha una cicatrice a forma di saetta sulla fronte e provoca strani fenomeni, come quello di farsi ricrescere in una notte i capelli inesorabilmente tagliati dai perfidi zii. Ma solo in occasione del suo undicesimo compleanno gli si rivelano la sua natura e il suo destino, e il mondo misterioso cui di diritto appartiene. Nello scatenato universo fantastico della Rowling, popolato da gufi portalettere, scope volanti, caramelle al gusto di cavolini di Bruxelles, ritratti che scappano, la magia si presenta come la vera vita, e strega anche il lettore allontanandolo dal nostro mondo che gli apparirà monotono e privo di sorprese. Il risveglio dalla lettura lo lascerà pieno di nostalgia, ma ancora illuminato dai riflessi di questo lussureggiante fuoco d’artificio.', 29.99, NULL, 20, 3),
