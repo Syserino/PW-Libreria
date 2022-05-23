@@ -12,12 +12,12 @@
 				<div class="carousel-item active">
 					<div class="card">
 						<div class="path">
-							HOME / LIBRI <a>/ ${book.category.name}</a>
+							Home / Libri <a>/ ${book.category.name}</a>
 						</div>
 						<div class="row">
 							<div class="col-md-6 text-center align-self-center">
 								<img class="img-fluid"
-									src="src/main/java/it/webapp/static/images/article/harrypotter.jpg">
+									src='<c:url value="/static/images/articles/harrypotter.jpg"/>'>
 							</div>
 							<div class="col-md-6 info">
 								<div class="row title">
