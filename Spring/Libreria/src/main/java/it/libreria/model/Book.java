@@ -36,7 +36,7 @@ public class Book implements Serializable
 	private Double price;
 	
 	@Column(name = "public_year", nullable = false)
-	private Date public_year;
+	private int public_year;
 
 	@Column(name = "quantity", nullable = false)
 	private int quantity;
@@ -93,14 +93,6 @@ public class Book implements Serializable
 		this.price = price;
 	}
 
-	public Date getPublic_year() {
-		return public_year;
-	}
-
-	public void setPublic_year(Date public_year) {
-		this.public_year = public_year;
-	}
-
 	public int getQuantity() {
 		return quantity;
 	}
@@ -109,7 +101,14 @@ public class Book implements Serializable
 		this.quantity = quantity;
 	}
 
-	
-	
+	public int getPublic_year() {
+		return public_year;
+	}
+
+	public void setPublic_year(int public_year) {
+		this.public_year = public_year;
+	}
+
+
 	
 }
