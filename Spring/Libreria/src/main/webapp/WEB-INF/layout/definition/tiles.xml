@@ -49,7 +49,7 @@
 			value="/WEB-INF/view/book-card.jsp" />
 	</definition>
 
-	<definition name="admin-panel" extends="baseLayout">
+	<definition name="user-list" extends="baseLayout">
 		<put-attribute name="title" value="Pannello Admin" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/user-list.jsp" />
