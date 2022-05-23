@@ -51,11 +51,11 @@
                     <h5 class="text-uppercase">Termini && Condizioni</h5>
 
                     <ul class="list-unstyled mb-0">
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">Privacy | </a>
+                            <a href='<c:url value="/static/fileLink/privacy.pdf"/>' class="text-decoration-none" style="color: #4f7978;" target="_blank">Privacy | </a>
 
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">Condizioni di vendita | </a>
+                            <a href='<c:url value="/static/fileLink/Condizioni_di_vendita.pdf"/>' class="text-decoration-none" style="color: #4f7978;" target="_blank">Condizioni di vendita | </a>
 
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;"> Informativa sui cookie </a>
+                            <a href='<c:url value="/static/fileLink/Cookie.pdf"/>' class="text-decoration-none" style="color: #4f7978;" target="_blank"> Informativa sui cookie </a>
 
                     </ul>
                 </div>
