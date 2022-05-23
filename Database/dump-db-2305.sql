@@ -42,7 +42,7 @@ INSERT INTO `anagraphic` (`id`, `name`, `surname`, `mail`, `gender`, `street`, `
 
 -- Dump della struttura di tabella libreria.books
 CREATE TABLE IF NOT EXISTS `books` (
-  `id_book` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL,
   `author` varchar(50) DEFAULT NULL,
   `public_year` int(11) DEFAULT NULL,
@@ -104,7 +104,6 @@ CREATE TABLE IF NOT EXISTS `order_list` (
   KEY `id_anagraphic` (`id_anagraphic`,`id_book`),
   KEY `id_book` (`id_book`),
   CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`id_anagraphic`) REFERENCES `anagraphic` (`id`),
-  CONSTRAINT `order_list_ibfk_2` FOREIGN KEY (`id_book`) REFERENCES `books` (`id_book`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella libreria.order_list: ~2 rows (circa)
