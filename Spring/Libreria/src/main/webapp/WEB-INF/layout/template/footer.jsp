@@ -2,6 +2,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<br>
 <footer class="alert-danger text-center">
     <div class="container p-4">
         <section class="mb-4">
@@ -14,7 +15,7 @@
             ></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"><img class="navbar-toggler-icon" src='<c:url value="/static/images/google_icona.png"/>'/></i
+            ><i class="fab fa-youtube"><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>'/></i
             ></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
