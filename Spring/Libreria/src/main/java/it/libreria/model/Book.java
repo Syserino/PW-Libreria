@@ -32,8 +32,11 @@ public class Book implements Serializable
 	@Column(name = "description", length = 255, nullable = false)
 	private String description;
 	
-	@Column(name = "price", nullable = false)
-	private Double price;
+	@Column(name = "price_flexiblecover", nullable = false)
+	private Double price_flexiblecover;
+	
+	@Column(name = "price_hardcover", nullable = false)
+	private Double price_hardcover;
 	
 	@Column(name = "public_year", nullable = false)
 	private int public_year;
@@ -85,12 +88,22 @@ public class Book implements Serializable
 		this.description = description;
 	}
 
-	public Double getPrice() {
-		return price;
+	
+
+	public Double getPrice_flexiblecover() {
+		return price_flexiblecover;
 	}
 
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setPrice_flexiblecover(Double price_flexiblecover) {
+		this.price_flexiblecover = price_flexiblecover;
+	}
+
+	public Double getPrice_hardcover() {
+		return price_hardcover;
+	}
+
+	public void setPrice_hardcover(Double price_hardcover) {
+		this.price_hardcover = price_hardcover;
 	}
 
 	public int getQuantity() {
