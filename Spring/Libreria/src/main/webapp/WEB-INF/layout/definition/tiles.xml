@@ -12,17 +12,20 @@
 		<put-attribute name="footer"
 			value="/WEB-INF/layout/template/footer.jsp" />
 	</definition>
-	
+
 	<definition name="index" extends="baseLayout">
 		<put-attribute name="index" value="Compra qualcosa pls" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/index.jsp" />
+
 	</definition>
-	
+
 	<definition name="register" extends="baseLayout">
 		<put-attribute name="title" value="Registrazione" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/register.jsp" />
 	</definition>
-	
+
 	<definition name="login" extends="baseLayout">
 		<put-attribute name="title" value="Login" />
 		<put-attribute name="content"
@@ -33,13 +36,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/checkout.jsp" />
 	</definition>
-	
+
 	<definition name="book-form" extends="baseLayout">
 		<put-attribute name="title" value="Book-form" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/book-form.jsp" />
 	</definition>
-	
+
 	<definition name="book-card" extends="baseLayout">
 		<put-attribute name="title" value="Scheda libro" />
 		<put-attribute name="content"
