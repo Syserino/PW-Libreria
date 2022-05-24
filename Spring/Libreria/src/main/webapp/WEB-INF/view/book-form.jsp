@@ -74,6 +74,15 @@
 					<form:errors path="price_hardcover" id="price_hardcoverSpError"
 						cssClass="text-danger" />
 				</div>
+				
+				<div class="col-6">
+					<label for="eBookSp">Prezzo formato e-Book:</label>
+					<form:input path="eBook" id="eBookSp"
+						type="number" step="any" cssClass="form-control"
+						required="required" />
+					<form:errors path="eBook" id="eBookSpError"
+						cssClass="text-danger" />
+				</div>
 
 				<div class="col-6">
 					<label for="quantitySp">Disponibilità in magazzino:</label>

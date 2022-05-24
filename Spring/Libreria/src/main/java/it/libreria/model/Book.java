@@ -35,6 +35,17 @@ public class Book implements Serializable {
 
 	@Column(name = "price_hardcover", nullable = false)
 	private double priceHardCover;
+	
+	@Column(name= "e_book" , nullable = false)
+	private double eBook;
+
+	public double geteBook() {
+		return eBook;
+	}
+
+	public void seteBook(double eBook) {
+		this.eBook = eBook;
+	}
 
 	@Column(name = "public_year", nullable = false)
 	private int publicYear;
