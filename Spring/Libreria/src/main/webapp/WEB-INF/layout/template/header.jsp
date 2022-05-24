@@ -83,11 +83,16 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="d-flex" action="books" method="GET">
-				<input class="form-control me-2" type="search" placeholder="Search"
+				<input class="form-control me-2" type="search" placeholder="Cerca. . ."
 					aria-label="Search" name="searchText">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<button class="btn btn-outline-success" type="submit">Cerca</button>
 			</form>
 		</div>
+		 <div class="collapse navbar-collapse">
+            <a href="#"><img class="navbar-toggler-icon" src='<c:url value="/static/images/icona_profilo.png"/>' alt="icona profilo"></a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="#"><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>' alt="icona preferiti"></a>
+        </div>
 	</div>
 	<div class="d-flex justify-content-right">
 		<c:if test="${cartnum > 0}">
