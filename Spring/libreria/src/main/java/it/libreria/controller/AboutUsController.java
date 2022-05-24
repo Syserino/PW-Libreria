@@ -1,6 +1,5 @@
 package it.libreria.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,15 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/about-us")
-public interface AboutUsController {
+public class AboutUsController {
 
-	
-	
-	
-	//http://localhost:8080/libreria/about-us
-	@GetMapping()
+	@GetMapping
 	public String getPage(Model model) {
+		model.addAttribute("isAboutUs", true);
 		return "about-us";
 	}
-	
+
 }

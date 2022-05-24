@@ -12,10 +12,32 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS -->
+
 	<link href="/static/css/book-card.css" rel="stylesheet" type="text/css">
 </c:if>
 
-
+<c:if test="${isAboutUs}">
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>About us</title>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans">
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		
+		
+	<!-- CSS -->
+	<link href="/static/css/about-us.css" rel="stylesheet" type="text/css">
+</c:if>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
 		<a class="navbar-brand" href="#"> <img class="navbar-toggler-icon"
@@ -64,6 +86,9 @@
 								href='<spring:url value="/admin-panel/user-list"/>'>Lista
 									utenti</a></li>
 							<li><a class="dropdown-item"
+								href='<spring:url value="/admin-panel/book-edit"/>'>Aggiungi
+									libro</a></li>
+							<li><a class="dropdown-item"
 								href='<spring:url value="/admin-panel/book-list"/>'>Lista
 									libri</a></li>
 						</ul></li>
@@ -83,16 +108,19 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="d-flex" action="books" method="GET">
-				<input class="form-control me-2" type="search" placeholder="Cerca. . ."
-					aria-label="Search" name="searchText">
+				<input class="form-control me-2" type="search"
+					placeholder="Cerca. . ." aria-label="Search" name="searchText">
 				<button class="btn btn-outline-success" type="submit">Cerca</button>
 			</form>
 		</div>
-		 <div class="collapse navbar-collapse">
-            <a href="#"><img class="navbar-toggler-icon" src='<c:url value="/static/images/icona_profilo.png"/>' alt="icona profilo"></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="#"><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>' alt="icona preferiti"></a>
-        </div>
+		<div class="collapse navbar-collapse">
+			<a href="#"><img class="navbar-toggler-icon"
+				src='<c:url value="/static/images/icona_profilo.png"/>'
+				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; <a href="#"><img
+				class="navbar-toggler-icon"
+				src='<c:url value="/static/images/youtube_icona.png"/>'
+				alt="icona preferiti"></a>
+		</div>
 	</div>
 	<div class="d-flex justify-content-right">
 		<c:if test="${cartnum > 0}">
