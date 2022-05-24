@@ -1,0 +1,1 @@
+cd "C:\Users\HP\Desktop\corso_spring\Workspace" && mklink /D libreria "C:\Users\HP\Documents\GitHub\PW-Libreria\Spring"
