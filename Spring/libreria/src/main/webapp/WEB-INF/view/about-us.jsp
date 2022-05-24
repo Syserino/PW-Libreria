@@ -30,25 +30,25 @@
                 <!-- Wrapper for carousel items -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="img-box"><img src="Spring/libreria/src/main/webapp/static/images/carosello/chi-siamo.jpg" alt="chi siamo"></div>
+                        <div class="img-box"><img src="/static/images/carosello/chi-siamo.jpg" alt="chi siamo"></div>
                         <p class="overview"><b>CHI SIAMO</b></p>
                         <p class="testimonial">Siamo una libreria indipendente, la classica bottega di quartiere sempre disponibili a scambiare qualche chiacchera, specialmente con un libro in mano.
                             La nostra passione per i libri ci ha portato ad aprire questo negozio e siamo grati a tutti i nostri clienti, grandi e piccini...</p>
                     </div>
                     <div class="carousel-item">
-                        <div class="img-box"><img src="Spring/libreria/src/main/webapp/static/images/carosello/dove-siamo.png" alt="dove siamo"></div>
+                        <div class="img-box"><img src="/static/images/carosello/dove-siamo.png" alt="dove siamo"></div>
                         <p class="overview"><b>DOVE SIAMO</b></p>
                         <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
 
                     </div>
                     <div class="carousel-item">
-                        <div class="img-box"><img src="Spring/libreria/src/main/webapp/static/images/carosello/mission.jpg" alt="la nostra mission"></div>
+                        <div class="img-box"><img src="/static/images/carosello/mission.jpg" alt="la nostra mission"></div>
                         <p class="overview"><b>LA NOSTRA MISSION</b></p>
                         <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
 
                     </div>
                     <div class="carousel-item">
-                        <div class="img-box"><img src="Spring/libreria/src/main/webapp/static/images/carosello/lavora-con-noi.jpg" alt="lavora con noi"></div>
+                        <div class="img-box"><img src="/static/images/carosello/lavora-con-noi.jpg" alt="lavora con noi"></div>
                         <p class="overview"><b>LAVORA CON NOI</b></p>
                         <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
 

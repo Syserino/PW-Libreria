@@ -16,7 +16,7 @@ public interface AboutUsController {
 	
 	//http://localhost:8080/libreria/about-us
 	@GetMapping()
-	public String getPage(Model model, HttpServletRequest request) {
+	public String getPage(Model model) {
 		return "about-us";
 	}
 	
