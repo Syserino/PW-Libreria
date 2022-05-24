@@ -9,7 +9,7 @@
 <!-- FORM SPRING -->
 <div class="row mt-4">
 	<div class="col-12 text-center">
-		<h5>Inserisci i dati del nuovo libro</h5>
+		<h5>Gestione libro</h5>
 	</div>
 </div>
 
@@ -54,18 +54,16 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-
-			<div class="col-6">
-				<label for="priceFlexibleCoverSp">Prezzo copertina
-					flessibile:</label>
-				<form:input path="priceFlexibleCover" id="priceFlexibleCoverSp"
-					type="number" step="any" cssClass="form-control"
-					required="required" />
-				<form:errors path="priceFlexibleCover"
-					id="priceFlexibleCoverSpError" cssClass="text-danger" />
-			</div>
-
 			<div class="row">
+				<div class="col-6">
+					<label for="priceFlexibleCoverSp">Prezzo copertina
+						flessibile:</label>
+					<form:input path="priceFlexibleCover" id="priceFlexibleCoverSp"
+						type="number" step="any" cssClass="form-control"
+						required="required" />
+					<form:errors path="priceFlexibleCover"
+						id="priceFlexibleCoverSpError" cssClass="text-danger" />
+				</div>
 				<div class="col-6">
 					<label for="priceHardCoverSp">Prezzo copertina rigida:</label>
 					<form:input path="priceHardCover" id="priceHardCoverSp"
@@ -74,14 +72,13 @@
 					<form:errors path="priceHardCover" id="priceHardCoverSpError"
 						cssClass="text-danger" />
 				</div>
-				
+			</div>
+			<div class="row">
 				<div class="col-6">
 					<label for="eBookSp">Prezzo formato e-Book:</label>
-					<form:input path="eBook" id="eBookSp"
-						type="number" step="any" cssClass="form-control"
-						required="required" />
-					<form:errors path="eBook" id="eBookSpError"
-						cssClass="text-danger" />
+					<form:input path="eBook" id="eBookSp" type="number" step="any"
+						cssClass="form-control" required="required" />
+					<form:errors path="eBook" id="eBookSpError" cssClass="text-danger" />
 				</div>
 
 				<div class="col-6">
@@ -91,11 +88,23 @@
 					<form:errors path="quantity" id="quantitySpError"
 						cssClass="text-danger" />
 				</div>
-				<div class="col-6 text-center">
-					<input type="submit" value="Registra Libro"
-						class="btn btn-primary mt-4">
-				</div>
 
+				<div class="col-6">
+					<br> <label for="categorySp">Categoria:</label>
+					
+					<form:select class="selectpicker form-control select-di" path="category.id" id="east-order" isChanged="false">
+		                 <form:option value="1" selected="${category.id =='1'? 'selected' : ''}">Avventura</form:option>
+		                 <form:option value="2" selected="${category.id =='1'? 'selected' : ''}">Storico</form:option>
+		                 <form:option value="3" selected="${category.id =='1'? 'selected' : ''}">Fantasy</form:option>
+		                 <form:option value="4" selected="${category.id =='1'? 'selected' : ''}">Horror</form:option>
+		                 <form:option value="5" selected="${category.id =='1'? 'selected' : ''}">Saggistica</form:option>
+		                 <form:option value="6" selected="${category.id =='1'? 'selected' : ''}">Romantico</form:option>
+		              </form:select>
+				</div>
+			</div>
+			<div class="col-6 text-center">
+				<input type="submit" value="Registra Libro"
+					class="btn btn-primary mt-4">
 			</div>
 
 		</form:form>

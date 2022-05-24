@@ -37,28 +37,27 @@
 									class="fa fa-star checked"></span> <span
 									class="fa fa-star-half-full"></span> <a>160 recensioni</a>
 								<div class="row price">
+
 									<label class="radio"> <input type="radio" name="size1"
 										value="small" checked> <span>
 											<div class="row">
 												<big><b>Copertina flessibile</b></big>
 											</div>
 											<div class="row">${book.priceFlexibleCover}</div>
-											</a>
 									</span>
 									</label> <label class="radio"> <input type="radio" name="size1"
 										value="large"> <span>
 											<div class="row">
 												<big><b>Copertina rigida</b></big>
 											</div>
-											<div class="row">${book.priceHardCover}</div> </a>
+											<div class="row">${book.priceHardCover}</div>
 									</span>
-									</label>
-										<label class="radio"> <input type="radio" name="size1"
+									</label> <label class="radio"> <input type="radio" name="size1"
 										value="large"> <span>
 											<div class="row">
 												<big><b>Formato e-Book</b></big>
 											</div>
-											<div class="row">${book.eBook}</div> </a>
+											<div class="row">${book.eBook}</div>
 									</span>
 									</label>
 								</div>

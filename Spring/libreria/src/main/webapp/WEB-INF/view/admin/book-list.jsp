@@ -16,7 +16,7 @@
 			<th scope="col">Azioni</th>
 		</tr>
 	</thead>
-	
+
 	<tbody>
 		<c:forEach items="${books}" var="book">
 			<tr>
@@ -26,10 +26,12 @@
 				<td>${book.publicYear}</td>
 				<td>${book.priceFlexibleCover}</td>
 				<td>${book.priceHardCover}</td>
-				<td>
-					<button class="btn-sm btn-group btn-danger" type="submit">Modifica</button>&nbsp;&nbsp;&nbsp;
-					<button class="btn-sm btn-group btn-danger" type="submit">Elimina</button>
-				</td>
+				<td><a
+					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
+							class="btn-sm btn-group btn-danger" type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
+					<a
+					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
+							class="btn-sm btn-group btn-danger" type="submit">Elimina</button></a>
 			</tr>
 		</c:forEach>
 	</tbody>

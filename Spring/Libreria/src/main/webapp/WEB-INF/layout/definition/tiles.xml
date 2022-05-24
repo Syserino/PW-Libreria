@@ -60,13 +60,19 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/book-list.jsp" />
 	</definition>
-	
+
 	<definition name="user-edit" extends="baseLayout">
 		<put-attribute name="title" value="Gestione utente" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/user-edit.jsp" />
 	</definition>
-	
+
+	<definition name="book-edit" extends="baseLayout">
+		<put-attribute name="title" value="Gestione libro" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/admin/book-edit.jsp" />
+	</definition>
+
 	<definition name="search" extends="baseLayout">
 		<put-attribute name="title" value="Ricerca" />
 		<put-attribute name="content"
@@ -78,4 +84,6 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/about-us.jsp" />
 	</definition>
+	
+	
 </tiles-definitions>
