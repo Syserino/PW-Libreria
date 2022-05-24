@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ link href="/static/css/book-card.css" rel="stylesheet"%>
 <!DOCTYPE html>
 <html>
 <body>
@@ -43,14 +44,14 @@
 												<big><b>Copertina flessibile</b></big>
 											</div>
 											<div class="row">${book.priceFlexibleCover}</div>
-											</a>
+											
 									</span>
 									</label> <label class="radio"> <input type="radio" name="size1"
 										value="large"> <span>
 											<div class="row">
 												<big><b>Copertina rigida</b></big>
 											</div>
-											<div class="row">${book.priceHardCover}</div> </a>
+											<div class="row">${book.priceHardCover}</div>
 									</span>
 									</label>
 										<label class="radio"> <input type="radio" name="size1"
@@ -58,7 +59,7 @@
 											<div class="row">
 												<big><b>Formato e-Book</b></big>
 											</div>
-											<div class="row">${book.eBook}</div> </a>
+											<div class="row">${book.eBook}</div>
 									</span>
 									</label>
 								</div>
