@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="Bootstrap_v4/css/bootstrap.css"/>
+
+    <style>
+        #sinistra {
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f9b299;
+        }
+
+        #centro {
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #f6cd47;
+        }
+
+        #centro1 {
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #f6cd47;
+        }
+
+        #destra {
+            padding-bottom: 10px;
+            text-align: right;
+            background-color: #4f7978;
+        }
+
+        #sinistraTitolo {
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f9b299;
+        }
+
+        #centroTitolo {
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #f6cd47;
+        }
+
+        #destraTitolo {
+            padding-bottom: 10px;
+            text-align: right;
+            background-color: #4f7978;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-3" id="sinistraTitolo">
+            <h3> Ultime uscite</h3>
+        </div>
+        <div class="col-6" id="centroTitolo">
+            <h3>Catalogo</h3>
+        </div>
+        <div class="col-3" id="destraTitolo">
+            <h3>Più venduti </h3>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-3" id="sinistra">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+        </div>
+
+        <div class="col-3" id="centro">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 1</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 2</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 3</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 4</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 5</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 6</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+        </div >
+
+        <div class="col-3" id="centro1">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 1</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 2</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 3</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 4</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 5</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro 6</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+        </div >
+
+        <div class="col-3" id="destra">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Titolo del libro</h5>
+                    <p class="card-text">Descrizione del libro e/o elenco generi</p>
+                </div>
+                <a href="#"><img class="card-img-bottom" src="#" alt="Questo messaggio appare perché non ci sta ancora un immagine"></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
