@@ -67,11 +67,11 @@
 
 			<div class="row">
 				<div class="col-6">
-					<label for="price_hardcoverSp">Prezzo copertina rigida:</label>
-					<form:input path="price_hardcover" id="price_hardcoverSp"
+					<label for="priceHardCoverSp">Prezzo copertina rigida:</label>
+					<form:input path="priceHardCover" id="priceHardCoverSp"
 						type="number" step="any" cssClass="form-control"
 						required="required" />
-					<form:errors path="price_hardcover" id="price_hardcoverSpError"
+					<form:errors path="priceHardCover" id="priceHardCoverSpError"
 						cssClass="text-danger" />
 				</div>
 				

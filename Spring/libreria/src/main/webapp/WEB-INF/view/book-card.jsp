@@ -42,7 +42,7 @@
 											<div class="row">
 												<big><b>Copertina flessibile</b></big>
 											</div>
-											<div class="row">*price* 25,00€</div>
+											<div class="row">${book.priceFlexibleCover}</div>
 											</a>
 									</span>
 									</label> <label class="radio"> <input type="radio" name="size1"
@@ -50,7 +50,15 @@
 											<div class="row">
 												<big><b>Copertina rigida</b></big>
 											</div>
-											<div class="row">*price* 39,99€</div> </a>
+											<div class="row">${book.priceHardCover}</div> </a>
+									</span>
+									</label>
+										<label class="radio"> <input type="radio" name="size1"
+										value="large"> <span>
+											<div class="row">
+												<big><b>Formato e-Book</b></big>
+											</div>
+											<div class="row">${book.eBook}</div> </a>
 									</span>
 									</label>
 								</div>
