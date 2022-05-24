@@ -20,9 +20,17 @@
 				<td>${user.anagraphic.mail}</td>
 				<td>${user.privileges}</td>
 				<td>Online/Offline</td>
-				<td>
-					<button class="btn-sm btn btn-danger" type="submit">Modifica</button>
-				</td>
+				<td><a
+					href='<spring:url value="/admin-panel/user-edit?id=${user.id}"/>'>
+						<button type="button" class="btn-sm btn btn-success">
+							<i class="fas fa-edit">Modifica</i>
+						</button>
+				</a> <a
+					href='<spring:url value="/admin-panel/remove?id=${user.id}"/>'>
+						<button type="button" class="btn-sm btn btn-danger">
+							<i class="far fa-trash-alt">Rimuovi</i>
+						</button>
+				</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
