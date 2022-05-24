@@ -29,12 +29,15 @@ public class Book implements Serializable {
 
 	@Column(name = "description", length = 255, nullable = false)
 	private String description;
-	
+
 	@Column(name = "price_flexiblecover", nullable = false)
 	private double priceFlexibleCover;
 
 	@Column(name = "price_hardcover", nullable = false)
 	private double priceHardCover;
+
+	@Column(name = "e_book", nullable = false)
+	private double eBook;
 
 	@Column(name = "public_year", nullable = false)
 	private int publicYear;
@@ -118,4 +121,11 @@ public class Book implements Serializable {
 		this.quantity = quantity;
 	}
 
+	public double geteBook() {
+		return eBook;
+	}
+
+	public void seteBook(double eBook) {
+		this.eBook = eBook;
+	}
 }
