@@ -4,14 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <c:if test="${isBookCard}">
-	<link rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>' rel="stylesheet">
+	<link href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"/>' rel="stylesheet">
+	<link href='<c:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>' rel="stylesheet">
+	<link href='<c:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
 		
 	<!-- CSS -->
 	<link href='<c:url value="/static/css/book-card.css"/>' rel="stylesheet" type="text/css"> <!--  ESEMPIO -->
@@ -25,11 +21,9 @@
 	<link  href='<c:url value="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans"/>'  rel="stylesheet">
 	<link  href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>'rel="stylesheet">
 	<link href='<c:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script
-		src='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>'></script>
+	<script src='<c:url value="https://code.jquery.com/jquery-3.5.1.min.js"/>'></script>
+	<script src='<curl value="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"/>'></script>
+	<script src='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>'></script>
 
 	<!-- CSS -->
 	<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet" type="text/css">
