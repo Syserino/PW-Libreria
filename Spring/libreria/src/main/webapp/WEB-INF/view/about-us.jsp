@@ -67,12 +67,16 @@
 							<p class="overview">
 								<b>LA NOSTRA MISSION</b>
 							</p>
-							<p class="testimonial">Phasellus vitae suscipit justo. Mauris
-								pharetra feugiat ante id lacinia. Etiam faucibus mauris id
-								tempor egestas. Duis luctus turpis at accumsan tincidunt.
-								Phasellus risus risus, volutpat vel tellus ac, tincidunt
-								fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
-
+							<p class="testimonial">La nostra missione è favorire la diffusione della cultura e delle 
+							idee attraverso prodotti, attività e servizi che
+							soddisfino i bisogni e i gusti del più ampio pubblico possibile. Nella nostra visione facciamo convivere l’amore per
+							la cultura e per la qualità editoriale con le leggi del mercato, la propensione a intuire e anticipare i cambiamenti con
+							il rispetto e la tutela dei valori che sono alla base del ruolo dell’editore nella società civile.
+							I valori cui ci ispiriamo sono alla base del nostro Codice etico, i cui principi e disposizioni concretizzano gli obblighi
+							generali di diligenza, correttezza e lealtà.La societa' collabora con VarrialeTree finanzia progetti presso comunità 
+							rurali in vari paesi del mondo e
+							realizza anche in Italia progetti a forte valenza sociale. Il primo passo è la formazione e il finanziamento delle 
+							comunità coinvolte nei progetti, ottenendo straordinari risultati in termini di empowerment delle stesse.</p>
 						</div>
 						<div class="carousel-item">
 							<div class="img-box">
@@ -84,11 +88,16 @@
 							<p class="overview">
 								<b>LAVORA CON NOI</b>
 							</p>
-							<p class="testimonial">Phasellus vitae suscipit justo. Mauris
-								pharetra feugiat ante id lacinia. Etiam faucibus mauris id
-								tempor egestas. Duis luctus turpis at accumsan tincidunt.
-								Phasellus risus risus, volutpat vel tellus ac, tincidunt
-								fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+							<p class="testimonial">Lavorare per la societa' significa entrare a far parte di una realtà di circa 5 persone, 
+							aperta, interessante
+							e in continua evoluzione, impegnata da sempre nella ricerca e nella creazione di prodotti ed eventi culturali, con un’offerta
+							innovativa e coinvolgente.
+							La societa', che opera lungo tutta la filiera editoriale, dalla produzione di contenuti, alla
+							promozione e alla distribuzione retail, oggi conta più di 100.000.000 di visualizzazioni sul sito e-commerce. Più di recente si è 
+							aperto al settore della ristorazione, grazie alla collaborazione con AlfieroSake, l’obiettivo e' quello di proporre format di vendita innovativi, che favoriscano un’esperienza ricca di stimoli ed emozioni.
+							La Penna d'Oro cerca collaboratori anche tra le candidature che arrivano tramite questo sito. Oltre alle competenze specifiche 
+							del ruolo, punta su persone dotate di passione, spirito di squadra, orientamento al risultato e al cliente, con forti capacità relazionali e organizzative.
+							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
 
 						</div>
 					</div>
