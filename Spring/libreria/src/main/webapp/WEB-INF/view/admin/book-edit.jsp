@@ -94,11 +94,11 @@
 					
 					<form:select class="selectpicker form-control select-di" path="category.id" id="east-order" isChanged="false">
 		                 <form:option value="1" selected="${category.id =='1'? 'selected' : ''}">Avventura</form:option>
-		                 <form:option value="2" selected="${category.id =='1'? 'selected' : ''}">Storico</form:option>
-		                 <form:option value="3" selected="${category.id =='1'? 'selected' : ''}">Fantasy</form:option>
-		                 <form:option value="4" selected="${category.id =='1'? 'selected' : ''}">Horror</form:option>
-		                 <form:option value="5" selected="${category.id =='1'? 'selected' : ''}">Saggistica</form:option>
-		                 <form:option value="6" selected="${category.id =='1'? 'selected' : ''}">Romantico</form:option>
+		                 <form:option value="2" selected="${category.id =='2'? 'selected' : ''}">Storico</form:option>
+		                 <form:option value="3" selected="${category.id =='3'? 'selected' : ''}">Fantasy</form:option>
+		                 <form:option value="4" selected="${category.id =='4'? 'selected' : ''}">Horror</form:option>
+		                 <form:option value="5" selected="${category.id =='5'? 'selected' : ''}">Saggistica</form:option>
+		                 <form:option value="6" selected="${category.id =='6'? 'selected' : ''}">Romantico</form:option>
 		              </form:select>
 				</div>
 			</div>

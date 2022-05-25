@@ -38,12 +38,13 @@
 
                     <ul class="list-unstyled mb-0">
 
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">Chi siamo | </a>
+                            <a href='<c:url value="/about-us?sel=1"/>' class="text-decoration-none" style="color: #4f7978;">Chi siamo | </a>
 
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">Dove puoi trovarci | </a>
+                            <a href='<c:url value="/about-us?sel=2"/>' class="text-decoration-none" style="color: #4f7978;">Dove puoi trovarci | </a>
 
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">La nostra mission | </a>
-                            <a href="#" class="text-decoration-none" style="color: #4f7978;">Lavora con noi</a>
+                            <a href='<c:url value="/about-us?sel=3"/>' class="text-decoration-none" style="color: #4f7978;">La nostra mission | </a>
+                            
+                            <a href='<c:url value="/about-us?sel=4"/>' class="text-decoration-none" style="color: #4f7978;">Lavora con noi</a>
 
                     </ul>
                 </div>
