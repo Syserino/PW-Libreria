@@ -21,6 +21,7 @@
 						<li data-target="#myCarousel" data-slide-to="1"></li>
 						<li data-target="#myCarousel" data-slide-to="2"></li>
 						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
 					</ol>
 					<!-- Wrapper for carousel items -->
 					<div class="carousel-inner">
@@ -82,9 +83,18 @@
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
-									src='<c:url value="/static/images/carosello/lavora-con-noi.jpg"/>'
+									src='<c:url value="/static/images/carosello/treedom.png"/>'
 									alt="dove siamo">
 							</div>
+							<p class="overview">
+								<b>LE NOSTRE INIZIATIVE</b>
+							</p>
+							<p class="testimonial">Crediamo molto nel valore della conoscienza e nel rispetto del nostro pianeta.
+							Da questo è nata la nostra collaborazione per Treedom che ci permette di piantare un nuovo albero 
+							per ogni eBook acquistato. Un piccolo gesto per l'uomo, un enorme gesto per l'umanità. Scopri di più visitando
+							 il sito www.treedom.it</p>
+
+						</div>
 
 							<p class="overview">
 								<b>LAVORA CON NOI</b>
@@ -101,6 +111,12 @@
 							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
 
 						</div>
+						<div class="carousel-item">
+
+							<div class="img-box">
+								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
+									alt="dove siamo">
+							</div>
 					</div>
 					<!-- Carousel controls -->
 					<a class="carousel-control-prev" href="#myCarousel"
