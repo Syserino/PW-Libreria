@@ -33,11 +33,14 @@
 							<p class="overview">
 								<b>CHI SIAMO</b>
 							</p>
-							<p class="testimonial">Siamo una libreria indipendente, la
-								classica bottega di quartiere sempre disponibili a scambiare
-								qualche chiacchera, specialmente con un libro in mano. La nostra
-								passione per i libri ci ha portato ad aprire questo negozio e
-								siamo grati a tutti i nostri clienti, grandi e piccini...</p>
+							<p class="testimonial">La societa' opera su tutta la filiera del libro, dall’editoria, al retail, 
+							con il sito di e-commerce localhost:8080/libreria, alla promozione e distribuzione
+							intermedia tramite L&G, una joint venture costituita con Campo Messaggerie Italiane.
+							L’offerta editoriale integrata del Gruppo si estende infine alla televisione con l'Aemme, un canale multipiattaforma
+							dall’offerta unica, inedita, di qualità, e si completa con l’attività di ricerca e divulgazione nell’ambito delle scienze
+							sociali e politiche della societa'. La Penna d'Oro è da oltre due giorni una delle principali imprese editoriali 
+							indipendenti, attiva in Italia e conosciuta in tutto il mondo.
+							La storia della societa' ha origine il 19 maggio 2022, durante il corso di sviluppatore Java di Generation Italy.</p>
 						</div>
 						<div class="carousel-item">
 							<div class="img-box">
