@@ -80,6 +80,7 @@
 							realizza anche in Italia progetti a forte valenza sociale. Il primo passo è la formazione e il finanziamento delle 
 							comunità coinvolte nei progetti, ottenendo straordinari risultati in termini di empowerment delle stesse.</p>
 						</div>
+						
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
@@ -96,6 +97,15 @@
 
 						</div>
 
+							
+
+						</div>
+						<div class="carousel-item">
+
+							<div class="img-box">
+								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
+									alt="dove siamo">
+							</div>
 							<p class="overview">
 								<b>LAVORA CON NOI</b>
 							</p>
@@ -109,15 +119,8 @@
 							La Penna d'Oro cerca collaboratori anche tra le candidature che arrivano tramite questo sito. Oltre alle competenze specifiche 
 							del ruolo, punta su persone dotate di passione, spirito di squadra, orientamento al risultato e al cliente, con forti capacità relazionali e organizzative.
 							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
-
-						</div>
-						<div class="carousel-item">
-
-							<div class="img-box">
-								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
-									alt="dove siamo">
-							</div>
 					</div>
+					
 					<!-- Carousel controls -->
 					<a class="carousel-control-prev" href="#myCarousel"
 						data-slide="prev"> <i class="fa fa-angle-left"></i>
