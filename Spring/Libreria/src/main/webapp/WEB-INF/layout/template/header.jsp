@@ -100,7 +100,7 @@
 			<form class="d-flex" action="books" method="GET">
 				<input class="form-control me-2" type="search"
 					placeholder="Cerca. . ." aria-label="Search" name="searchText">
-				<button class="btn btn-outline-success" type="submit">Cerca</button>
+				<button class="btn btn-outline-warning" type="submit">Cerca</button>
 			</form>
 		</div>
 		<div class="collapse navbar-collapse">
