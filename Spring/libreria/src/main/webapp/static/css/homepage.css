@@ -1,0 +1,124 @@
+  .card {
+            font-family: Cairo,sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h5 {
+            font-family: Cairo,sans-serif;
+        }
+
+        h6 {
+            font-family: Cairo,sans-serif;
+        }
+        #sinistra {
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f9b299;
+        }
+
+        #centro {
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f6cd47;
+        }
+
+        #centro1 {
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f6cd47;
+        }
+
+        #destra {
+            padding-bottom: 10px;
+            text-align: right;
+            background-color: #4f7978;
+        }
+
+        #sinistraTitolo {
+            font-family: Cairo,sans-serif;
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #f9b299;
+        }
+
+        #centroTitolo {
+            font-family: Cairo,sans-serif;
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: #f6cd47;
+        }
+
+        #destraTitolo {
+            font-family: Cairo,sans-serif;
+            padding-bottom: 10px;
+            text-align: right;
+            background-color: #4f7978;
+        }
+
+        #destraAlt {
+            font-family: Cairo,sans-serif;
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: #4f7978;
+            display:none
+        }
+
+        #sinistraAlt {
+            font-family: Cairo,sans-serif;
+            padding-bottom: 10px;
+            text-align: right;
+            background-color: #f9b299;
+            display: none;
+        }
+
+        .sin:hover{
+            background-color: #EA73E0;
+            color:#ED15CC;
+        }
+
+        .cen:hover{
+            background-color: #ECE42C;
+            color:#F87E0B;
+        }
+
+        .des:hover{
+            background-color: #1BDAB2;
+            color:#2243AC;
+        }
+
+        @media only screen and (max-width: 991px) {  /*quando è medio */
+            #destra{
+                display: none;
+            }
+            #destraTitolo{
+                display: none;
+            }
+            #destraAlt{
+                display: block;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {  /*quando è piccolo */
+            #sinistra{
+                display: none;
+            }
+            #sinistraTitolo {
+                display: none;
+            }
+            #sinistraAlt{
+                display: block;
+            }
+            #destra{
+                display: none;
+            }
+            #destraTitolo{
+                display: none;
+            }
+            #destraAlt{
+                display: block;
+            }
+        }
