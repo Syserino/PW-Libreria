@@ -90,4 +90,5 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/profile.jsp" />
 	</definition>
+
 </tiles-definitions>

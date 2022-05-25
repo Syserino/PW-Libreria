@@ -41,7 +41,7 @@ public class LoginController {
 		
 		if (u != null && u.getPassword().equals(user.getPassword())) {
 			session.setAttribute("loginSuccess", true);
-			session.setAttribute("user", user);
+			session.setAttribute("username", user.getUsername());
 			
 			if (u.getPrivileges() == 1)
 				session.setAttribute("isAdmin", true);
