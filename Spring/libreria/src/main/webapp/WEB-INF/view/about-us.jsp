@@ -58,12 +58,14 @@
 							<p class="overview">
 								<b>DOVE SIAMO</b>
 							</p>
-							<p class="testimonial">Vestibulum quis quam ut magna
-								consequat faucibus. Pellentesque eget nisi a mi suscipit
-								tincidunt. Utmtc tempus dictum risus. Pellentesque viverra
-								sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet
-								gravida nibh, facilisis gravida odio.</p>
- <div class="col-12"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.2570927905!2d12.395912026526345!3d41.91024148820807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1653471455348!5m2!1sit!2sit"style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<p class="testimonial">La Penna d'Oro e' presente su tutto il territorio 
+							nazionale e all'estero, abbiamo piu' di 1000 sedi in tutto il mondo, ma 
+							indovina un po' un solo sito internet! Ma se volete venire a visitare la nostra prima sede
+							ci trovate proprio di fronte al Colosseo, Roma.
+							La nostra libraria(Cristina) e i nostri librai(Andrea, Gabriele, Giuseppe e Nicola) vi aspettano per consigliarvi il libro più bello;
+							 Quello che non avete ancora letto.</p>
+ 							<div class="col-12">
+ 							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.2570927905!2d12.395912026526345!3d41.91024148820807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1653471455348!5m2!1sit!2sit"style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 						</div>
 						
@@ -73,7 +75,7 @@
 
 							<div class="img-box">
 								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
-									alt="dove siamo">
+									alt="libri">
 							</div>
 							<p class="overview">
 								<b>LA NOSTRA MISSION</b>
@@ -90,11 +92,8 @@
 							comunità coinvolte nei progetti, ottenendo straordinari risultati in termini di empowerment delle stesse.</p>
 						</div>
 						
-<<<<<<< HEAD
 						<!-- LE NOSTRE INIZIATIVE -->
-						
-=======
->>>>>>> ab2b6e35251694e541834888750a7676234aef47
+
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
@@ -110,21 +109,11 @@
 							 il sito www.treedom.it</p>
 
 						</div>
-<<<<<<< HEAD
+
 						<div class="carousel-item">
-						<div class="img-box">
-								<img src='<c:url value="/static/images/carosello/lavora-con-noi.jpg"/>'
-=======
-
-							
-
-						</div>
-						<div class="carousel-item">
-
 							<div class="img-box">
-								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
->>>>>>> ab2b6e35251694e541834888750a7676234aef47
-									alt="dove siamo">
+								<img 
+								src='<c:url value="/static/images/carosello/lavora-con-noi.jpg"/>' alt="libri">
 							</div>
 							<p class="overview">
 								<b>LAVORA CON NOI</b>
@@ -140,16 +129,11 @@
 							del ruolo, punta su persone dotate di passione, spirito di squadra, orientamento al risultato e al cliente, con forti capacità relazionali e organizzative.
 							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
 					</div>
-<<<<<<< HEAD
+
 					</div>
 					
 					<!-- CONTROLLO DEL CAROSELLO -->
-					
-					
-=======
-					
-					<!-- Carousel controls -->
->>>>>>> ab2b6e35251694e541834888750a7676234aef47
+
 					<a class="carousel-control-prev" href="#myCarousel"
 						data-slide="prev"> <i class="fa fa-angle-left"></i>
 					</a> <a class="carousel-control-next" href="#myCarousel"
