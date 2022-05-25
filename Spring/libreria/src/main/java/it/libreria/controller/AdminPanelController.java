@@ -16,6 +16,7 @@ import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
 import it.libreria.dao.UserDao;
 import it.libreria.model.Book;
+import it.libreria.model.User;
 
 @Controller
 @RequestMapping("/admin-panel")
@@ -30,6 +31,8 @@ public class AdminPanelController {
 	@GetMapping
 	public String getPage(Model model) {
 		model.addAttribute("users", userDao.findAll());
+		model.addAttribute("login", new User());
+
 		return "admin-panel";
 	}
 

@@ -23,10 +23,7 @@ public class LoginController {
 	private UserDao userDao;
 
 	@GetMapping
-	public String getPage(Model model, HttpSession session) {
-		model.addAttribute("login", new User());
-		model.addAttribute("isLoginPage", true);
-		
+	public String getPage(Model model, HttpSession session) {		
 		return "login";
 	}
 

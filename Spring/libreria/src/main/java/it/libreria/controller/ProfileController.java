@@ -19,6 +19,8 @@ public class ProfileController {
 
 	@GetMapping
 	public String getPage(Model model, HttpSession session) {
+		model.addAttribute("login", new User());
+
 		User u = userDao.findByUsername((String) session.getAttribute("username"));
 
 		model.addAttribute("user", u);

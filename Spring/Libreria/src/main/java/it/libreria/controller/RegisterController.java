@@ -27,8 +27,9 @@ public class RegisterController {
 
 	@GetMapping()
 	public String getPage(Model model) {
+		model.addAttribute("login", new User());
 		model.addAttribute("formState", errUsername);
-		model.addAttribute(new User());
+		model.addAttribute("user", new User());
 
 		return "register";
 	}
