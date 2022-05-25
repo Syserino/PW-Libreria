@@ -22,6 +22,7 @@ public class IndexController {
 	public String getPage(Model model)
 	{		
 		model.addAttribute("books", bookDao.findAll());
+		model.addAttribute("isHome", true);
 		return "index";
 	}
 }

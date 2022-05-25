@@ -22,11 +22,18 @@
 	<link  href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>'rel="stylesheet">
 	<link href='<c:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
 	<script src='<c:url value="https://code.jquery.com/jquery-3.5.1.min.js"/>'></script>
-	<script src='<curl value="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"/>'></script>
+	<script src='<c:url value="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"/>'></script>
 	<script src='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>'></script>
 
 	<!-- CSS -->
 	<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet" type="text/css">
+</c:if>
+
+<c:if test="${isHome}">
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>' rel="stylesheet">    
+	<link href='<c:url value="/static/css/homepage.css"/>' rel="stylesheet" type="text/css">
 </c:if>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
