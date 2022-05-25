@@ -15,9 +15,9 @@
 				<ul class="list-group mb-3">
 					<li class="list-group-item d-flex justify-content-between lh-sm">
 						<div>
-							<h6 class="my-0">${book.id}</h6>
-							<small class="text-muted">${book.title}</small>
-						</div> <span class="text-muted">${book.price_flexiblecover}</span>
+							<h6 class="my-0">${book.title}</h6>
+							<small class="text-muted">Descrizione breve</small>
+						</div> <span class="text-muted">${book.priceFlexibleCover}</span>
 					</li>
 			</c:forEach>
 			<li class="list-group-item d-flex justify-content-between bg-light">

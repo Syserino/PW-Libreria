@@ -1,6 +1,10 @@
 package it.libreria.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,4 +29,22 @@ public class BookCardController {
 		model.addAttribute("isBookCard", true);
 		return "book-card";
 	}
+	
+	@SuppressWarnings("unchecked")
+	@GetMapping("/addArticle")
+	public String addArticleToCart(HttpServletRequest request, HttpSession session) {
+		int idProd = Integer.parseInt(request.getParameter("idProd"));
+		List<Integer> tmpList;
+
+		if (session.getAttribute("cart") == null)
+			tmpList = new ArrayList<Integer>();
+		else
+			tmpList = (List<Integer>) session.getAttribute("cart");
+
+		tmpList.add(idProd);
+		session.setAttribute("cart", tmpList);
+
+		return "redirect:/home";
+	}
+
 }
