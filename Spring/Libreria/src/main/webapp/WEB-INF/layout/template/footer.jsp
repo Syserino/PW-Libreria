@@ -45,7 +45,7 @@
                     </ul>
                 </div>
                 <div class="col-6">
-                    <h5 class="text-uppercase">Termini && Condizioni</h5>
+                    <h5 class="text-uppercase">Termini e Condizioni</h5>
 
                     <ul class="list-unstyled mb-0">
                             <a href='<c:url value="/static/fileLink/privacy.pdf"/>' class="text-decoration-none" style="color: #4f7978;" target="_blank">Privacy | </a>
