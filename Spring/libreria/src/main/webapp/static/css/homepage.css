@@ -76,18 +76,16 @@
         }
 
         .sin:hover{
-            background-color: #EA73E0;
-            color:#ED15CC;
+            background-color: #f9b299;
+            color: black;
         }
-
         .cen:hover{
-            background-color: #ECE42C;
-            color:#F87E0B;
+            background-color: #f6cd47;
+            color: black;
         }
-
         .des:hover{
-            background-color: #1BDAB2;
-            color:#2243AC;
+            background-color: #4f7978;
+            color: black;
         }
 
         @media only screen and (max-width: 991px) {  /*quando è medio */
