@@ -90,8 +90,11 @@
 							comunità coinvolte nei progetti, ottenendo straordinari risultati in termini di empowerment delle stesse.</p>
 						</div>
 						
+<<<<<<< HEAD
 						<!-- LE NOSTRE INIZIATIVE -->
 						
+=======
+>>>>>>> ab2b6e35251694e541834888750a7676234aef47
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
@@ -107,9 +110,20 @@
 							 il sito www.treedom.it</p>
 
 						</div>
+<<<<<<< HEAD
 						<div class="carousel-item">
 						<div class="img-box">
 								<img src='<c:url value="/static/images/carosello/lavora-con-noi.jpg"/>'
+=======
+
+							
+
+						</div>
+						<div class="carousel-item">
+
+							<div class="img-box">
+								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
+>>>>>>> ab2b6e35251694e541834888750a7676234aef47
 									alt="dove siamo">
 							</div>
 							<p class="overview">
@@ -126,11 +140,16 @@
 							del ruolo, punta su persone dotate di passione, spirito di squadra, orientamento al risultato e al cliente, con forti capacità relazionali e organizzative.
 							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
 					</div>
+<<<<<<< HEAD
 					</div>
 					
 					<!-- CONTROLLO DEL CAROSELLO -->
 					
 					
+=======
+					
+					<!-- Carousel controls -->
+>>>>>>> ab2b6e35251694e541834888750a7676234aef47
 					<a class="carousel-control-prev" href="#myCarousel"
 						data-slide="prev"> <i class="fa fa-angle-left"></i>
 					</a> <a class="carousel-control-next" href="#myCarousel"
