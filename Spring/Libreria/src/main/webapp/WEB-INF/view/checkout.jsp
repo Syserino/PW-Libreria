@@ -40,7 +40,7 @@
 			</form>
 		</div>
 		<div class="col-md-7 col-lg-8">
-			<h4 class="mb-3">Inidirizzo di spedizione</h4>
+			<h4 class="mb-3">Indirizzo di spedizione</h4>
 			<form class="needs-validation">
 				<div class="row g-3">
 					<div class="col-sm-6">
@@ -96,6 +96,11 @@
 							type="text" class="form-control" id="cap" placeholder="CAP..."
 							required>
 					</div>
+					    <div class="custom-control">
+                        <input type="radio" name="spedizione" value="standard">Spedizione standard 3-5 giorni lavorativi
+                        <br>
+                        <input type="radio" name="spedizione" value="premium" checked>Spedizione premium 1-2 giorni lavorativi
+                    </div>
 				</div>
 				<br>
 				<div class="form-check">
