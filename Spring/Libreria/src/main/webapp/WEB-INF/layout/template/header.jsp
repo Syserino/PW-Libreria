@@ -112,10 +112,10 @@
 		<div class="collapse navbar-collapse">
 			<a href="#"><img class="navbar-toggler-icon"
 				src='<c:url value="/static/images/icona_profilo.png"/>'
-				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; <a href="#"><img
-				class="navbar-toggler-icon"
-				src='<c:url value="/static/images/youtube_icona.png"/>'
-				alt="icona preferiti"></a>
+				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; 
+				<a href="#"><img class="navbar-toggler-icon"
+				src='<c:url value="/static/images/header/icona_carrello.png"/>'
+				alt="icona carrello"></a>
 		</div>
 	</div>
 	<div class="d-flex justify-content-right">

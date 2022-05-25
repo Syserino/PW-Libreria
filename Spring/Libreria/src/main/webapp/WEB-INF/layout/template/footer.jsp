@@ -7,20 +7,16 @@
     <div class="container p-4">
         <section class="mb-4">
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank">
-                <i class="fab fa-facebook-f"><img class="navbar-toggler-icon"
-                                                  src='<c:url value="/static/images/fb_icona.png"/>'/></i></a>
+              <img class="navbar-toggler-icon" src='<c:url value="/static/images/fb_icona.png"/>'/></a>
                                                   
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
-            ><i class="fab fa-twitter"><img class="navbar-toggler-icon" src='<c:url value="/static/images/twitter_icona.png"/>'/></i
-            ></a>
+            ><img class="navbar-toggler-icon" src='<c:url value="/static/images/twitter_icona.png"/>'/></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
-            ><i class="fab fa-youtube"><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>'/></i
-            ></a>
+            ><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>'/></a>
 
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
-            ><img class="navbar-toggler-icon" src='<c:url value="/static/images/ig_icona.png"/>'/><i class="fab fa-instagram"></i
-            ></a>
+            ><img class="navbar-toggler-icon" src='<c:url value="/static/images/ig_icona.png"/>'/></a>
         </section>
         <section class="mb-4">
             <p>
