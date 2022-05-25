@@ -14,7 +14,7 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		
 	<!-- CSS -->
-	<link href='<c:url value="/static/css/book-card.css"/>' rel="stylesheet" type="text/css">
+	<link href='<c:url value="/static/css/book-card.css"/>' rel="stylesheet" type="text/css"> <!--  ESEMPIO -->
 </c:if>
 
 <c:if test="${isAboutUs}">
@@ -22,12 +22,9 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>About us</title>
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans">
-	<link rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link  href='<c:url value="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans"/>'  rel="stylesheet">
+	<link  href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>'rel="stylesheet">
+	<link href='<c:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
