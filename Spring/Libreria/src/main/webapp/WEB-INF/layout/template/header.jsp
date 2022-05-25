@@ -4,6 +4,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+
+
 <c:if test="${isBookCard}">
 	<link
 		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>'
@@ -50,15 +52,7 @@
 		type="text/css">
 </c:if>
 
-<c:if test="${isHome}">
-	<meta charset="UTF-8">
-	<title>Homepage</title>
-	<link
-		href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>'
-		rel="stylesheet">
-	<link href='<c:url value="/static/css/homepage.css"/>' rel="stylesheet"
-		type="text/css">
-</c:if>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
 		<a class="navbar-brand" href="#"> <img class="navbar-toggler-icon"
@@ -71,6 +65,9 @@
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		
+		<!-- VOCI CLICCABILI SU HEADER -->
+		
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
@@ -81,6 +78,8 @@
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false"> Catagolo </a>
+
+			<!-- MENU A TENDINA GENERI A CATALOGO -->
 
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item"
@@ -96,6 +95,8 @@
 						<li><a class="dropdown-item"
 							href='<spring:url value="/search?idCategory=6"/>'>Romantico</a></li>
 					</ul></li>
+
+			<!-- MENU A TENDINA VISTA ADMIN -->
 
 				<c:if test="${isAdmin}">
 					<li class="nav-item dropdown"><a
@@ -116,13 +117,20 @@
 				</c:if>
 			</ul>
 		</div>
+		
+		
+		<!-- BARRA DI RICERCA E BOTTONE -->
+		
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="d-flex" action="books" method="GET">
 				<input class="form-control me-2" type="search"
 					placeholder="Cerca. . ." aria-label="Search" name="searchText">
-				<button class="btn btn-outline-warning" type="submit">Cerca</button>
+				<button class="btn bottone btn-warning" type="submit">Cerca</button>
 			</form>
 		</div>
+		
+		<!-- ICONE PROFILO E CARRELLO -->
+		
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item dropdown"><a class="nav-link" href="#"
@@ -191,11 +199,13 @@
 		</div>
 	</div>
 </nav>
+<div class="row mb-3">
 <div class="card bg-dark text-white container-fluid">
-	<img src='<c:url value="/static/images/header/banner.png"/>' alt="ehm" />
+	<img src='<c:url value="/static/images/header/banner.png"/>' alt="motto" />
 	<div class="card-img-overlay">
 		<h2 class="card-title"></h2>
 	</div>
+</div>
 </div>
 
 

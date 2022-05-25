@@ -11,6 +11,9 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- CSS HEADER -->
+<link href='<c:url value="/static/css/header.css"/>'
+		rel="stylesheet" type="text/css">
 
 		<c:if test="${isBookCard}">
 			<link href='<c:url value="/static/css/book-card.css"/>'
@@ -19,6 +22,15 @@
 		<c:if test="${isAboutUs}">
 			<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet"
 			type="text/css">
+		</c:if>
+		<c:if test="${isHome}">
+		
+	
+	<link
+		href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>'
+		rel="stylesheet">
+	<link href='<c:url value="/static/css/homepage.css"/>' rel="stylesheet"
+		type="text/css">
 		</c:if>
 		
 		<link rel="icon" type="image/svg" href="static/images/header/La-penna-d_oro.ico">
