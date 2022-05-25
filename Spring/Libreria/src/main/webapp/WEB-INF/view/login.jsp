@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-6">
 					<label for="usernameSp">Username</label>
-					<form:input path="username" id="usernameSp" type="text"
+					<form:input path="username" id="usernameSp" type="password"
 						cssClass="form-control" required="required" />
 					<form:errors path="username" id="usernameSpError"
 						cssClass="text-danger" />
