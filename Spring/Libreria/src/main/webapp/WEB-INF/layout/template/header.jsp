@@ -4,10 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <c:if test="${isBookCard}">
-	<link href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>' rel="stylesheet">
-	<link href='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"/>' rel="stylesheet">
-	<link href='<c:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>' rel="stylesheet">
-	<link href='<c:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
+	<link href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>' rel="stylesheet">
+	<link href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"/>' rel="stylesheet">
+	<link href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>' rel="stylesheet">
+	<link href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>' rel="stylesheet">
 		
 	<!-- CSS -->
 	<link href='<c:url value="/static/css/book-card.css"/>' rel="stylesheet" type="text/css"> <!--  ESEMPIO -->
@@ -104,12 +104,13 @@
 			</form>
 		</div>
 		<div class="collapse navbar-collapse">
-			<a href="#"><img class="navbar-toggler-icon"
-				src='<c:url value="/static/images/header/icona_profilo.png"/>'
-				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; 
-				<a href="#"><img class="navbar-toggler-icon"
-				src='<c:url value="/static/images/header/icona_carrello.png"/>'
-				alt="icona carrello"></a>
+			<a href='<spring:url value="/profile"/>'><img class="navbar-toggler-icon"
+				src='<c:url value="/static/images/icona_profilo.png"/>'
+				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; <a
+				href='<spring:url value="#youtubeeeee"/>'><img
+				class="navbar-toggler-icon"
+				src='<c:url value="/static/images/youtube_icona.png"/>'
+				alt="icona preferiti"></a>
 		</div>
 	</div>
 	<div class="d-flex justify-content-right">
@@ -127,4 +128,5 @@
 		<h2 class="card-title"></h2>
 	</div>
 </div>
+
 

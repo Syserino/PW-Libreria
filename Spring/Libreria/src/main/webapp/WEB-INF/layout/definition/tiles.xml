@@ -78,12 +78,16 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/search.jsp" />
 	</definition>
-		
+
 	<definition name="about-us" extends="baseLayout">
 		<put-attribute name="title" value="About us" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/about-us.jsp" />
 	</definition>
-	
-	
+
+	<definition name="profile" extends="baseLayout">
+		<put-attribute name="title" value="Profilo utente" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/profile.jsp" />
+	</definition>
 </tiles-definitions>

@@ -19,7 +19,7 @@
 		<div class="col-md-5 border-right">
 			<div class="p-3 py-5">
 				<div class="d-flex justify-content-between align-items-center mb-3">
-					<h4 class="text-right">Stai modificando il profilo di ${user.username}</h4>
+					<h4 class="text-right">Il Mio Profilo</h4>
 				</div>
 				<div class="row mt-2">
 					<div class="col-md-6">
