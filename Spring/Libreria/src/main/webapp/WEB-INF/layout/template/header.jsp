@@ -105,21 +105,14 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<a href='<spring:url value="/profile"/>'><img class="navbar-toggler-icon"
-				src='<c:url value="/static/images/icona_profilo.png"/>'
-				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; <a
-				href='<spring:url value="#youtubeeeee"/>'><img
+				src='<c:url value="/static/images/header/icona_profilo.png"/>'
+				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; 
+				<a
+				href='<spring:url value="/cart"/>'><img
 				class="navbar-toggler-icon"
-				src='<c:url value="/static/images/youtube_icona.png"/>'
-				alt="icona preferiti"></a>
+				src='<c:url value="/static/images/header/icona_carrello.png"/>'
+				alt="icona carrello"></a>
 		</div>
-	</div>
-	<div class="d-flex justify-content-right">
-		<c:if test="${cartnum > 0}">
-			<a href='<spring:url value="cart"/>' class="btn btn-primary"> Vai
-				al carrello <span class="badge badge-light">(Elementi nel
-					carrello: ${cartnum})</span>
-			</a>
-		</c:if>
 	</div>
 </nav>
 <div class="card bg-dark text-white container-fluid">
