@@ -20,38 +20,38 @@ public class Anagraphic implements Serializable {
 	private int id;
 
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "name", length = 255, nullable = false)
+	@Column(name = "name", length = 255, nullable = true)
 	private String name;
 
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "surname", length = 255, nullable = false)
+	@Column(name = "surname", length = 255, nullable = true)
 	private String surname;
 
 	@Pattern(regexp = "[a-zA-Z0-9@_.-]{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "mail", length = 255, nullable = false)
+	@Column(name = "mail", length = 255, nullable = true)
 	private String mail;
 
-	@Column(name = "gender", length = 10, nullable = false)
+	@Column(name = "gender", length = 10, nullable = true)
 	private String gender;
 
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s'.-]{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "street", length = 255, nullable = false)
+	@Column(name = "street", length = 255, nullable = true)
 	private String street;
 
 	@Pattern(regexp = "[a-zA-Z0-9/.-]{1,10}", message = "{customer.form.error.general}")
-	@Column(name = "cn", length = 10, nullable = false)
+	@Column(name = "cn", length = 10, nullable = true)
 	private String civicNumber;
 	
 	@Pattern(regexp = "[a-zA-Z0-9/.-]{1,10}", message = "{customer.form.error.general}")
-	@Column(name = "phone", length = 15, nullable = false)
+	@Column(name = "phone", length = 15, nullable = true)
 	private String phone;
 
 	@Pattern(regexp = "[0-9]{5}", message = "{customer.form.error.general}")
-	@Column(name = "cap", length = 10, nullable = false)
+	@Column(name = "cap", length = 10, nullable = true)
 	private String cap;
 
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s'.-]{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "town", length = 255, nullable = false)
+	@Column(name = "town", length = 255, nullable = true)
 	private String town;
 
 	public int getId() {

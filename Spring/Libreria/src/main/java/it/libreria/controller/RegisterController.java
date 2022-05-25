@@ -12,30 +12,38 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.model.User;
+import it.libreria.dao.AnagraphicDao;
 import it.libreria.dao.UserDao;
 
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
+	private boolean errUsername = false;
+
 	@Autowired
 	UserDao userDao;
-	
+	@Autowired
+	AnagraphicDao anagraphicDao;
+
 	@GetMapping()
-	public String getPage(Model model)
-	{
+	public String getPage(Model model) {
+		model.addAttribute("formState", errUsername);
 		model.addAttribute(new User());
-		
+
 		return "register";
 	}
-	
+
 	@PostMapping
 	public String customerCreate(@Valid @ModelAttribute("user") User user, BindingResult result) {
 		if (result.hasErrors())
 			return "register";
+		// se stai provando a registrarti con un nome utente già usato
+		errUsername = userDao.findByUsername(user.getUsername()) != null;
 
-		//user.setAnagraphic(anagraphic);
-
-		userDao.save(user);
+		if (!errUsername) {
+			user.setPrivileges(1);
+			userDao.save(user);
+		}
 
 		return "redirect:/";
 	}
