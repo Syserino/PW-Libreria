@@ -107,9 +107,7 @@
 							Da questo è nata la nostra collaborazione per Treedom che ci permette di piantare un nuovo albero 
 							per ogni eBook acquistato. Un piccolo gesto per l'uomo, un enorme gesto per l'umanità. Scopri di più visitando
 							 il sito www.treedom.it</p>
-
 						</div>
-
 						<div class="carousel-item">
 							<div class="img-box">
 								<img 

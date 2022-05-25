@@ -182,7 +182,8 @@
 							</c:otherwise>
 						</c:choose>
 					</c:if></li>
-				<li><a href='<spring:url value="/cart"/>'><img
+					&nbsp;&nbsp;
+				<li><a class="nav-link" href='<spring:url value="/cart"/>'><img
 						class="navbar-toggler-icon"
 						src='<c:url value="/static/images/header/icona_carrello.png"/>'
 						alt="icona carrello"></a></li>
