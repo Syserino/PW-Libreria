@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
  body {
-            font-family: "Open Sans", sans-serif;
+            font-family: Cairo,sans-serif;
         }
 
 
@@ -9,7 +9,7 @@
             color: #333;
             text-align: center;
             text-transform: uppercase;
-            font-family: "Roboto", sans-serif;
+            font-family: Cairo,sans-serif;
             font-weight: bold;
             position: relative;
             margin: 30px 0 60px;
