@@ -12,9 +12,9 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 	<!-- CSS -->
-
-	<link href="/static/css/book-card.css" rel="stylesheet" type="text/css">
+	<link href='<c:url value="/static/css/book-card.css"/>' rel="stylesheet" type="text/css">
 </c:if>
 
 <c:if test="${isAboutUs}">
@@ -32,11 +32,10 @@
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		
-		
+		src='<c:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>'></script>
+
 	<!-- CSS -->
-	<link href="/static/css/about-us.css" rel="stylesheet" type="text/css">
+	<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet" type="text/css">
 </c:if>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid alert-danger">
