@@ -15,14 +15,14 @@
 			<div class="row">
 				<div class="col-6">
 					<label for="usernameSp">Username</label>
-					<form:input path="username" id="usernameSp" type="password"
+					<form:input path="username" id="usernameSp" type="text"
 						cssClass="form-control" required="required" />
 					<form:errors path="username" id="usernameSpError"
 						cssClass="text-danger" />
 				</div>
 				<div class="col-6">
 					<label for="passwordSp">Password</label>
-					<form:input path="password" id="passwordSp" type="text"
+					<form:input path="password" id="passwordSp" type="password"
 						cssClass="form-control" required="required" />
 					<form:errors path="password" id="passwordSpError"
 						cssClass="text-danger" />
