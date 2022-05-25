@@ -105,7 +105,7 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<a href="#"><img class="navbar-toggler-icon"
-				src='<c:url value="/static/images/icona_profilo.png"/>'
+				src='<c:url value="/static/images/header/icona_profilo.png"/>'
 				alt="icona profilo"></a> &nbsp;&nbsp;&nbsp; 
 				<a href="#"><img class="navbar-toggler-icon"
 				src='<c:url value="/static/images/header/icona_carrello.png"/>'
