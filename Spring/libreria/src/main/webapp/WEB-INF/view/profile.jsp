@@ -32,7 +32,7 @@
 					</div>
 					<br>
 					<div class="form-group col-md-12">
-						<br> <label>Sesso: </label> <label class="radio-inline">
+						<br> <label>Genere: </label> <label class="radio-inline">
 							<input type="radio" name="sesso"> Maschio |
 						</label> <label class="radio-inline"><input type="radio"
 							name="sesso"> Femmina | </label> <label class="radio-inline"><input
