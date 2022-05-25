@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
+import it.libreria.dao.OrderDao;
 import it.libreria.dao.UserDao;
 import it.libreria.model.Book;
 import it.libreria.model.User;
@@ -27,6 +28,8 @@ public class AdminPanelController {
 	BookDao bookDao;
 	@Autowired
 	CategoryDao categoryDao;
+	@Autowired
+	OrderDao orderDao;
 
 	@GetMapping
 	public String getPage(Model model) {
@@ -78,4 +81,10 @@ public class AdminPanelController {
 		return "book-edit";
 	}
 
+	@GetMapping("/order-list")
+	public String orderList(Model model) {
+		model.addAttribute("orders", orderDao.findAll());
+
+		return "order-list";
+	}
 }

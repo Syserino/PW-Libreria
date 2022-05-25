@@ -90,5 +90,9 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/profile.jsp" />
 	</definition>
-
+	<definition name="order-list" extends="baseLayout">
+		<put-attribute name="title" value="Lista ordini" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/admin/order-list.jsp" />
+	</definition>
 </tiles-definitions>

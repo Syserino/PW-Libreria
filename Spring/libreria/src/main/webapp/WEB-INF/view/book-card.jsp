@@ -62,10 +62,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="row lower">
-						<div class="col text-right align-self-center">
-							<button class="btn">Aggiungi al carrello</button>
-						</div>
+					<div class="d-flex justify-content-center">
+						<form action="/libreria/book-card/addArticle" method="GET">
+							<button id="btnSave" name="idProd" value="${book.id}"
+								class="btn btn-primary">Aggiungi al carrello</button>
+						</form>
 					</div>
 				</div>
 			</div>
