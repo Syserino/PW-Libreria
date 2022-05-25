@@ -25,6 +25,9 @@
 					</ol>
 					<!-- Wrapper for carousel items -->
 					<div class="carousel-inner">
+					
+					<!--  BOX CHI SIAMO -->
+					
 						<div class="carousel-item active">
 							<div class="img-box">
 								<img
@@ -43,6 +46,9 @@
 							indipendenti, attiva in Italia e conosciuta in tutto il mondo.
 							La storia della societa' ha origine il 19 maggio 2022, durante il corso di sviluppatore Java di Generation Italy.</p>
 						</div>
+						
+						<!-- BOX DOVE SIAMO -->
+						
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
@@ -60,6 +66,9 @@
  <div class="col-12"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.2570927905!2d12.395912026526345!3d41.91024148820807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1653471455348!5m2!1sit!2sit"style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 						</div>
+						
+						<!-- BOX LA NOSTRA MISSION -->
+						
 						<div class="carousel-item">
 
 							<div class="img-box">
@@ -80,11 +89,14 @@
 							realizza anche in Italia progetti a forte valenza sociale. Il primo passo è la formazione e il finanziamento delle 
 							comunità coinvolte nei progetti, ottenendo straordinari risultati in termini di empowerment delle stesse.</p>
 						</div>
+						
+						<!-- LE NOSTRE INIZIATIVE -->
+						
 						<div class="carousel-item">
 							<div class="img-box">
 								<img
 									src='<c:url value="/static/images/carosello/treedom.png"/>'
-									alt="dove siamo">
+									alt="logo treedom">
 							</div>
 							<p class="overview">
 								<b>LE NOSTRE INIZIATIVE</b>
@@ -95,7 +107,11 @@
 							 il sito www.treedom.it</p>
 
 						</div>
-
+						<div class="carousel-item">
+						<div class="img-box">
+								<img src='<c:url value="/static/images/carosello/lavora-con-noi.jpg"/>'
+									alt="dove siamo">
+							</div>
 							<p class="overview">
 								<b>LAVORA CON NOI</b>
 							</p>
@@ -109,16 +125,12 @@
 							La Penna d'Oro cerca collaboratori anche tra le candidature che arrivano tramite questo sito. Oltre alle competenze specifiche 
 							del ruolo, punta su persone dotate di passione, spirito di squadra, orientamento al risultato e al cliente, con forti capacità relazionali e organizzative.
 							Mandare il curriculum a: g.landolfo@lapennadoro.it</p>
-
-						</div>
-						<div class="carousel-item">
-
-							<div class="img-box">
-								<img src='<c:url value="/static/images/carosello/mission.jpg"/>'
-									alt="dove siamo">
-							</div>
 					</div>
-					<!-- Carousel controls -->
+					</div>
+					
+					<!-- CONTROLLO DEL CAROSELLO -->
+					
+					
 					<a class="carousel-control-prev" href="#myCarousel"
 						data-slide="prev"> <i class="fa fa-angle-left"></i>
 					</a> <a class="carousel-control-next" href="#myCarousel"
