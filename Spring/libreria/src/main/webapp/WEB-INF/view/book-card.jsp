@@ -28,7 +28,7 @@
 									</a>
 								</div>
 							</div>
-							<p>${book.author}</p>
+							<p>${book.author}            ${book.isbn} </p>     
 							<p>${book.description}</p>
 							<span class="fa fa-star checked"></span> <span
 								class="fa fa-star checked"></span> <span

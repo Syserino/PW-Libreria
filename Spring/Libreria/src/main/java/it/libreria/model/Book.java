@@ -44,6 +44,28 @@ public class Book implements Serializable {
 
 	@Column(name = "quantity", nullable = false)
 	private int quantity;
+	
+	@Column(name = "short_desch", length = 255,nullable = false)
+	private String shortDesch;
+	
+	@Column(name = "isbn", length = 50, nullable = false)
+	private String isbn;
+
+	public String getShortDesch() {
+		return shortDesch;
+	}
+
+	public void setShortDesch(String shortDesch) {
+		this.shortDesch = shortDesch;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 
 	@ManyToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "category_id", referencedColumnName = "id")
