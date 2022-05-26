@@ -18,8 +18,8 @@
 				</div>
 			</c:if>
 
-			<section class="vh-100" style="background-color: #eee;">
-				<div class="container h-100">
+			<section style="background-color: #eee;">
+				<div class="container">
 					<div
 						class="row d-flex justify-content-center align-items-center h-100">
 						<div class="col-lg-12 col-xl-11">
@@ -85,7 +85,15 @@
 													<input class="form-check-input me-2" type="checkbox"
 														value="" id="form2Example3c" /> <label
 														class="form-check-label" for="form2Example3">
-														Accetto i <a href="#!">Termini di servizio</a>
+														Accetto i <a href='<c:url value="/static/fileLink/Condizioni_di_vendita.pdf"/>'target="_blank">Termini di servizio</a>
+													</label>
+												
+													<br>
+												
+													<input class="form-check-input me-2" type="checkbox"
+														value="" id="form3Example3c" /> <label
+														class="form-check-label" for="form2Example3">
+														Accetto le <a href='<c:url value="/static/fileLink/privacy.pdf"/>'target="_blank">Normative Privacy</a>
 													</label>
 												</div>
 
