@@ -214,13 +214,15 @@
 				</div>
 			</div>
 		</nav>
-		<div class="row mb-3">
+		<div class="row">
+		<div class="col-12">
 			<div class="card bg-dark text-white container-fluid">
 				<img src='<c:url value="/static/images/header/banner.png"/>'
 					alt="motto" />
 				<div class="card-img-overlay">
 					<h2 class="card-title"></h2>
 				</div>
+			</div>
 			</div>
 		</div>
 
