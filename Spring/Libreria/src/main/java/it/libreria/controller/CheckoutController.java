@@ -25,10 +25,16 @@ public class CheckoutController {
 	@SuppressWarnings("unchecked")
 	@GetMapping()
 	public String getPage(Model model, HttpSession session) {
-		model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
-		model.addAttribute("cartnum", ((List<Integer>) session.getAttribute("cart")).size());
-		User u = userDao.findByUsername((String) session.getAttribute("username"));
-		model.addAttribute("user", u);
+		if (session.getAttribute("cart") != null)
+		{
+			model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
+			model.addAttribute("cartnum", ((List<Integer>) session.getAttribute("cart")).size());
+		}
+		if (session.getAttribute("username") != null)
+		{
+			User u = userDao.findByUsername((String) session.getAttribute("username"));
+			model.addAttribute("user", u);
+		}
 
 		return "checkout";
 	}

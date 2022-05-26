@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <div class="container">
 
 	<div class="row g-5">
@@ -11,58 +13,89 @@
 				<span class="text-primary">Il tuo carrello</span> <span
 					class="badge bg-primary rounded-pill">#</span>
 			</h4>
-			<c:forEach items="${books}" var="book">
-				<ul class="list-group mb-3">
-					<li class="list-group-item d-flex justify-content-between lh-sm">
-						<div>
-							<h6 class="my-0">${book.title}</h6>
-							<small class="text-muted">Descrizione breve</small>
-						</div> <span class="text-muted">${book.priceFlexibleCover}</span>
-					</li>
-			</c:forEach>
-			<li class="list-group-item d-flex justify-content-between bg-light">
-				<div class="text-success">
-					<h6 class="my-0">Codice Promo</h6>
-					<small>EXAMPLECODE</small>
-				</div> <span class="text-success">Importo sconto</span>
-			</li>
-			<li class="list-group-item d-flex justify-content-between"><span>Totale:</span>
-				<strong>Prezzo totale</strong></li>
-			</ul>
+			<ul class="list-group mb-3">
 
-			<form class="card p-2">
-				<div class="input-group">
-					<input type="text" class="form-control"
-						placeholder="Inserisci il tuo codice sconto...">
-					<button type="submit" class="btn btn-secondary">Applica
-						coupon</button>
-				</div>
-			</form>
+				<c:choose>
+					<c:when test="${books}">
+						<c:forEach items="${books}" var="book">
+							<li class="list-group-item d-flex justify-content-between lh-sm">
+								<div>
+									<h6 class="my-0">${book.title}</h6>
+									<small class="text-muted">Descrizione breve</small>
+								</div> <span class="text-muted">${book.priceFlexibleCover}</span>
+							</li>
+						</c:forEach>
+						<li
+							class="list-group-item d-flex justify-content-between bg-light">
+							<div class="text-success">
+								<h6 class="my-0">Codice Promo</h6>
+								<small>EXAMPLECODE</small>
+							</div> <span class="text-success">Importo sconto</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between"><span>Totale:</span>
+							<strong>Prezzo totale</strong></li>
+						<form class="card p-2">
+							<div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Inserisci il tuo codice sconto...">
+								<button type="submit" class="btn btn-secondary">Applica
+									coupon</button>
+							</div>
+						</form>
+
+					</c:when>
+					<c:otherwise>
+						<li class="list-group-item d-flex justify-content-between lh-sm">
+							<div>
+								<h6 class="my-0">Carrello vuoto</h6>
+								<small class="text-muted">Vai nella lista articoli e
+									scegli un libro!</small>
+							</div>
+						</li>
+					</c:otherwise>
+				</c:choose>
+
+			</ul>
 		</div>
 		<div class="col-md-7 col-lg-8">
 			<h4 class="mb-3">Indirizzo di spedizione</h4>
-			<form class="needs-validation">
+			<form:form method="POST" modelAttribute="user"
+				acceptCharset="ISO-8859-1">
+				<form:errors path="*" cssClass="alert alert-danger" element="div"
+					id="generalAlert" />
 				<div class="row g-3">
 					<div class="col-sm-6">
-						<label for="nome" class="form-label">Nome:</label> <input
-							type="text" class="form-control" id="nome"
-							placeholder="Inserisci il tuo nome..." required>
+						<label for="nameSp">Nome</label>
+						<form:input path="anagraphic.name" id="nameSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.name" id="nameSpError" cssClass="text-danger" />
 					</div>
 					<div class="col-sm-6">
-						<label for="cognome" class="form-label">Cognome:</label> <input
-							type="text" class="form-control" id="cognome"
-							placeholder="Inserisci il tuo cognome..." required>
+						<label for="surnameSp">Cognome</label>
+						<form:input path="anagraphic.surname" id="nameSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.surname" id="nameSpError" cssClass="text-danger" />
 					</div>
 					<div class="col-12">
-						<label for="email" class="form-label">Email:<span
-							class="text-muted">(Opzionale)</span></label> <input type="email"
-							class="form-control" id="email"
-							placeholder="pippofranco@gmail.com">
+						<label for="emailSp">Email</label>
+						<form:input path="anagraphic.mail" id="emailSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.mail" id="emailSpError" cssClass="text-danger" />
+
 					</div>
-					<div class="col-12">
-						<label for="indirizzo" class="form-label">Indirizzo:</label> <input
-							type="text" class="form-control" id="indirizzo"
-							placeholder="Via/Piazza..." required>
+					<div class="col-9">
+						<label for="streetSp">Indirizzo:</label>
+						<form:input path="anagraphic.street" id="emailSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.street" id="streetSpError"
+							cssClass="text-danger" />
+					</div>
+					<div class="col-3">
+						<label for="streetSp">Numero:</label>
+						<form:input path="anagraphic.civicNumber" id="cnSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.civicNumber" id="streetSpError"
+							cssClass="text-danger" />
 					</div>
 
 					<div class="col-md-4">
@@ -92,15 +125,18 @@
 						</select>
 					</div>
 					<div class="col-md-3">
-						<label for="cap" class="form-label">CAP:</label> <input
-							type="text" class="form-control" id="cap" placeholder="CAP..."
-							required>
+						<label for="capSp">CAP:</label>
+						<form:input path="anagraphic.cap" id="capSp" type="text"
+							cssClass="form-control" required="required" />
+						<form:errors path="anagraphic.cap" id="capSpError"
+							cssClass="text-danger" />
 					</div>
-					    <div class="custom-control">
-                        <input type="radio" name="spedizione" value="standard">Spedizione standard 3-5 giorni lavorativi
-                        <br>
-                        <input type="radio" name="spedizione" value="premium" checked>Spedizione premium 1-2 giorni lavorativi
-                    </div>
+					<div class="custom-control">
+						<input type="radio" name="spedizione" value="standard">Spedizione
+						standard 3-5 giorni lavorativi <br> <input type="radio"
+							name="spedizione" value="premium" checked>Spedizione
+						premium 1-2 giorni lavorativi
+					</div>
 				</div>
 				<br>
 				<div class="form-check">
@@ -123,29 +159,9 @@
 				</div>
 
 				<hr class="my-4">
-<%-- 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post"
-					target="_top">
-					<input type="hidden" name="cmd" value="_xclick"> <input
-						type="hidden" name="business"
-						value="<spring:message code="company.mail"/>"> <input
-						type="hidden" name="lc" value="US"> <input type="hidden"
-						name="item_name" value="<spring:message code="header.title"/>">
-					<input type="hidden" name="amount" value="${orderPayment}">
-					<input type="hidden" name="currency_code" value="EUR"> <input
-						type="hidden" name="button_subtype" value="services"> <input
-						type="hidden" name="no_note" value="0"> <input
-						type="hidden" name="bn"
-						value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"> <input
-						type="image"
-						src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-						border="0" name="submit"
-						alt="PayPal - The safer, easier way to pay online!"> <img
-						alt="" border="0"
-						src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-						width="1" height="1">
-				</form>
- --%>				<button class="w-100 btn btn-primary btn-lg" type="submit">Checkout</button>
-			</form>
+
+				<input type="submit" value="Accedi" class="btn btn-primary mt-4">
+			</form:form>
 		</div>
 	</div>
 
