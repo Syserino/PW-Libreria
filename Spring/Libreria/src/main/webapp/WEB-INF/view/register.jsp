@@ -97,13 +97,7 @@
 													</label>
 												</div>
 
-												<div class="form-check d-flex justify-content-center mb-5">
-													<input class="form-check-input me-2" type="checkbox"
-														value="" id="form2Example3c" /> <label
-														class="form-check-label" for="form2Example3">
-														Accetto il trattamento dei dati secondo le <a href='<c:url value="/static/fileLink/privacy.pdf"/>normative della privacy</a>
-													</label>
-												</div>
+												
 
 												<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 													<button type="submit" class="btn btn-primary btn-lg">Registrati</button>

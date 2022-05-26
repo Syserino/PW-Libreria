@@ -101,7 +101,17 @@
 						cssClass="form-control" required="required" />
 					<form:errors path="eBook" id="eBookSpError" cssClass="text-danger" />
 				</div>
-
+				
+			<div class="col-6">
+					<label for="codeEBookSp">Codice e-Book:</label>
+					<form:textarea path="codeEBook" id="codeEBookSp"
+						cssClass="form-control" rows="3" style="resize:none;"
+						required="required" />
+					<form:errors path="codeEBook" id="codeEBookSpError"
+						cssClass="text-danger" />
+				</div>	
+				
+			<div class="row">
 				<div class="col-6">
 					<label for="quantitySp">Disponibilità in magazzino:</label>
 					<form:input path="quantity" id="quantitySp" type="number"
@@ -121,6 +131,7 @@
 		                 <form:option value="5" selected="${category.id =='5'? 'selected' : ''}">Saggistica</form:option>
 		                 <form:option value="6" selected="${category.id =='6'? 'selected' : ''}">Romantico</form:option>
 		              </form:select>
+				</div>	
 				</div>
 			</div>
 			<div class="col-6 text-center">

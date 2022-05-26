@@ -38,6 +38,17 @@ public class Book implements Serializable {
 
 	@Column(name = "e_book", nullable = false)
 	private double eBook;
+	
+	@Column(name = "code_ebook", nullable = false)
+	private String codeEBook;
+	
+	public String getCodeEBook() {
+		return codeEBook;
+	}
+
+	public void setCodeEBook(String codeEBook) {
+		this.codeEBook = codeEBook;
+	}
 
 	@Column(name = "public_year", nullable = false)
 	private int publicYear;
