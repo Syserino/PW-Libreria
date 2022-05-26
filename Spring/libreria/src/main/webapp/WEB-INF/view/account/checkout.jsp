@@ -57,6 +57,7 @@
 
 			</ul>
 		</div>
+
 		<div class="col-md-7 col-lg-8">
 			<h4 class="mb-3">Indirizzo di spedizione</h4>
 			<form:form method="POST" modelAttribute="user"
@@ -68,19 +69,22 @@
 						<label for="nameSp">Nome</label>
 						<form:input path="anagraphic.name" id="nameSp" type="text"
 							cssClass="form-control" required="required" />
-						<form:errors path="anagraphic.name" id="nameSpError" cssClass="text-danger" />
+						<form:errors path="anagraphic.name" id="nameSpError"
+							cssClass="text-danger" />
 					</div>
 					<div class="col-sm-6">
 						<label for="surnameSp">Cognome</label>
 						<form:input path="anagraphic.surname" id="nameSp" type="text"
 							cssClass="form-control" required="required" />
-						<form:errors path="anagraphic.surname" id="nameSpError" cssClass="text-danger" />
+						<form:errors path="anagraphic.surname" id="nameSpError"
+							cssClass="text-danger" />
 					</div>
 					<div class="col-12">
 						<label for="emailSp">Email</label>
 						<form:input path="anagraphic.mail" id="emailSp" type="text"
 							cssClass="form-control" required="required" />
-						<form:errors path="anagraphic.mail" id="emailSpError" cssClass="text-danger" />
+						<form:errors path="anagraphic.mail" id="emailSpError"
+							cssClass="text-danger" />
 
 					</div>
 					<div class="col-9">
@@ -164,7 +168,6 @@
 			</form:form>
 		</div>
 	</div>
-
 
 
 </div>

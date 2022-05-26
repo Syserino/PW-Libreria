@@ -19,23 +19,7 @@
 <link href='<c:url value="/static/css/header.css"/>' rel="stylesheet"
 	type="text/css">
 
-<c:if test="${isBookCard}">
-	<link
-		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>'
-		rel="stylesheet">
 
-	<link href='<c:url value="/static/css/sexycard.css"/>'
-		rel="stylesheet" type="text/css">
-</c:if>
 <c:if test="${isAboutUs}">
 	<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet"
 		type="text/css">

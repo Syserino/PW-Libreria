@@ -73,6 +73,12 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/search.jsp" />
 	</definition>
+	
+	<definition name="category-list" extends="baseLayout">
+		<put-attribute name="title" value="Lista categorie" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/category-list.jsp" />
+	</definition>
 
 	<definition name="about-us" extends="baseLayout">
 		<put-attribute name="title" value="About us" />
@@ -91,10 +97,17 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/order-list.jsp" />
 	</definition>
-	
+
 	<definition name="order-history" extends="baseLayout">
 		<put-attribute name="title" value="Lista ordini" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/account/order-history.jsp" />
 	</definition>
+	
+	<definition name="book-card" extends="baseLayout">
+		<put-attribute name="title" value="Scheda libro" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/book-card.jsp" />
+	</definition>
+
 </tiles-definitions>

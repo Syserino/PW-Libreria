@@ -138,7 +138,6 @@
 				<input type="submit" value="Registra Libro"
 					class="btn btn-primary mt-4">
 			</div>
-
 		</form:form>
 	</div>
 </div>

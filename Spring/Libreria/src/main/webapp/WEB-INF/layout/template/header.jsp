@@ -52,26 +52,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href='<c:url value="/home"/>'>Home</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/articles"/>'>In offerta</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#"
-					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false"> Catagolo </a> <!-- MENU A TENDINA GENERI A CATALOGO -->
-
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=1"/>'>Avventura</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=2"/>'>Storico</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=3"/>'>Fantasy</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=4"/>'>Horror</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=5"/>'>Saggistica</a></li>
-						<li><a class="dropdown-item"
-							href='<spring:url value="/search?idCategory=6"/>'>Romantico</a></li>
-					</ul></li>
+					href='<spring:url value="/category-list"/>'>Catagolo</a></li>
 
 				<!-- MENU A TENDINA VISTA ADMIN -->
 
@@ -100,15 +81,20 @@
 
 
 		<!-- BARRA DI RICERCA E BOTTONE -->
-
+		<!-- 		<select aria-describedby="searchDropdownDescription" -->
+		<!-- 			class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown" data-nav-selected="0" -->
+		<!-- 			id="searchDropdownBox" name="url" style="display: block; top: 2.5px;" -->
+		<!-- 			tabindex="0" title="Ricerca in"> -->
+		<!-- 			<option selected="selected" value="search-alias=aps">Titolo</option> -->
+		<!-- 			<option value="search-alias=apparel">Autore</option> -->
+		<!-- 		</select> -->
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<form class="d-flex" action="books" method="GET">
+			<form class="d-flex" action="index" method="GET">
 				<input class="form-control me-2" type="search"
 					placeholder="Cerca. . ." aria-label="Search" name="searchText">
 				<button class="btn" type="submit">Cerca</button>
 			</form>
 		</div>
-
 		<!-- ICONE PROFILO E CARRELLO -->
 
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -160,9 +146,11 @@
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarDropdownMenuLink">
 									<li><a class="dropdown-item"
-										href='<spring:url value="/account/profile"/>'>Il mio account</a></li>
+										href='<spring:url value="/account/profile"/>'>Il mio
+											account</a></li>
 									<li><a class="dropdown-item"
-										href='<spring:url value="/account/order-history"/>'>Lista ordini</a></li>
+										href='<spring:url value="/account/order-history"/>'>Lista
+											ordini</a></li>
 									<li><a class="dropdown-item"
 										href='<spring:url value="/account/logout"/>'>Esci</a></li>
 								</ul>

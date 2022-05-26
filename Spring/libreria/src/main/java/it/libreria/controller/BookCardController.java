@@ -23,17 +23,22 @@ public class BookCardController {
 	
 	// http://localhost:8080/libreria/book-card
 	@GetMapping()
-	public String getPage(Model model, HttpServletRequest request) {
+	public String getPage(Model model, HttpSession session, HttpServletRequest request) {
 		int idProd = Integer.parseInt(request.getParameter("idProd"));
 		model.addAttribute("book", bookDao.findById(idProd).get());
 		model.addAttribute("isBookCard", true);
+		if (session.getAttribute("loginSuccess") != null)
+			model.addAttribute("isLogged", true);
+		
+
 		return "book-card";
 	}
 	
 	@SuppressWarnings("unchecked")
 	@GetMapping("/addArticle")
-	public String addArticleToCart(HttpServletRequest request, HttpSession session) {
+	public String addArticleToCart(Model model, HttpServletRequest request, HttpSession session) {
 		int idProd = Integer.parseInt(request.getParameter("idProd"));
+
 		List<Integer> tmpList;
 
 		if (session.getAttribute("cart") == null)

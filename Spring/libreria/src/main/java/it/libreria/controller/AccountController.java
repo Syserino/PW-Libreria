@@ -71,7 +71,7 @@ public class AccountController {
 	@GetMapping("/checkout")
 	public String checkout(Model model, HttpSession session) {
 		if (session.getAttribute("loginSuccess") == null)
-			return "redirect:/home";
+			return "redirect:/register";
 
 		if (session.getAttribute("cart") != null) {
 			model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
@@ -80,7 +80,9 @@ public class AccountController {
 		if (session.getAttribute("username") != null) {
 			User u = userDao.findByUsername((String) session.getAttribute("username"));
 			model.addAttribute("user", u);
-		}
+		} else 
+			model.addAttribute("user", new User());
+
 
 		return "checkout";
 	}
