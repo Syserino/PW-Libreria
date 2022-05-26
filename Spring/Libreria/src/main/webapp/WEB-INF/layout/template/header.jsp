@@ -90,6 +90,9 @@
 							<li><a class="dropdown-item"
 								href='<spring:url value="/admin-panel/book-list"/>'>Lista
 									libri</a></li>
+							<li><a class="dropdown-item"
+								href='<spring:url value="/admin-panel/order-list"/>'>Lista
+									ordini</a></li>
 						</ul></li>
 				</c:if>
 			</ul>
@@ -119,7 +122,7 @@
 						<c:choose>
 							<c:when test="${!loginSuccess}">
 								<div class="dropdown-menu">
-									<form:form action="/libreria/login" method="POST"
+									<form:form action="/libreria/account/login" method="POST"
 										modelAttribute="login" acceptCharset="ISO-8859-1"
 										class="px-4 py-3">
 
@@ -157,21 +160,20 @@
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarDropdownMenuLink">
 									<li><a class="dropdown-item"
-										href='<spring:url value="/profile"/>'>Il mio account</a></li>
+										href='<spring:url value="/account/profile"/>'>Il mio account</a></li>
 									<li><a class="dropdown-item"
-										href='<spring:url value="/profile"/>'>Lista ordini</a></li>
+										href='<spring:url value="/account/order-history"/>'>Lista ordini</a></li>
 									<li><a class="dropdown-item"
-										href='<spring:url value="/logout"/>'>Esci</a></li>
+										href='<spring:url value="/account/logout"/>'>Esci</a></li>
 								</ul>
-
 							</c:otherwise>
 						</c:choose>
 					</c:if></li>
-				<li class="nav-item dropdown"><a class="nav-link" href='<spring:url value="/checkout"/>'
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="navbar-toggler-icon"
+				<li class="nav-item dropdown"><a class="nav-link"
+					href='<spring:url value="/account/checkout"/>' role="button"
+					aria-expanded="false"> <img class="navbar-toggler-icon"
 						src='<c:url value="/static/images/header/icona_carrello.png"/>'
-						alt="icona profilo">
+						alt="icona carrello">
 				</a></li>
 
 			</ul>
