@@ -27,7 +27,7 @@ public class IndexController {
 	BookService bookService;
 	
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name="type", required = false) String searchType, @RequestParam(name="text", required = false) String searchText)
+	public String getPage(Model model, @RequestParam(name="text", required = false) String searchText)
 	{
 		String searchBy = "";
 		
@@ -37,8 +37,9 @@ public class IndexController {
 		
 		model.addAttribute("login", new User());
 		model.addAttribute("isHome", true);
-		if (searchType != null)
-			model.addAttribute("books", searchType == "title" ? getBooksFromTitle(searchBy) : getBooksFromAuthor(searchBy));
+		model.addAttribute("books", getBooksFromTitle(searchBy));
+		//if (searchType != null)
+		//	model.addAttribute("books", searchType == "title" ? getBooksFromTitle(searchBy) : getBooksFromAuthor(searchBy));
 		return "index";
 	}
 	
