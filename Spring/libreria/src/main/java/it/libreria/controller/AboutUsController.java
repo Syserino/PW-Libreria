@@ -13,8 +13,7 @@ public class AboutUsController {
 
 	@GetMapping
 	public String getPage(Model model, HttpServletRequest request) {
-		int sel = Integer.parseInt(request.getParameter("sel"));
-		model.addAttribute("sel", sel);
+		model.addAttribute("sel", request.getParameter("sel") == null ? 1 : Integer.parseInt(request.getParameter("sel")));
 		model.addAttribute("isAboutUs", true);
 		return "about-us";
 	}
