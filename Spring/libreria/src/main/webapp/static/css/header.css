@@ -9,6 +9,7 @@ btn {
 
 btn:hover {
   background-color: #f9b299;
+
   color: #f9b299;
 }
 
@@ -16,3 +17,6 @@ btn:hover {
 	display: inline;
 }
 
+.nav-link {
+    display: inline;
+}
