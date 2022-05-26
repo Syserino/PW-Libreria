@@ -16,7 +16,7 @@
 			<ul class="list-group mb-3">
 
 				<c:choose>
-					<c:when test="${books}">
+					<c:when test="${books != null}">
 						<c:forEach items="${books}" var="book">
 							<li class="list-group-item d-flex justify-content-between lh-sm">
 								<div>

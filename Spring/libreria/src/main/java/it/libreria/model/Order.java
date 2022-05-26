@@ -24,6 +24,7 @@ public class Order implements Serializable {
 	    CONSEGNATO,
 	    CANCELLATO
 	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

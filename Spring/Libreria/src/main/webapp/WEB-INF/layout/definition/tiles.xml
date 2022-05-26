@@ -34,7 +34,7 @@
 	<definition name="checkout" extends="baseLayout">
 		<put-attribute name="title" value="Checkout" />
 		<put-attribute name="content"
-			value="/WEB-INF/view/checkout.jsp" />
+			value="/WEB-INF/view/account/checkout.jsp" />
 	</definition>
 
 	<definition name="book-form" extends="baseLayout">
@@ -83,12 +83,18 @@
 	<definition name="profile" extends="baseLayout">
 		<put-attribute name="title" value="Profilo utente" />
 		<put-attribute name="content"
-			value="/WEB-INF/view/profile.jsp" />
+			value="/WEB-INF/view/account/profile.jsp" />
 	</definition>
-	
+
 	<definition name="order-list" extends="baseLayout">
 		<put-attribute name="title" value="Lista ordini" />
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/order-list.jsp" />
+	</definition>
+	
+	<definition name="order-history" extends="baseLayout">
+		<put-attribute name="title" value="Lista ordini" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/account/order-history.jsp" />
 	</definition>
 </tiles-definitions>
