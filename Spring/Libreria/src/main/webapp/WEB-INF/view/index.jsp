@@ -6,10 +6,6 @@
 
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<body>
 	<div class="row">
 		<div class="col-lg-3 col-md-4" id="sinistraTitolo">
 			<h3>Ultime uscite</h3>
@@ -120,6 +116,3 @@
 
 		</div>
 	</div>
-
-</body>
-</html>

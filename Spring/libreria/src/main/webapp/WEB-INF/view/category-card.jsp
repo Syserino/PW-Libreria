@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     
-    <c:forEach items="${books}" var="book">
+    <c:forEach items="${category}" var="category">
 <div class="row">
     <div class="col-12 col-lg-6">
         <div class="card-wrapper">
