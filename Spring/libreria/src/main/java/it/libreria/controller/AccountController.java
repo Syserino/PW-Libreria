@@ -31,7 +31,7 @@ public class AccountController {
 
 	@GetMapping
 	public String getPage() {
-		return "account";
+		return "redirect:/home";
 	}
 
 	@GetMapping("/login")
@@ -60,6 +60,9 @@ public class AccountController {
 
 	@GetMapping("/order-history")
 	public String orderHistory(Model model, HttpSession session) {
+		if (session.getAttribute("loginSuccess") == null)
+			return "redirect:/home";
+
 		model.addAttribute("orders", orderDao.findAll());
 		return "order-history";
 	}
@@ -67,6 +70,9 @@ public class AccountController {
 	@SuppressWarnings("unchecked")
 	@GetMapping("/checkout")
 	public String checkout(Model model, HttpSession session) {
+		if (session.getAttribute("loginSuccess") == null)
+			return "redirect:/home";
+
 		if (session.getAttribute("cart") != null) {
 			model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
 			model.addAttribute("cartnum", ((List<Integer>) session.getAttribute("cart")).size());
@@ -81,6 +87,9 @@ public class AccountController {
 
 	@GetMapping("/profile")
 	public String profile(Model model, HttpSession session) {
+		if (session.getAttribute("loginSuccess") == null)
+			return "redirect:/home";
+
 		model.addAttribute("login", new User());
 
 		User u = userDao.findByUsername((String) session.getAttribute("username"));

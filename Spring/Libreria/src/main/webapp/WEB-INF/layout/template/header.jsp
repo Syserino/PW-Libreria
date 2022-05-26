@@ -170,7 +170,7 @@
 						</c:choose>
 					</c:if></li>
 				<li class="nav-item dropdown"><a class="nav-link"
-					href='<spring:url value="/checkout"/>' role="button"
+					href='<spring:url value="/account/checkout"/>' role="button"
 					aria-expanded="false"> <img class="navbar-toggler-icon"
 						src='<c:url value="/static/images/header/icona_carrello.png"/>'
 						alt="icona carrello">
