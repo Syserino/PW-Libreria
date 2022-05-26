@@ -87,7 +87,7 @@
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> Catagolo </a> <!-- MENU A TENDINA GENERI A CATALOGO -->
+							data-bs-toggle="dropdown" aria-expanded="false"> Catalogo </a> <!-- MENU A TENDINA GENERI A CATALOGO -->
 
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
