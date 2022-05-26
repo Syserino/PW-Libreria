@@ -1,16 +1,20 @@
 
 
-bottone {
+btn {
 	border: 2px solid #4f7978;
-  color: #000000;
   background-color: #f9b299;
+  color: #4f7978;
   border-color: #4f7978;
 }
 
-bottone:hover {
-	color: #000000;
+btn:hover {
   background-color: #f9b299;
-  border-color: #4f7978;
+
+  color: #f9b299;
+}
+
+.nav-link {
+	display: inline;
 }
 
 .nav-link {

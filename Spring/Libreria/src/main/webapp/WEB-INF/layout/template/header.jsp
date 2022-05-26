@@ -4,21 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<c:if test="${isBookCard}">
-	<link
-		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>'
-		rel="stylesheet">
-	<link
-		href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>'
-		rel="stylesheet">
-</c:if>
-
 
 <c:if test="${isAboutUs}">
 	<meta charset="utf-8">
@@ -59,9 +44,9 @@
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		
+
 		<!-- VOCI CLICCABILI SU HEADER -->
-		
+
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
@@ -71,9 +56,7 @@
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false"> Catagolo </a>
-
-			<!-- MENU A TENDINA GENERI A CATALOGO -->
+					aria-expanded="false"> Catagolo </a> <!-- MENU A TENDINA GENERI A CATALOGO -->
 
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item"
@@ -90,7 +73,7 @@
 							href='<spring:url value="/search?idCategory=6"/>'>Romantico</a></li>
 					</ul></li>
 
-			<!-- MENU A TENDINA VISTA ADMIN -->
+				<!-- MENU A TENDINA VISTA ADMIN -->
 
 				<c:if test="${isAdmin}">
 					<li class="nav-item dropdown"><a
@@ -111,20 +94,20 @@
 				</c:if>
 			</ul>
 		</div>
-		
-		
+
+
 		<!-- BARRA DI RICERCA E BOTTONE -->
-		
+
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="d-flex" action="books" method="GET">
 				<input class="form-control me-2" type="search"
 					placeholder="Cerca. . ." aria-label="Search" name="searchText">
-				<button class="btn bottone btn-warning" type="submit">Cerca</button>
+				<button class="btn" type="submit">Cerca</button>
 			</form>
 		</div>
-		
+
 		<!-- ICONE PROFILO E CARRELLO -->
-		
+
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item dropdown"><a class="nav-link" href="#"
@@ -184,21 +167,25 @@
 							</c:otherwise>
 						</c:choose>
 					</c:if></li>
-				<li><a class="nav-link" href='<spring:url value="/checkout"/>'><img
-						class="navbar-toggler-icon"
+				<li class="nav-item dropdown"><a class="nav-link" href='<spring:url value="/checkout"/>'
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="navbar-toggler-icon"
 						src='<c:url value="/static/images/header/icona_carrello.png"/>'
-						alt="icona carrello"></a></li>
+						alt="icona profilo">
+				</a></li>
+
 			</ul>
 		</div>
 	</div>
 </nav>
 <div class="row mb-3">
-<div class="card bg-dark text-white container-fluid">
-	<img src='<c:url value="/static/images/header/banner.png"/>' alt="motto" />
-	<div class="card-img-overlay">
-		<h2 class="card-title"></h2>
+	<div class="card bg-dark text-white container-fluid">
+		<img src='<c:url value="/static/images/header/banner.png"/>'
+			alt="motto" />
+		<div class="card-img-overlay">
+			<h2 class="card-title"></h2>
+		</div>
 	</div>
-</div>
 </div>
 
 
