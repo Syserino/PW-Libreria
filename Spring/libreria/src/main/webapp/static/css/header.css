@@ -12,3 +12,7 @@ bottone:hover {
   background-color: #f9b299;
   border-color: #4f7978;
 }
+
+.nav-link {
+    display: inline;
+}
