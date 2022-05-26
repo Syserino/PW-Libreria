@@ -4,8 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
-
 <c:if test="${isBookCard}">
 	<link
 		href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>'
@@ -19,12 +17,8 @@
 	<link
 		href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>'
 		rel="stylesheet">
-
-	<!-- CSS -->
-	<link href='<c:url value="/static/css/book-card.css"/>'
-		rel="stylesheet" type="text/css">
-	<!--  ESEMPIO -->
 </c:if>
+
 
 <c:if test="${isAboutUs}">
 	<meta charset="utf-8">
