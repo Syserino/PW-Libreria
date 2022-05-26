@@ -30,8 +30,8 @@ pageEncoding="UTF-8"%>
                 <a href=<c:url value="/book-card?idProd=${book.id}"/>>
                 <div class="card-body sin">
                     <h5 class="card-title">${book.title}</h5>
-                    <h6>Generi</h6>
-                    <p class="card-text">Breve descrizione del libro</p>
+                    <h6>Genere</h6>
+                    <p class="card-text">${book.shortDesch}</p>
                 </div>
                 </a>
             </div></c:forEach>

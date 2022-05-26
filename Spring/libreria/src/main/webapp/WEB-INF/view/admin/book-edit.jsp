@@ -37,6 +37,16 @@
 			</div>
 			<div class="row">
 				<div class="col-6">
+					<label for="isbnSp">ISBN-10:</label>
+					<form:textarea path="isbn" id="isbnSp"
+						cssClass="form-control" rows="3" style="resize:none;"
+						required="required" />
+					<form:errors path="isbn" id="isbnSpError"
+						cssClass="text-danger" />
+				</div>
+				
+			
+				<div class="col-6">
 					<label for="descriptionSp">Descrizione:</label>
 					<form:textarea path="description" id="descriptionSp"
 						cssClass="form-control" rows="3" style="resize:none;"
@@ -44,7 +54,18 @@
 					<form:errors path="description" id="descriptionSpError"
 						cssClass="text-danger" />
 				</div>
-
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="shortDeschSp">Breve descrizione:</label>
+					<form:textarea path="shortDesch" id="shortDeschSp"
+						cssClass="form-control" rows="3" style="resize:none;"
+						required="required" />
+					<form:errors path="shortDesch" id="shortDeschSpError"
+						cssClass="text-danger" />
+				</div>
+				
 				<div class="col-6">
 					<label for="publicYearSp">Anno di pubblicazione:</label>
 					<form:input path="publicYear" id="publicYearSp" type="number"
