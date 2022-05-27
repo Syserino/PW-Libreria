@@ -42,6 +42,7 @@ public class AdminPanelController {
 	@GetMapping("/user-list")
 	public String userList(Model model) {
 		model.addAttribute("users", userDao.findAll());
+		model.addAttribute("login", new User());
 
 		return "user-list";
 	}
@@ -49,6 +50,7 @@ public class AdminPanelController {
 	@GetMapping("/user-edit")
 	public String userEdit(Model model, HttpServletRequest request) {
 		model.addAttribute("user", userDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		model.addAttribute("login", new User());
 
 		return "user-edit";
 	}
@@ -56,6 +58,7 @@ public class AdminPanelController {
 	@GetMapping("/book-list")
 	public String bookList(Model model) {
 		model.addAttribute("books", bookDao.findAll());
+		model.addAttribute("login", new User());
 
 		return "book-list";
 	}
@@ -66,19 +69,22 @@ public class AdminPanelController {
 			model.addAttribute(new Book());
 		else
 			model.addAttribute("book", bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		model.addAttribute("login", new User());
 
 		return "book-edit";
 	}
+	
 
 	@PostMapping("/book-edit")
 	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book, BindingResult result) {
 		if (result.hasErrors())
 			return "book-edit";
+		model.addAttribute("login", new User());
 
 		book.setCategory(categoryDao.findById(book.getCategory().getId()).get());
 		bookDao.save(book);
 
-		return "book-edit";
+		return "redirect:/admin-panel/book-list";
 	}
 
 	@GetMapping("/user-remove")
@@ -95,6 +101,14 @@ public class AdminPanelController {
 			bookDao.delete(bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 
 		return "redirect:/admin-panel/book-list";
+	}
+	
+	@GetMapping("/order-remove")
+	public String orderRemove(Model model, HttpServletRequest request) {
+		if (request.getParameter("id") != null)
+			orderDao.delete(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+
+		return "redirect:/admin-panel/order-list";
 	}
 
 	@GetMapping("/order-list")

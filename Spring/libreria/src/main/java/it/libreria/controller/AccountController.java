@@ -18,6 +18,7 @@ import it.libreria.dao.AnagraphicDao;
 import it.libreria.dao.BookDao;
 import it.libreria.dao.OrderDao;
 import it.libreria.dao.UserDao;
+import it.libreria.model.Anagraphic;
 import it.libreria.model.Book;
 import it.libreria.model.Order;
 import it.libreria.model.User;
@@ -125,11 +126,29 @@ public class AccountController {
 			return "redirect:/home";
 
 		model.addAttribute("login", new User());
+		model.addAttribute("username", (String) session.getAttribute("username"));
 
-		User u = userDao.findByUsername((String) session.getAttribute("username"));
+		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
 
-		model.addAttribute("user", u);
+		model.addAttribute("anagraphic", a);
 		return "profile";
+	}
+	
+	@PostMapping("/profile")
+	public String updateProfile(Model model, @Valid @ModelAttribute("anagraphic") Anagraphic anagraphic, BindingResult result, HttpSession session) {
+		if (result.hasErrors())
+			return "profile";
+		model.addAttribute("login", new User());
+
+		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
+		a.setName(anagraphic.getName());
+		a.setSurname(anagraphic.getSurname());
+		a.setGender(anagraphic.getGender());
+		a.setStreet(anagraphic.getName());
+		
+		anagraphicDao.save(a);
+
+		return "redirect:/account/profile";
 	}
 
 	@GetMapping("/logout")

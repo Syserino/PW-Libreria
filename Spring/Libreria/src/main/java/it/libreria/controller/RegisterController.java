@@ -1,5 +1,6 @@
 package it.libreria.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,8 @@ public class RegisterController {
 	}
 
 	@PostMapping
-	public String customerCreate(Model model, @Valid @ModelAttribute("user") User user, BindingResult result) {
+	public String customerCreate(Model model, @Valid @ModelAttribute("user") User user, BindingResult result,
+			HttpSession session) {
 		if (result.hasErrors())
 			return "register";
 		// se stai provando a registrarti con un nome utente già usato
@@ -44,6 +46,10 @@ public class RegisterController {
 		if (!errUsername) {
 			user.setPrivileges(4);
 			userDao.save(user);
+
+			session.setAttribute("loginSuccess", true);
+			session.setAttribute("username", user.getUsername());
+			
 			return "redirect:/account/profile";
 		}
 		model.addAttribute("errUsername", errUsername);

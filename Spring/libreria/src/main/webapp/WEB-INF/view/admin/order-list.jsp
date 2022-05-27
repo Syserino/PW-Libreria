@@ -24,12 +24,9 @@
 				<td>${order.anagraphic.name} ${order.anagraphic.surname}</td>
 				<td>${order.book.priceFlexibleCover}</td>
 				<td>${order.status}</td>
-				<td><a
-					href='<spring:url value="/admin-panel/order-edit?id=${order.id}"/>'><button
-							class="btn-sm btn-group btn-danger" type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
-					<a
-					href='<spring:url value="/admin-panel/book-edit?id=${order.id}"/>'><button
-							class="btn-sm btn-group btn-danger" type="submit">Elimina</button></a>
+				<td>
+					<a href='<spring:url value="/admin-panel/order-remove?id=${order.id}"/>'><button
+							class="btn-sm btn-group btn-danger" type="submit">Annulla ordine</button></a>
 			</tr>
 		</c:forEach>
 	</tbody>
