@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.libreria.dao.AnagraphicDao;
 import it.libreria.dao.BookDao;
 import it.libreria.dao.OrderDao;
 import it.libreria.dao.UserDao;
+import it.libreria.model.Book;
+import it.libreria.model.Order;
 import it.libreria.model.User;
 
 @Controller
@@ -28,6 +31,10 @@ public class AccountController {
 	UserDao userDao;
 	@Autowired
 	OrderDao orderDao;
+	@Autowired
+	AnagraphicDao anagraphicDao;
+
+	private boolean errLogin = false;
 
 	@GetMapping
 	public String getPage() {
@@ -36,6 +43,8 @@ public class AccountController {
 
 	@GetMapping("/login")
 	public String login(Model model, HttpSession session) {
+		model.addAttribute("login", new User());
+		model.addAttribute("errLogin", errLogin);
 		return "login";
 	}
 
@@ -53,6 +62,9 @@ public class AccountController {
 
 			if (u.getPrivileges() == 1)
 				session.setAttribute("isAdmin", true);
+		} else {
+			errLogin = true;
+			return "redirect:/account/login";
 		}
 
 		return "redirect:/home";
@@ -62,8 +74,11 @@ public class AccountController {
 	public String orderHistory(Model model, HttpSession session) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
-
-		model.addAttribute("orders", orderDao.findAll());
+		if (session.getAttribute("username") != null)
+			model.addAttribute("orders", orderDao.findAllByAnagraphic(userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic())); 
+		else {
+			model.addAttribute("orders", null);
+		}
 		return "order-history";
 	}
 
@@ -72,6 +87,7 @@ public class AccountController {
 	public String checkout(Model model, HttpSession session) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/register";
+		model.addAttribute("login", new User());
 
 		if (session.getAttribute("cart") != null) {
 			model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
@@ -80,11 +96,27 @@ public class AccountController {
 		if (session.getAttribute("username") != null) {
 			User u = userDao.findByUsername((String) session.getAttribute("username"));
 			model.addAttribute("user", u);
-		} else 
+		} else
 			model.addAttribute("user", new User());
 
-
 		return "checkout";
+	}
+
+	@SuppressWarnings("unchecked")
+	@PostMapping("/checkout")
+	public String checkoutData(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
+		List<Integer> order_list = (List<Integer>) session.getAttribute("cart");
+		Order order;
+		for (int i = 0; i < order_list.size(); i++) {
+			order = new Order();
+			order.setAnagraphic(userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic());
+			order.setBook(bookDao.findById(order_list.get(i)).get());
+			order.setStatus("Da spedire");
+			orderDao.save(order);
+		}
+		session.removeAttribute("cart");
+
+		return "redirect:/home";
 	}
 
 	@GetMapping("/profile")

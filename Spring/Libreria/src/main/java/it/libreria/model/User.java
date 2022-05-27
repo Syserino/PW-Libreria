@@ -11,26 +11,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable
-{
+public class User implements Serializable {
 	private static final long serialVersionUID = 8769999019709863198L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
+	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{4,25}", message = "{form.error.username}")
 	@Column(name = "username", length = 255, nullable = false)
 	private String username;
-	
-	@Column(name = "password", length = 255, nullable = false)
+
+	@Pattern(regexp = "[a-zA-Z0-9/.-]{4,20}", message = "La password deve avere tra 4 e 20 caratteri.")
+	@Column(name = "password", length = 20, nullable = false)
 	private String password;
-	
+
 	@Column(name = "privileges", length = 255, nullable = false)
 	private int privileges;
-		
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "anagraphic_id")
 	private Anagraphic anagraphic;
@@ -74,6 +76,5 @@ public class User implements Serializable
 	public void setPrivileges(int privileges) {
 		this.privileges = privileges;
 	}
-
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,28 +19,21 @@ import javax.persistence.Table;
 @Table(name = "order_list")
 public class Order implements Serializable {
 	private static final long serialVersionUID = -5482634261369670437L;
-	public enum OrderStatus {
-	    DA_SPEDIRE,
-	    SPEDITO,
-	    CONSEGNATO,
-	    CANCELLATO
-	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "id_anagraphic")
 	private Anagraphic anagraphic;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "id_book")
 	private Book book;
  
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    private OrderStatus status;
+    @Column(name = "orderStatus")
+    private String status;
 
 	public int getId() {
 		return id;
@@ -65,11 +59,11 @@ public class Order implements Serializable {
 		this.book = book;
 	}
 
-	public OrderStatus getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(OrderStatus status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 

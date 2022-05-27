@@ -7,4 +7,7 @@ import it.libreria.model.Anagraphic;
 public interface AnagraphicDao extends CrudRepository<Anagraphic, Integer>
 {
 	Anagraphic findByName(String name);
+	Anagraphic findByMail(String mail);
+	
+	
 }

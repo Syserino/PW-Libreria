@@ -85,7 +85,6 @@
 							cssClass="form-control" required="required" />
 						<form:errors path="anagraphic.mail" id="emailSpError"
 							cssClass="text-danger" />
-
 					</div>
 					<div class="col-9">
 						<label for="streetSp">Indirizzo:</label>
@@ -164,7 +163,7 @@
 
 				<hr class="my-4">
 
-				<input type="submit" value="Accedi" class="btn btn-primary mt-4">
+				<input type="submit" value="Acquista" class="btn btn-primary mt-4">
 			</form:form>
 		</div>
 	</div>

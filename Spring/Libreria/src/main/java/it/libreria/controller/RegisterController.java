@@ -28,25 +28,27 @@ public class RegisterController {
 	@GetMapping()
 	public String getPage(Model model) {
 		model.addAttribute("login", new User());
-		model.addAttribute("formState", errUsername);
+		model.addAttribute("errUsername", errUsername);
 		model.addAttribute("user", new User());
 
 		return "register";
 	}
 
 	@PostMapping
-	public String customerCreate(@Valid @ModelAttribute("user") User user, BindingResult result) {
+	public String customerCreate(Model model, @Valid @ModelAttribute("user") User user, BindingResult result) {
 		if (result.hasErrors())
 			return "register";
 		// se stai provando a registrarti con un nome utente già usato
 		errUsername = userDao.findByUsername(user.getUsername()) != null;
 
 		if (!errUsername) {
-			user.setPrivileges(1);
+			user.setPrivileges(4);
 			userDao.save(user);
+			return "redirect:/account/profile";
 		}
+		model.addAttribute("errUsername", errUsername);
 
-		return "redirect:/";
+		return "redirect:/register";
 	}
 
 }

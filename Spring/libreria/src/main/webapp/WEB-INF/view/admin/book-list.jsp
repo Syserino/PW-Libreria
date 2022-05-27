@@ -30,7 +30,7 @@
 					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
 							class="btn-sm btn-group btn-danger" type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
 					<a
-					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
+					href='<spring:url value="/admin-panel/book-remove?id=${book.id}"/>'><button
 							class="btn-sm btn-group btn-danger" type="submit">Elimina</button></a>
 			</tr>
 		</c:forEach>

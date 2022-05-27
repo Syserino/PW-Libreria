@@ -45,7 +45,7 @@ public class AdminPanelController {
 
 		return "user-list";
 	}
-	
+
 	@GetMapping("/user-edit")
 	public String userEdit(Model model, HttpServletRequest request) {
 		model.addAttribute("user", userDao.findById(Integer.parseInt(request.getParameter("id"))).get());
@@ -64,21 +64,37 @@ public class AdminPanelController {
 	public String bookEdit(Model model, HttpServletRequest request) {
 		if (request.getParameter("id") == null)
 			model.addAttribute(new Book());
-		else 
+		else
 			model.addAttribute("book", bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 
 		return "book-edit";
 	}
-	
+
 	@PostMapping("/book-edit")
 	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book, BindingResult result) {
 		if (result.hasErrors())
 			return "book-edit";
-		
+
 		book.setCategory(categoryDao.findById(book.getCategory().getId()).get());
 		bookDao.save(book);
-		
+
 		return "book-edit";
+	}
+
+	@GetMapping("/user-remove")
+	public String userRemove(Model model, HttpServletRequest request) {
+		if (request.getParameter("id") != null)
+			userDao.delete(userDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+
+		return "redirect:/admin-panel/user-list";
+	}
+
+	@GetMapping("/book-remove")
+	public String bookRemove(Model model, HttpServletRequest request) {
+		if (request.getParameter("id") != null)
+			bookDao.delete(bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+
+		return "redirect:/admin-panel/book-list";
 	}
 
 	@GetMapping("/order-list")

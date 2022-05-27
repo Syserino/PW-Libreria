@@ -28,7 +28,7 @@ public class Anagraphic implements Serializable {
 	private String surname;
 
 	@Pattern(regexp = "[a-zA-Z0-9@_.-]{1,255}", message = "{customer.form.error.general}")
-	@Column(name = "mail", length = 255, nullable = true)
+	@Column(name = "mail", length = 255, nullable = false)
 	private String mail;
 
 	@Column(name = "gender", length = 10, nullable = true)

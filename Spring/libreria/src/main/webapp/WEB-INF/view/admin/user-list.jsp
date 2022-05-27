@@ -26,7 +26,7 @@
 							<i class="fas fa-edit">Modifica</i>
 						</button>
 				</a> <a
-					href='<spring:url value="/admin-panel/remove?id=${user.id}"/>'>
+					href='<spring:url value="/admin-panel/user-remove?id=${user.id}"/>'>
 						<button type="button" class="btn-sm btn btn-danger">
 							<i class="far fa-trash-alt">Rimuovi</i>
 						</button>
