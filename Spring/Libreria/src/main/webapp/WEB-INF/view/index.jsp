@@ -26,7 +26,7 @@
 					<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 						<div class="card-body sin">
 							<h5 class="card-title">${book.title}</h5>
-							<h6>Genere</h6>
+							<h6>${book.category.name}</h6>
 							<p class="card-text">${book.shortDesch}</p>
 						</div>
 					</a>
@@ -48,9 +48,16 @@
 									</div>
 									<div class="col-6">
 										<h5 class="card-title">${book.title}</h5>
-										<h6>Generi</h6>
+										<h6>${book.category.name}</h6>
 										<p class="card-text">${book.shortDesch}</p>
-										<p class="card-text">Prezzo</p>
+										<p class="card-text">Prezzo:  <fmt:formatNumber 
+                                value="${book.priceHardCover}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></p>
 									</div>
 								</div>
 							</div>
@@ -67,7 +74,7 @@
 					<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 						<div class="card-body des">
 							<h5 class="card-title">${book.title}</h5>
-							<h6>Generi</h6>
+							<h6>${book.category.name}</h6>
 							<p class="card-text">${book.shortDesch}</p>
 						</div>
 					</a>
@@ -88,7 +95,7 @@
 					<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 						<div class="card-body des">
 							<h5 class="card-title">${book.title}</h5>
-							<h6>Generi</h6>
+							<h6>${book.category.name}</h6>
 							<p class="card-text">${book.shortDesch}</p>
 						</div>
 					</a>
@@ -107,7 +114,7 @@
 					<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 						<div class="card-body sin">
 							<h5 class="card-title">${book.title}</h5>
-							<h6>Generi</h6>
+							<h6>${book.category.name}</h6>
 							<p class="card-text">${book.shortDesch}</p>
 						</div>
 					</a>
