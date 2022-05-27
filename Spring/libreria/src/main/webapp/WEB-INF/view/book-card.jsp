@@ -37,7 +37,7 @@
 						</div>
 						<p>${book.author}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 							ISBN-10: ${book.isbn}</p>
-						<p>${book.pubblicYear}</p>	
+						<p><b>Anno di pubblicazione:</b>${book.pubblicYear}</p>	
 
 						<p>${book.description}</p>
 						<span class="fa fa-star checked"></span> <span
