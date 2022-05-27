@@ -52,21 +52,21 @@
 									<div class="row">
 										<big><b>Copertina flessibile</b></big>
 									</div>
-									<div class="row">${book.priceFlexibleCover}</div>
+									<div class="row">${book.priceFlexibleCover} &euro</div>
 							</span>
 							</label> <label class="radio"> <input type="radio" name="size1"
 								value="large"> <span>
 									<div class="row">
 										<big><b>Copertina rigida</b></big>
 									</div>
-									<div class="row">${book.priceHardCover}</div>
+									<div class="row">${book.priceHardCover} &euro</div>
 							</span>
 							</label> <label class="radio"> <input type="radio" name="size1"
 								value="large"> <span>
 									<div class="row">
 										<big><b>Formato e-Book</b></big>
 									</div>
-									<div class="row">${book.eBook}</div>
+									<div class="row">${book.eBook} &euro</div>
 							</span>
 							</label>
 						</div>
