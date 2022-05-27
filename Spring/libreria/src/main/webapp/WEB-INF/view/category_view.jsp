@@ -14,7 +14,7 @@
             <p>${category.description}</p>
         </div>
         <div class="card-footer text-end">
-           <button class="btn btn-danger">Scopri di piu'</button>
+       	<a href='<spring:url value="/search?idCategory=${category.id}"/>'>    <button class="btn btn-danger">Scopri di piu'</button></a>
         </div>
     </div>
     </c:forEach>
