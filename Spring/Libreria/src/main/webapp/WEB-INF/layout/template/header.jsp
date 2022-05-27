@@ -79,93 +79,88 @@
 			</ul>
 		</div>
 
-
-		<!-- BARRA DI RICERCA E BOTTONE -->
-		<!-- 		<select aria-describedby="searchDropdownDescription" -->
-		<!-- 			class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown" data-nav-selected="0" -->
-		<!-- 			id="searchDropdownBox" name="url" style="display: block; top: 2.5px;" -->
-		<!-- 			tabindex="0" title="Ricerca in"> -->
-		<!-- 			<option selected="selected" value="search-alias=aps">Titolo</option> -->
-		<!-- 			<option value="search-alias=apparel">Autore</option> -->
-		<!-- 		</select> -->
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<!-- BARRA DI RICERCA E BOTTONE -->
 			<form class="d-flex" action="index" method="GET">
-				<input class="form-control me-2" type="search"
-					placeholder="Cerca. . ." aria-label="Search" name="searchText">
-				<button class="btn" type="submit">Cerca</button>
+				<select aria-describedby="searchDropdownDescription"
+					class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown"
+					data-nav-selected="0" id="searchDropdownBox" name="type"
+					style="display: block; top: 2.5px;" tabindex="0" title="Ricerca in">
+					<option selected="selected" value="title">Titolo</option>
+					<option value="author">Autore</option>
+				</select> <input class="form-control me-2" type="search"
+					placeholder="Cosa vuoi cercare?" aria-label="Search" name="text">
+				<button class="btn btn-outline-dark" type="submit">Cerca</button>
 			</form>
 		</div>
 		<!-- ICONE PROFILO E CARRELLO -->
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item dropdown"><a class="nav-link" href="#"
+				role="button" data-bs-toggle="dropdown" aria-expanded="false"> <img
+					class="navbar-toggler-icon"
+					src='<c:url value="/static/images/header/icona_profilo.png"/>'
+					alt="icona profilo">
+			</a> <c:if test="${login != null}">
+					<c:choose>
+						<c:when test="${!loginSuccess}">
+							<div class="dropdown-menu">
+								<form:form action="/libreria/account/login" method="POST"
+									modelAttribute="login" acceptCharset="ISO-8859-1"
+									class="px-4 py-3">
 
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item dropdown"><a class="nav-link" href="#"
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="navbar-toggler-icon"
-						src='<c:url value="/static/images/header/icona_profilo.png"/>'
-						alt="icona profilo">
-				</a> <c:if test="${login != null}">
-						<c:choose>
-							<c:when test="${!loginSuccess}">
-								<div class="dropdown-menu">
-									<form:form action="/libreria/account/login" method="POST"
-										modelAttribute="login" acceptCharset="ISO-8859-1"
-										class="px-4 py-3">
+									<div class="form-group">
+										<label for="usernameSp">Username</label>
+										<form:input path="username" id="usernameSp" type="text"
+											cssClass="form-control" required="required"
+											placeholder="Nome utente" />
+										<form:errors path="username" id="usernameSpError"
+											cssClass="text-danger" />
+									</div>
+									<div class="form-group">
+										<label for="passwordSp">Password</label>
+										<form:input path="password" id="passwordSp" type="password"
+											cssClass="form-control" required="required"
+											placeholder="Password" />
+										<form:errors path="password" id="passwordSpError"
+											cssClass="text-danger" />
+									</div>
+									<div class="form-check">
+										<input type="checkbox" class="form-check-input"
+											id="dropdownCheck"> <label class="form-check-label"
+											for="dropdownCheck"> Ricordami </label>
+									</div>
+									<button type="submit" class="btn btn-primary">Accedi</button>
+								</form:form>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href='<c:url value="/register"/>'>Sei
+									nuovo? Registrati</a> <a class="dropdown-item"
+									href='<c:url value="/forgot-password"/>'>Dimenticato la
+									password?</a>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item"
+									href='<spring:url value="/account/profile"/>'>Il mio
+										account</a></li>
+								<li><a class="dropdown-item"
+									href='<spring:url value="/account/order-history"/>'>Lista
+										ordini</a></li>
+								<li><a class="dropdown-item"
+									href='<spring:url value="/account/logout"/>'>Esci</a></li>
+							</ul>
+						</c:otherwise>
+					</c:choose>
+				</c:if></li>
+			<li class="nav-item dropdown"><a class="nav-link"
+				href='<spring:url value="/account/checkout"/>' role="button"
+				aria-expanded="false"> <img class="navbar-toggler-icon"
+					src='<c:url value="/static/images/header/icona_carrello.png"/>'
+					alt="icona carrello">
+			</a></li>
 
-										<div class="form-group">
-											<label for="usernameSp">Username</label>
-											<form:input path="username" id="usernameSp" type="text"
-												cssClass="form-control" required="required"
-												placeholder="Nome utente" />
-											<form:errors path="username" id="usernameSpError"
-												cssClass="text-danger" />
-										</div>
-										<div class="form-group">
-											<label for="passwordSp">Password</label>
-											<form:input path="password" id="passwordSp" type="password"
-												cssClass="form-control" required="required"
-												placeholder="Password" />
-											<form:errors path="password" id="passwordSpError"
-												cssClass="text-danger" />
-										</div>
-										<div class="form-check">
-											<input type="checkbox" class="form-check-input"
-												id="dropdownCheck"> <label class="form-check-label"
-												for="dropdownCheck"> Ricordami </label>
-										</div>
-										<button type="submit" class="btn btn-primary">Accedi</button>
-									</form:form>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href='<c:url value="/register"/>'>Sei
-										nuovo? Registrati</a> <a class="dropdown-item"
-										href='<c:url value="/forgot-password"/>'>Dimenticato la
-										password?</a>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<ul class="dropdown-menu"
-									aria-labelledby="navbarDropdownMenuLink">
-									<li><a class="dropdown-item"
-										href='<spring:url value="/account/profile"/>'>Il mio
-											account</a></li>
-									<li><a class="dropdown-item"
-										href='<spring:url value="/account/order-history"/>'>Lista
-											ordini</a></li>
-									<li><a class="dropdown-item"
-										href='<spring:url value="/account/logout"/>'>Esci</a></li>
-								</ul>
-							</c:otherwise>
-						</c:choose>
-					</c:if></li>
-				<li class="nav-item dropdown"><a class="nav-link"
-					href='<spring:url value="/account/checkout"/>' role="button"
-					aria-expanded="false"> <img class="navbar-toggler-icon"
-						src='<c:url value="/static/images/header/icona_carrello.png"/>'
-						alt="icona carrello">
-				</a></li>
-
-			</ul>
-		</div>
+		</ul>
 	</div>
 </nav>
 <div class="row mb-3">
