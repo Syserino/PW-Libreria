@@ -67,13 +67,25 @@
 										<div class="row">
 											<big><b>Copia fisica</b></big>
 										</div>
-										<div class="row">Da ${book.priceFlexibleCover} a
-											${book.priceHardCover}
+										<div class="row">Da <fmt:formatNumber 
+                                value="${book.priceFlexibleCover}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /> a
+											<fmt:formatNumber 
+                                value="${book.priceHardCover}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            />
 											
 											</div>
-
 										</span> 
-								
 								</label>
 								
 								<label class="radio"> <input type="radio"
@@ -81,7 +93,14 @@
 											<div class="row">
 												<big><b>Formato e-Book</b></big>
 											</div>
-											<div class="row">${book.eBook}</div>
+											<div class="row"><fmt:formatNumber 
+                                value="${book.eBook}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></div>
 									</span>
 
 								</label>
@@ -93,14 +112,28 @@
 										<div class="row">
 											<big><b>Copertina flessibile</b></big>
 										</div>
-										<div class="row">${book.priceFlexibleCover}sss</div>
+										<div class="row"><fmt:formatNumber 
+                                value="${book.priceFlexibleCover}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            />sss</div>
 								</span>
 								</label> <label class="radio"> <input name="cover" type="radio"
 									value="hard"> <span>
 										<div class="row">
 											<big><b>Copertina rigida</b></big>
 										</div>
-										<div class="row">${book.priceHardCover}ss</div>
+										<div class="row"><fmt:formatNumber 
+                                value="${book.priceHardCover}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            />ss</div>
 								</span>
 								</label>
 							</div>
@@ -114,17 +147,16 @@
 					</c:if>
 
 				</form>
-			</div>
+			
 			<c:if test="${!isLogged}">
 				<div class="alert alert-primary" role="alert">
 					Effettua l'accesso per aggiungere l'articolo al carrello. Non hai
 					un account? <a href='<c:url value="/register"/>' class="alert-link">Registrati!</a>
 				</div>
 			</c:if>
-
+</div>
 		</div>
 	</div>
-</div>
-</div>
+	</div>
 <script src='<c:url value="/static/js/cart.js"/>'></script>
 
