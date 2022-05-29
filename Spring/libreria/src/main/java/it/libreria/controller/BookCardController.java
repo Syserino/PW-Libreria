@@ -1,8 +1,5 @@
 package it.libreria.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,14 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.BookDao;
+import it.libreria.dao.CartDao;
+import it.libreria.dao.UserDao;
+import it.libreria.model.Book;
+import it.libreria.model.Cart;
 
 @Controller
 @RequestMapping("/book-card")
 public class BookCardController {
 	@Autowired
 	BookDao bookDao;
-	
-	
+	@Autowired
+	CartDao cartDao;
+	@Autowired
+	UserDao userDao;
+
 	// http://localhost:8080/libreria/book-card
 	@GetMapping()
 	public String getPage(Model model, HttpSession session, HttpServletRequest request) {
@@ -29,25 +33,26 @@ public class BookCardController {
 		model.addAttribute("isBookCard", true);
 		if (session.getAttribute("loginSuccess") != null)
 			model.addAttribute("isLogged", true);
-		
 
 		return "book-card";
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	@GetMapping("/addArticle")
 	public String addArticleToCart(Model model, HttpServletRequest request, HttpSession session) {
+		if (request.getParameter("idProd") == null || request.getParameter("cover") == null)
+			return "redirect:/home";
+
 		int idProd = Integer.parseInt(request.getParameter("idProd"));
+		String cover = request.getParameter("cover");
 
-		List<Integer> tmpList;
-
-		if (session.getAttribute("cart") == null)
-			tmpList = new ArrayList<Integer>();
-		else
-			tmpList = (List<Integer>) session.getAttribute("cart");
-
-		tmpList.add(idProd);
-		session.setAttribute("cart", tmpList);
+		Cart cart = new Cart();
+		Book book = bookDao.findById(idProd).get();
+		cart.setUser(userDao.findByUsername((String) session.getAttribute("username")));
+		cart.setBook(book);
+		cart.setPrice(cover.contains("flex") ? book.getPriceFlexibleCover() : book.getPriceHardCover());
+		cart.setCover(cover);
+		cart.setQuantity(1);
+		cartDao.save(cart);
 
 		return "redirect:/home";
 	}

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.CategoryDao;
+import it.libreria.model.User;
 
 @Controller
 @RequestMapping("category-list")
@@ -20,6 +21,7 @@ public class CategoryController {
 	public String getPage(Model model, HttpServletRequest request) 
 	{
 		model.addAttribute("category", categoryDao.findAll());
+		model.addAttribute("login", new User());
 
 		return "category-list";
 	}

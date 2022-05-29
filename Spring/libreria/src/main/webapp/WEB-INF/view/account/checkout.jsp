@@ -16,14 +16,14 @@
             <ul class="list-group mb-3">
 
                 <c:choose>
-                    <c:when test="${books != null}">
-                        <c:forEach items="${books}" var="book">
+                    <c:when test="${cart != null}">
+                        <c:forEach items="${cart}" var="c">
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0">${book.title}</h6>
-                                    <small class="text-muted">Descrizione breve</small>
+                                    <h6 class="my-0">${c.book.title}</h6>
+                                    <small class="text-muted">Tipo di cover: ${c.cover}</small>
                                 </div>
-                                <span class="text-muted">${book.priceFlexibleCover}</span>
+                                <span class="text-muted">${c.price}</span>
                             </li>
                         </c:forEach>
                         <li
@@ -83,7 +83,7 @@
                                      cssClass="text-danger"/>
                     </div>
                     <div class="col-sm-6">
-                        <label for="surnameSp">Codicie Fiscale:</label>
+                        <label for="surnameSp">Codice Fiscale:</label>
                         <form:input path="anagraphic.codiceFiscale"  id="nameSp" type="text"
                                     cssClass="form-control" required="required"/>
                         <form:errors  id="nameSpError"

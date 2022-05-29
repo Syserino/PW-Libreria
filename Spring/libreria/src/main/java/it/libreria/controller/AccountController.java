@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.AnagraphicDao;
 import it.libreria.dao.BookDao;
+import it.libreria.dao.CartDao;
 import it.libreria.dao.OrderDao;
 import it.libreria.dao.UserDao;
 import it.libreria.model.Anagraphic;
-import it.libreria.model.Book;
+import it.libreria.model.Cart;
 import it.libreria.model.Order;
 import it.libreria.model.User;
 
@@ -34,7 +35,9 @@ public class AccountController {
 	OrderDao orderDao;
 	@Autowired
 	AnagraphicDao anagraphicDao;
-
+	@Autowired
+	CartDao cartDao;
+	
 	private boolean errLogin = false;
 
 	@GetMapping
@@ -76,24 +79,21 @@ public class AccountController {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 		if (session.getAttribute("username") != null)
-			model.addAttribute("orders", orderDao.findAllByAnagraphic(userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic())); 
+			model.addAttribute("orders", orderDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")))); 
 		else {
 			model.addAttribute("orders", null);
 		}
 		return "order-history";
 	}
 
-	@SuppressWarnings("unchecked")
 	@GetMapping("/checkout")
 	public String checkout(Model model, HttpSession session) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/register";
 		model.addAttribute("login", new User());
 
-		if (session.getAttribute("cart") != null) {
-			model.addAttribute("books", bookDao.findAllById((List<Integer>) session.getAttribute("cart")));
-			model.addAttribute("cartnum", ((List<Integer>) session.getAttribute("cart")).size());
-		}
+		model.addAttribute("cart", cartDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username"))));
+		
 		if (session.getAttribute("username") != null) {
 			User u = userDao.findByUsername((String) session.getAttribute("username"));
 			model.addAttribute("user", u);
@@ -103,16 +103,17 @@ public class AccountController {
 		return "checkout";
 	}
 
-	@SuppressWarnings("unchecked")
 	@PostMapping("/checkout")
-	public String checkoutData(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-		List<Integer> order_list = (List<Integer>) session.getAttribute("cart");
+	public String checkoutData(Model model, @Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
+		List<Cart> order_list = cartDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
+
 		Order order;
+		order = new Order();
+		order.setUser(userDao.findByUsername((String) session.getAttribute("username")));
+		order.setStatus("Da spedire");
+
 		for (int i = 0; i < order_list.size(); i++) {
-			order = new Order();
-			order.setAnagraphic(userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic());
-			order.setBook(bookDao.findById(order_list.get(i)).get());
-			order.setStatus("Da spedire");
+			
 			orderDao.save(order);
 		}
 		session.removeAttribute("cart");

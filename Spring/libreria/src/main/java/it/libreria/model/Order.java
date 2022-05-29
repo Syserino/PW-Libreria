@@ -1,18 +1,16 @@
 package it.libreria.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,16 +23,21 @@ public class Order implements Serializable {
 	private int id;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "id_anagraphic")
-	private Anagraphic anagraphic;
+	@JoinColumn(name = "id_user")
+	private User user;
 	
-	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "id_book")
-	private Book book;
- 
+    @Column(name = "price")
+	private double price;
+	
     @Column(name = "orderStatus")
     private String status;
-
+    
+    @Column(name = "start")
+    private Date startDate;
+    
+    @Column(name = "end")
+    private Date enDate;
+    
 	public int getId() {
 		return id;
 	}
@@ -43,28 +46,36 @@ public class Order implements Serializable {
 		this.id = id;
 	}
 
-	public Anagraphic getAnagraphic() {
-		return anagraphic;
-	}
-
-	public void setAnagraphic(Anagraphic anagraphic) {
-		this.anagraphic = anagraphic;
-	}
-
-	public Book getBook() {
-		return book;
-	}
-
-	public void setBook(Book book) {
-		this.book = book;
-	}
-
 	public String getStatus() {
 		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEnDate() {
+		return enDate;
+	}
+
+	public void setEnDate(Date enDate) {
+		this.enDate = enDate;
 	}
 
     

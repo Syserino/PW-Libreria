@@ -153,14 +153,19 @@
 						</c:otherwise>
 					</c:choose>
 				</c:if></li>
+
+
+
 			<li class="nav-item dropdown"><a class="nav-link"
 				href='<spring:url value="/account/checkout"/>' role="button"
-				aria-expanded="false"> <img class="navbar-toggler-icon"
+				aria-expanded="false" data-toggle="modal"
+					data-target="#cart"> <img class="navbar-toggler-icon"
 					src='<c:url value="/static/images/header/icona_carrello.png"/>'
-					alt="icona carrello">
+					alt="icona carrello">(<span class="total-count"></span>)
 			</a></li>
-
 		</ul>
+
+
 	</div>
 </nav>
 <div class="row mb-3">
@@ -172,5 +177,31 @@
 		</div>
 	</div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<table class="show-cart table">
 
+				</table>
+				<div>
+					Total price: $<span class="total-cart"></span>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Order now</button>
+			</div>
+		</div>
+	</div>
+</div>
 
