@@ -33,19 +33,19 @@
             padding: 0 70px;
         }
         .carousel .carousel-item {
-            color: #999;
+            color: #2c2b2f;
             font-size: 14px;
             text-align: center;
             overflow: hidden;
             min-height: 290px;
         }
         .carousel .carousel-item .img-box {
-            width: 170px;
-            height: 170px;
+            width: 190px;
+            height: 190px;
             margin: 0 auto;
             padding: 5px;
             border: 1px solid #ddd;
-            border-radius: 50%;
+            border-radius: 70%;
         }
         .carousel .img-box img {
             width: 100%;
