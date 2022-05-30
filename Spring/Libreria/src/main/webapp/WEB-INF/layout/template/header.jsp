@@ -82,14 +82,15 @@
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<!-- BARRA DI RICERCA E BOTTONE -->
 			<form class="d-flex" action="index" method="GET">
-				<select aria-describedby="searchDropdownDescription"
+			 <input class="form-control me-2" type="search"
+					placeholder="Cosa vuoi cercare?" aria-label="Search" name="text">
+						<select aria-describedby="searchDropdownDescription"
 					class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown"
 					data-nav-selected="0" id="searchDropdownBox" name="type"
 					style="display: block; top: 2.5px;" tabindex="0" title="Ricerca in">
 					<option selected="selected" value="title">Titolo</option>
 					<option value="author">Autore</option>
-				</select> <input class="form-control me-2" type="search"
-					placeholder="Cosa vuoi cercare?" aria-label="Search" name="text">
+				</select>&nbsp;
 				<button class="btn btn-outline-dark" type="submit">Cerca</button>
 			</form>
 		</div>

@@ -119,7 +119,7 @@
                                 type="currency"
                                 currencyCode="EUR"
                                 currencySymbol="€"
-                            />sss</div>
+                            /></div>
 								</span>
 								</label> <label class="radio"> <input name="cover" type="radio"
 									value="hard"> <span>
@@ -133,7 +133,7 @@
                                 type="currency"
                                 currencyCode="EUR"
                                 currencySymbol="€"
-                            />ss</div>
+                            /></div>
 								</span>
 								</label>
 							</div>

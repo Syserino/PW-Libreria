@@ -11,7 +11,7 @@
 			<div
 				class="d-flex flex-column align-items-center text-center p-3 py-5">
 				<img class="rounded-circle mt-5" width="150px"
-					src='<c:url value="/static/images/fotoDiscord.png"/>'><span
+					src='<c:url value="/static/images/header/penna_logo.png"/>'><span
 					class="font-weight-bold">Username: ${username}</span><span
 					class="text-black-50">${anagraphic.mail}</span><span> </span>
 			</div>
@@ -42,10 +42,18 @@
 								type="radio" name="sesso" checked> Altro</label>
 						</div>
 					</div>
-					<br>
+				
+					<div class="row mt-3">
 					<div class="col-md-12">
 						<label class="labels">Email:</label><input type="text"
 							class="form-control" value="${anagraphic.mail}">
+							</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-12">
+						<label class="labels">Codice Fiscale:</label><input type="text"
+							class="form-control" value="${anagraphic.codiceFiscale}">
+							</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
@@ -59,7 +67,7 @@
 								class="form-control" value="${anagraphic.street}">
 						</div>
 						<div class="col-md-2">
-							<label class="labels">Numero:</label><input type="text"
+							<label class="labels">N°:</label><input type="text"
 								class="form-control" value="${anagraphic.civicNumber}">
 						</div>
 					</div>
@@ -74,10 +82,18 @@
 							<label class="labels">Citta':</label><input type="text"
 								class="form-control" value="${anagraphic.town}">
 						</div>
+						<div class="row mt-3">
+						<div class="col-md-12">
+							<label class="labels">Comune:</label><input type="text"
+								class="form-control" value="${anagraphic.city}">
+						</div>
+						</div>
 					</div>
+					<div class="row mt-3">
 					<div class="mt-5 text-center">					
 						<button class="btn btn-primary profile-button" type="submit">Aggiorna
 							il Profilo</button>
+							</div>
 					</div>
 				</form:form>
 			</div>
