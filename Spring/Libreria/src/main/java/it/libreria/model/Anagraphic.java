@@ -58,7 +58,7 @@ public class Anagraphic implements Serializable {
 	@Column(name = "city", length = 255, nullable = true)
 	private String city;
 
-	@Pattern(regexp = "[a-zA-Zאטלעש\\s'.-]{1,255}", message = "{customer.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z0-9s'.-]{1,255}", message = "{customer.form.error.general}")
 	@Column(name = "codice_fiscale", length = 16, nullable = true)
 	private String codiceFiscale;
 
