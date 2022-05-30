@@ -33,11 +33,10 @@
 					Home / Libri <a>/ ${book.category.name}</a>
 				</div>
 				<form action="/libreria/book-card/addArticle" method="GET">
-
 					<div class="row">
 						<div class="col-md-6 text-center align-self-center">
 							<img class="img-fluid"
-								src='<c:url value="/static/images/articles/harrypotter.jpg"/>'>
+								src='<c:url value="/static/images/articles/${book.id}.png"/>'>
 						</div>
 						<div class="col-md-6 info">
 							<div class="row title">

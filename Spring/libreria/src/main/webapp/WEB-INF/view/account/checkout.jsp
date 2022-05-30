@@ -42,7 +42,7 @@
                             <span class="text-success">Importo sconto</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between"><span>Totale:</span>
-                            <strong>Prezzo totale</strong></li>
+                            <strong>${sum}</strong></li>
                         <form class="card p-2">
                             <div class="input-group">
                                 <input type="text" class="form-control"

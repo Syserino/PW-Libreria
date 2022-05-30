@@ -41,7 +41,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "it.libreria.controller", "it.libreria.service", "it.libreria.dao" })
+@ComponentScan(basePackages = { "it.libreria.controller", "it.libreria.service", "it.libreria.dao", "it.libreria.configuration"})
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:application.properties" })
 @EnableJpaRepositories(basePackages = {

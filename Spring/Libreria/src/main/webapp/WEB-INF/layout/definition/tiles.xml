@@ -97,6 +97,11 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/admin/order-list.jsp" />
 	</definition>
+	<definition name="upload" extends="baseLayout">
+		<put-attribute name="title" value="ss ordini" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/admin/upload.jsp" />
+	</definition>
 
 	<definition name="order-history" extends="baseLayout">
 		<put-attribute name="title" value="Lista ordini" />
