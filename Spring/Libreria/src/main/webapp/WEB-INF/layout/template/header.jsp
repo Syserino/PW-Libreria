@@ -161,7 +161,11 @@
 				aria-expanded="false" data-toggle="modal"
 					data-target="#cart"> <img class="navbar-toggler-icon"
 					src='<c:url value="/static/images/header/icona_carrello.png"/>'
-					alt="icona carrello">(<span class="total-count"></span>)
+					alt="icona carrello">
+					<c:if test="${sessionScope.cartNum != null}">
+					(${sessionScope.cartNum})
+					</c:if>
+					
 			</a></li>
 		</ul>
 
