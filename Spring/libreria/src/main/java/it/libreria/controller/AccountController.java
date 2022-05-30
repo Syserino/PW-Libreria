@@ -99,11 +99,15 @@ public class AccountController {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 		
-		if (request.getParameter("id") != null)
-			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
-		else {
-			model.addAttribute("orders", null);
-		}
+		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAll();
+		System.out.println(listOrder.size());
+		model.addAttribute("orders", listOrder);
+		
+//		if (request.getParameter("id") != null)
+//			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
+//		else {
+//			model.addAttribute("orders", null);
+//		}
 		return "order-list";
 	}
 
@@ -143,9 +147,14 @@ public class AccountController {
 		order.setStatus("Da spedire");
 
 		for (int i = 0; i < order_list.size(); i++) {
-
 			orderDao.save(order);
 		}
+		
+		BookInOrder bookInOrder;
+		for (Cart c : order_list)
+			cartDao.delete(c);
+		
+
 		session.removeAttribute("cart");
 
 		return "redirect:/home";

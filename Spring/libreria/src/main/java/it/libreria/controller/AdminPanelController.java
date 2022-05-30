@@ -70,7 +70,7 @@ public class AdminPanelController {
 	}
 	
 	@GetMapping("/book-edit")
-	public String bookEdit(Model model, @RequestParam("id") int id, HttpSession session, HttpServletRequest request) {
+	public String bookEdit(Model model, @RequestParam(name="id", required=false) String id, HttpSession session, HttpServletRequest request) {
 		boolean hasImage = false;
 
 		try {
@@ -83,12 +83,18 @@ public class AdminPanelController {
 		}
 
 		if (request.getParameter("id") == null)
+		{
 			model.addAttribute(new Book());
+			model.addAttribute("bookId", 0);
+		}
 		else
+		{
 			model.addAttribute("book", bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+			model.addAttribute("bookId", String.valueOf(id));
+
+		}
 		model.addAttribute("hasImage", hasImage);
 		
-		model.addAttribute("bookId", String.valueOf(id));
 		model.addAttribute("login", new User());
 
 		return "book-edit";

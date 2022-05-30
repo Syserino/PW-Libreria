@@ -43,7 +43,7 @@
 								<div class="row">
 									<div class="col-6">
 										<img class="card-img-bottom"
-											src=<c:url value="/static/images/articles/${book.id}.jpg"/>
+											src=<c:url value="/static/images/articles/harrypotter.jpg"/>
 											alt="Questo messaggio appare perché non ci sta ancora un immagine">
 									</div>
 									<div class="col-6">

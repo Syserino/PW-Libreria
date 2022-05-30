@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "book_in_order")
 public class BookInOrder implements Serializable {
-	private static final long serialVersionUID = -4754455262120111333L;
+	private static final long serialVersionUID = 6352225170378982136L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

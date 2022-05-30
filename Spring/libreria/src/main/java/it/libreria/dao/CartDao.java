@@ -10,4 +10,5 @@ import it.libreria.model.User;
 public interface CartDao extends CrudRepository<Cart, Integer>{
 	List<Cart> findAllByUser(User user);
 	long countByUser(User u);
+
 }

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.libreria.dao.BookDao;
+import it.libreria.dao.CartDao;
+import it.libreria.dao.UserDao;
 import it.libreria.model.Book;
 import it.libreria.model.User;
 import it.libreria.service.BookService;
@@ -24,7 +26,10 @@ public class IndexController {
 	BookDao bookDao;
 	@Autowired
 	BookService bookService;
-
+	@Autowired
+	CartDao cartDao;
+	@Autowired
+	UserDao userDao;
 	@GetMapping
 	public String getPage(Model model, HttpSession session, @RequestParam(name = "type", required = false) String searchType,
 			@RequestParam(name = "text", required = false) String searchText) {
@@ -33,6 +38,9 @@ public class IndexController {
 		if (searchText != null && !searchText.isEmpty()) {
 			searchBy = searchText;
 		}
+		User u = userDao.findByUsername((String) session.getAttribute("username"));
+
+		session.setAttribute("cartNum", cartDao.countByUser(u));
 
 		model.addAttribute("login", new User());
 		model.addAttribute("isHome", true);
