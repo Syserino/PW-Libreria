@@ -23,7 +23,14 @@
                                     <h6 class="my-0">${c.book.title}</h6>
                                     <small class="text-muted">Tipo di cover: ${c.cover}</small>
                                 </div>
-                                <span class="text-muted">${c.price}</span>
+                                <span class="text-muted"> <fmt:formatNumber 
+                                value="${c.price}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></span>
                             </li>
                         </c:forEach>
                         <li
@@ -136,9 +143,23 @@
                     </div>
                     <div class="custom-control">
                         <input type="radio" name="spedizione" value="standard">Spedizione
-                        standard 3-5 giorni lavorativi <br> <input type="radio"
+                        standard 3-5 giorni lavorativi, costo: <fmt:formatNumber 
+                                value="4.99" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /> <br> <input type="radio"
                                                                    name="spedizione" value="premium" checked>Spedizione
-                        premium 1-2 giorni lavorativi
+                        premium 1-2 giorni lavorativi, costo: <fmt:formatNumber 
+                                value="9.99" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            />
                     </div>
                 </div>
                 <br>

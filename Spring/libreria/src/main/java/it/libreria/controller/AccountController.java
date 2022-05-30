@@ -63,6 +63,7 @@ public class AccountController {
 		if (u != null && u.getPassword().equals(user.getPassword())) {
 			session.setAttribute("loginSuccess", true);
 			session.setAttribute("username", user.getUsername());
+			session.setAttribute("cartNum", cartDao.countByUser(u));
 
 			if (u.getPrivileges() == 1)
 				session.setAttribute("isAdmin", true);
@@ -157,6 +158,7 @@ public class AccountController {
 		session.removeAttribute("loginSuccess");
 		session.removeAttribute("isAdmin");
 		session.removeAttribute("username");
+		session.removeAttribute("cartNum");
 		return "redirect:/home";
 	}
 
