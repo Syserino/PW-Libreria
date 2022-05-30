@@ -2,6 +2,7 @@ package it.libreria.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -16,10 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.libreria.dao.AnagraphicDao;
 import it.libreria.dao.BookDao;
+import it.libreria.dao.BookInOrderDao;
 import it.libreria.dao.CartDao;
 import it.libreria.dao.OrderDao;
 import it.libreria.dao.UserDao;
 import it.libreria.model.Anagraphic;
+import it.libreria.model.Book;
+import it.libreria.model.BookInOrder;
 import it.libreria.model.Cart;
 import it.libreria.model.Order;
 import it.libreria.model.User;
@@ -37,7 +41,9 @@ public class AccountController {
 	AnagraphicDao anagraphicDao;
 	@Autowired
 	CartDao cartDao;
-
+	@Autowired
+	BookInOrderDao bookInOrderDao;
+	
 	private boolean errLogin = false;
 
 	@GetMapping
@@ -86,6 +92,19 @@ public class AccountController {
 			model.addAttribute("orders", null);
 		}
 		return "order-history";
+	}
+	
+	@GetMapping("/order-list")
+	public String orderList(Model model, HttpSession session, HttpServletRequest request) {
+		if (session.getAttribute("loginSuccess") == null)
+			return "redirect:/home";
+		
+		if (request.getParameter("id") != null)
+			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
+		else {
+			model.addAttribute("orders", null);
+		}
+		return "order-list";
 	}
 
 	@GetMapping("/checkout")
@@ -154,6 +173,7 @@ public class AccountController {
 		model.addAttribute("login", new User());
 
 		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
+		System.out.println(anagraphic.getName());
 		a.setName(anagraphic.getName());
 		a.setSurname(anagraphic.getSurname());
 		a.setGender(anagraphic.getGender());
