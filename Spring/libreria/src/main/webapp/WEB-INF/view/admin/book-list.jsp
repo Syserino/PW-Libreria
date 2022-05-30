@@ -8,11 +8,16 @@
 	<thead>
 		<tr>
 			<th scope="col">ID</th>
-			<th scope="col">Nome libro</th>
+			<th scope="col">Titolo libro</th>
 			<th scope="col">Autore</th>
 			<th scope="col">Anno di pubblicazione</th>
-			<th scope="col">Prezzo1</th>
-			<th scope="col">Prezzo2</th>
+			<th scope="col">Prezzo copertina flessibile</th>
+			<th scope="col">Prezzo copertina rigida</th>
+			<th scope="col">Prezzo e-book</th>
+			<th scope="col">Codice e-book</th>
+			<th scope="col">Quantita'</th>
+			<th scope="col">ISBN</th>
+			<th scope="col">Categoria</th>
 			<th scope="col">Azioni</th>
 		</tr>
 	</thead>
@@ -26,6 +31,11 @@
 				<td>${book.publicYear}</td>
 				<td>${book.priceFlexibleCover}</td>
 				<td>${book.priceHardCover}</td>
+				<td>${book.eBook}</td>
+				<td>${book.codeEBook}</td>
+				<td>${book.quantity}</td>
+				<td>${book.isbn}</td>
+				<td>${book.category.name}</td>
 				<td><a
 					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
 							class="btn-sm btn-group btn-danger" type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;

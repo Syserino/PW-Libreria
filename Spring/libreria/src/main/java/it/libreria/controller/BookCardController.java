@@ -41,7 +41,7 @@ public class BookCardController {
 	public String addArticleToCart(Model model, HttpServletRequest request, HttpSession session) {
 		if (request.getParameter("idProd") == null || request.getParameter("cover") == null)
 			return "redirect:/home";
-
+		
 		int idProd = Integer.parseInt(request.getParameter("idProd"));
 		String cover = request.getParameter("cover");
 
@@ -53,7 +53,9 @@ public class BookCardController {
 		cart.setCover(cover);
 		cart.setQuantity(1);
 		cartDao.save(cart);
-
+		
+		session.setAttribute("cartNum", cartDao.countByUser(cart.getUser()));
+		
 		return "redirect:/home";
 	}
 

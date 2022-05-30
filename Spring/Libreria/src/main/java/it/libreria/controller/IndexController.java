@@ -2,6 +2,8 @@ package it.libreria.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +26,7 @@ public class IndexController {
 	BookService bookService;
 
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name = "type", required = false) String searchType,
+	public String getPage(Model model, HttpSession session, @RequestParam(name = "type", required = false) String searchType,
 			@RequestParam(name = "text", required = false) String searchText) {
 		String searchBy = "";
 
@@ -35,7 +37,6 @@ public class IndexController {
 		model.addAttribute("login", new User());
 		model.addAttribute("isHome", true);
 		model.addAttribute("books", getBooks(searchBy, searchType == null ? "" : searchType));
-
 		return "index";
 	}
 

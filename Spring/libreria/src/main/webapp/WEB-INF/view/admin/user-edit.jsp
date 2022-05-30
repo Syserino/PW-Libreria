@@ -32,18 +32,25 @@
 					</div>
 					<br>
 					<div class="form-group col-md-12">
-						<br> <label>Sesso: </label> <label class="radio-inline">
+						<br> <label>Genere: </label> <label class="radio-inline">
 							<input type="radio" name="sesso"> Maschio |
 						</label> <label class="radio-inline"><input type="radio"
 							name="sesso"> Femmina | </label> <label class="radio-inline"><input
 							type="radio" name="sesso" checked> Altro</label>
 					</div>
 				</div>
-				<br>
+			<div class="row mt-3">
 				<div class="col-md-12">
 					<label class="labels">Email:</label><input type="text"
 						class="form-control" value="${user.anagraphic.mail}">
 				</div>
+				</div>
+				<div class="row mt-3">
+						<div class="col-md-12">
+						<label class="labels">Codice Fiscale:</label><input type="text"
+							class="form-control" value="${anagraphic.codiceFiscale}">
+							</div>
+					</div>
 				<div class="row mt-3">
 					<div class="col-md-12">
 						<label class="labels">Numero di cellulare:</label><input
@@ -56,7 +63,7 @@
 							class="form-control" value="${user.anagraphic.street}">
 					</div>
 					<div class="col-md-2">
-						<label class="labels">Numero:</label><input type="text"
+						<label class="labels">N°:</label><input type="text"
 							class="form-control" value="${user.anagraphic.civicNumber}">
 					</div>
 				</div>
@@ -72,6 +79,12 @@
 							class="form-control" value="${user.anagraphic.town}">
 					</div>
 				</div>
+				<div class="row mt-3">
+						<div class="col-md-12">
+							<label class="labels">Comune:</label><input type="text"
+								class="form-control" value="${anagraphic.city}">
+						</div>
+						</div>
 				<div class="mt-5 text-center">
 					<button class="btn btn-primary profile-button" type="button">Aggiorna
 						il Profilo</button>
