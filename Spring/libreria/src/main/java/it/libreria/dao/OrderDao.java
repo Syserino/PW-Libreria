@@ -10,5 +10,6 @@ import it.libreria.model.User;
 public interface OrderDao extends CrudRepository<Order, Integer>
 {
 	List<Order> findAllByUser(User u);
+	List<Order> findAllById(int parseInt);
 }
 
