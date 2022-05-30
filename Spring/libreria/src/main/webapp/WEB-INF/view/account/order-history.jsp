@@ -7,7 +7,7 @@
 
 
 <section style="background-color: #eee;">
-	<div class="container py-5">
+	
 		<div class="row justify-content-center mb-3">
 			<div class="col-md-12 col-xl-10">
 				<c:forEach items="${orders}" var="order">
@@ -58,5 +58,5 @@
 				</c:forEach>
 			</div>
 		</div>
-	</div>
+	
 </section>

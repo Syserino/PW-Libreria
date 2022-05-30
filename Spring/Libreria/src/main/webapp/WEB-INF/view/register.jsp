@@ -14,7 +14,7 @@
 			acceptCharset="ISO-8859-1">
 
 			<section style="background-color: #eee;">
-				<div class="container">
+				
 					<div
 						class="row d-flex justify-content-center align-items-center h-100">
 						<div class="col-lg-12 col-xl-11">
@@ -125,7 +125,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				
 			</section>
 		</form:form>
 	</div>

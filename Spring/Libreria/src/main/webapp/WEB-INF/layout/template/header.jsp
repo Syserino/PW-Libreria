@@ -29,6 +29,8 @@
 	<!-- CSS -->
 	<link href='<c:url value="/static/css/about-us.css"/>' rel="stylesheet"
 		type="text/css">
+		
+		
 </c:if>
 
 

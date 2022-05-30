@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="container">
+
 
     <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
@@ -175,4 +175,3 @@
             </form:form>
         </div>
     </div>
-</div>

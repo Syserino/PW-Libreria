@@ -4,13 +4,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!DOCTYPE html>
-<html>
+
 
 <!-- Chi siamo | Dove puoi trovarci | La nostra mission | Lavora con noi -->
 
-<body>
-	<div class="container-xl">
+
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
 				<h2>INFORMAZIONI</h2>
@@ -140,8 +138,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+
+
 <script> $('#myCarousel').carousel(${sel-1}); </script>
 
-</html>
