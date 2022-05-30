@@ -22,12 +22,12 @@
 				<td>${user.privileges}</td>
 				<td>Online/Offline</td>
 				<td><a
-					href='<spring:url value="/admin-panel/user-edit?id=${user.id}"/>'>
+					href='<spring:url value="/admin-panel/user-edit?id=${user.id}"/>'style="text-decoration: none">
 						<button type="button" class="btn-sm btn btn-success">
 							<i class="fas fa-edit">Modifica</i>
 						</button>
 				</a> <a
-					href='<spring:url value="/admin-panel/user-remove?id=${user.id}"/>'>
+					href='<spring:url value="/admin-panel/user-remove?id=${user.id}"/>'style="text-decoration: none">
 						<button type="button" class="btn-sm btn btn-danger">
 							<i class="far fa-trash-alt">Rimuovi</i>
 						</button>

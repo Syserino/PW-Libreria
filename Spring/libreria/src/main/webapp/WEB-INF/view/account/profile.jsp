@@ -23,69 +23,92 @@
 				</div>
 				<form:form method="POST" modelAttribute="anagraphic"
 					acceptCharset="ISO-8859-1">
-
-					<div class="row mt-2">
-						<div class="col-md-6">
-							<label class="labels">Nome:</label><input type="text"
-								class="form-control" value="${anagraphic.name}">
-						</div>
-						<div class="col-md-6">
-							<label class="labels">Cognome:</label><input type="text"
-								class="form-control" value="${anagraphic.surname}">
-						</div>
+					
+					<div class="row">
+				<div class="col-6">
+					<label for="titleSp">Nome:</label>
+					<form:input path="name" id="nameSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="name" id="nameSpError" cssClass="text-danger" />
+				</div>
+				<div class="col-6">
+					<label for="surnameSp">Cognome:</label>
+					<form:input path="surname" id="surnameSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="surname" id="surnameSpError"
+						cssClass="text-danger" />
+				</div>
+					
 						<br>
 						<div class="form-group col-md-12">
-							<br> <label>Genere: </label> <label class="radio-inline">
-								<input type="radio" name="sesso"> Maschio |
-							</label> <label class="radio-inline"><input type="radio"
-								name="sesso"> Femmina | </label> <label class="radio-inline"><input
-								type="radio" name="sesso" checked> Altro</label>
+							<label>Gender: </label> 
+							Male <form:radiobutton path="Gender" value="Male"/>  
+       						Female <form:radiobutton path="Gender" value="Female"/>
+       						Altro <form:radiobutton path="Gender" value="Altro"/> 
 						</div>
 					</div>
 				
-					<div class="row mt-3">
-					<div class="col-md-12">
-						<label class="labels">Email:</label><input type="text"
-							class="form-control" value="${anagraphic.mail}">
-							</div>
+					<div class="row">
+				<div class="col-6">
+					<label for="mailSp">Email:</label>
+					<form:input path="mail" id="mailSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="mail" id="mailSpError" cssClass="text-danger" />
+				</div>
+				<div class="col-6">
+					<label for="codiceFiscaleSp">Codice Fiscale:</label>
+					<form:input path="codiceFiscale" id="codiceFiscaleSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="codiceFiscale" id="codiceFiscaleSpError"
+						cssClass="text-danger" />
+				</div>
+				
+				</div>
+				
+					<div class="row">
+				<div class="col-6">
+					<label for="phoneSp">Numero di telefono:</label>
+					<form:input path="phone" id="phoneSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="phone" id="phoneSpError" cssClass="text-danger" />
+				</div>
+				<div class="col-6">
+					<label for="streetSp">Indirizzo:</label>
+					<form:input path="street" id="streetSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="street" id="streetSpError"
+						cssClass="text-danger" />
+				</div>
+				
+						<div class="row">
+				<div class="col-6">
+					<label for="civicNumberSp">N°:</label>
+					<form:input path="civicNumber" id="civicNumberSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="civicNumber" id="civicNumberSpError" cssClass="text-danger" />
+				</div>
+				<div class="col-6">
+					<label for="capSp">Cap:</label>
+					<form:input path="cap" id="capSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="cap" id="capSpError"
+						cssClass="text-danger" />
+				</div>
 					</div>
-					<div class="row mt-3">
-						<div class="col-md-12">
-						<label class="labels">Codice Fiscale:</label><input type="text"
-							class="form-control" value="${anagraphic.codiceFiscale}">
-							</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-md-12">
-							<label class="labels">Numero di cellulare:</label><input
-								type="text" class="form-control" value="${anagraphic.phone}">
-						</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-md-10">
-							<label class="labels">Indirizzo:</label><input type="text"
-								class="form-control" value="${anagraphic.street}">
-						</div>
-						<div class="col-md-2">
-							<label class="labels">N°:</label><input type="text"
-								class="form-control" value="${anagraphic.civicNumber}">
-						</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-md-12">
-							<label class="labels">CAP:</label><input type="text"
-								class="form-control" value="${anagraphic.cap}">
-						</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-md-12">
-							<label class="labels">Citta':</label><input type="text"
-								class="form-control" value="${anagraphic.town}">
-						</div>
-						<div class="row mt-3">
-						<div class="col-md-12">
-							<label class="labels">Comune:</label><input type="text"
-								class="form-control" value="${anagraphic.city}">
+					<div class="row">
+				<div class="col-6">
+					<label for="townSp">Provincia:</label>
+					<form:input path="town" id="townSp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="town" id="townSpError" cssClass="text-danger" />
+				</div>
+				<div class="col-6">
+					<label for="cityleSp">Comune:</label>
+					<form:input path="city" id="citySp" type="text"
+						cssClass="form-control" required="required" />
+					<form:errors path="city" id="citySpError"
+						cssClass="text-danger" />
+				</div>
 						</div>
 						</div>
 					</div>
