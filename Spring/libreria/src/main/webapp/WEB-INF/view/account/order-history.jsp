@@ -6,47 +6,39 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
-<section style="background-color: #eee;">
-	
-		<div class="row justify-content-center mb-3">
-			<div class="col-md-12 col-xl-10">
-				<c:forEach items="${orders}" var="order">
-					<div class="card shadow-0 border rounded-3">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-									<div class="bg-image hover-zoom ripple rounded ripple-surface">
-										<img
-											src='<c:url value="/static/images/fotoDiscord.png"/>'
-											class="w-100" /> <a href="#!">
-											<div class="hover-overlay">
-												<div class="mask"
-													style="background-color: rgba(253, 253, 253, 0.15);"></div>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-6 col-xl-6">
-									<h5>#${order.id}</h5>
-									<div class="d-flex flex-row">
-										<div class="text-danger mb-1 me-2">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i>
-										</div>
-									</div>
-								</div>
-								<div
-									class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-									<h6 class="text-success">Stato ordine: ${order.status}</h6>
-									<div class="d-flex flex-column mt-4">
-										<button class="btn btn-primary btn-sm" type="button">Visualizza ordine</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-	
-</section>
+<table class="table table-sm table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Utente/th>
+            <th scope="col">Data Ordine</th>
+            <th scope="col">Data Consegna</th>
+            <th scope="col">Totale Ordine</th>
+            <th scope="col">Stato</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <c:forEach items="${orders}" var="order">
+            <tr>
+                <th scope="row">${order.id}</th>
+                <td>${order.user.username}</td>
+                <td><fmt:formatDate value=" ${order.startDate}" pattern="dd-MM-yyyy"/></td>
+                <td><fmt:formatDate value=" ${order.enDate}" pattern="dd-MM-yyyy"/></td>
+                <td> <fmt:formatNumber 
+                                value="${order.price}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></td>
+                 <td>${order.status}</td>
+                <td>
+                    <a href='<spring:url value="/admin-panel/order-remove?id=${order.id}"/>'><button
+                            class="btn-sm btn-group btn-danger" type="submit">Annulla ordine</button></a>
+                            </td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
