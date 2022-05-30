@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Utente/th>
+            <th scope="col">Utente</th>
             <th scope="col">Data Ordine</th>
             <th scope="col">Data Consegna</th>
             <th scope="col">Totale Ordine</th>
@@ -23,8 +23,8 @@
             <tr>
                 <th scope="row">${order.id}</th>
                 <td>${order.user.username}</td>
-                <td><fmt:formatDate value=" ${order.startDate}" pattern="dd-MM-yyyy"/></td>
-                <td><fmt:formatDate value=" ${order.enDate}" pattern="dd-MM-yyyy"/></td>
+                <td><fmt:formatDate value="${order.startDate}" pattern="dd-MM-yyyy"/></td>
+                <td><fmt:formatDate value="${order.enDate}" pattern="dd-MM-yyyy"/></td>
                 <td> <fmt:formatNumber 
                                 value="${order.price}" 
                                 maxFractionDigits="2" 
@@ -35,8 +35,8 @@
                             /></td>
                  <td>${order.status}</td>
                 <td>
-                    <a href='<spring:url value="/admin-panel/order-remove?id=${order.id}"/>'><button
-                            class="btn-sm btn-group btn-danger" type="submit">Annulla ordine</button></a>
+                    <a href='<spring:url value="/account/order-list?id=${order.id}"/>'><button
+                            class="btn-sm btn-group btn-danger" type="submit">Visualizza ordine</button></a>
                             </td>
             </tr>
         </c:forEach>

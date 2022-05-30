@@ -150,9 +150,20 @@ public class AccountController {
 			orderDao.save(order);
 		}
 		
-		BookInOrder bookInOrder;
+		BookInOrder tmpBookInOrder;
 		for (Cart c : order_list)
+		{
+			tmpBookInOrder = new BookInOrder();
+			tmpBookInOrder.setBook(c.getBook());
+			tmpBookInOrder.setCover(c.getCover());
+			tmpBookInOrder.setOrder(order);
+			tmpBookInOrder.setPrice(c.getPrice());
+			tmpBookInOrder.setQuantity(c.getQuantity());
+			bookInOrderDao.save(tmpBookInOrder);
 			cartDao.delete(c);
+			
+		}
+		
 		
 
 		session.removeAttribute("cart");
