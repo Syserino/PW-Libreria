@@ -99,10 +99,10 @@ public class AccountController {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 		
-		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAll();
+		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 		System.out.println(listOrder.size());
 		model.addAttribute("orders", listOrder);
-		
+		model.addAttribute("totalPrice", orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
 //		if (request.getParameter("id") != null)
 //			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
 //		else {
@@ -182,11 +182,11 @@ public class AccountController {
 		model.addAttribute("login", new User());
 
 		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
-		System.out.println(anagraphic.getName());
 		a.setName(anagraphic.getName());
 		a.setSurname(anagraphic.getSurname());
 		a.setGender(anagraphic.getGender());
 		a.setStreet(anagraphic.getName());
+		a.setCity(anagraphic.getCity());
 
 		anagraphicDao.save(a);
 

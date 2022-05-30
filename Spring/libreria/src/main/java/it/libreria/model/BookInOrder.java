@@ -2,11 +2,15 @@ package it.libreria.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,10 +22,12 @@ public class BookInOrder implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "order_id", length = 255, nullable = false)
+	@ManyToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "order_id")
 	private Order order;
-
-	@Column(name = "book_id", length = 255, nullable = false)
+	
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "book_id")
 	private Book book;
 
 	@Column(name = "quantity", length = 255, nullable = false)
