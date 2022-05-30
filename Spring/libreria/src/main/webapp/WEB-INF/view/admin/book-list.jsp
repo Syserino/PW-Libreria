@@ -37,11 +37,11 @@
 				<td>${book.isbn}</td>
 				<td>${book.category.name}</td>
 				<td><a
-					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'><button
-							class="btn-sm btn-group btn-danger" type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
+					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>' style="text-decoration: none"><button
+							class="btn-sm btn-group btn-danger " type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
 					<a
-					href='<spring:url value="/admin-panel/book-remove?id=${book.id}"/>'><button
-							class="btn-sm btn-group btn-danger" type="submit">Elimina</button></a>
+					href='<spring:url value="/admin-panel/book-remove?id=${book.id}"/>' style="text-decoration: none"><button
+							class="btn-sm btn-group btn-danger " type="submit">Elimina</button></a>
 			</tr>
 		</c:forEach>
 	</tbody>
