@@ -52,7 +52,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href='<c:url value="/home"/>'>Home</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href='<spring:url value="/category-list"/>'>Catagolo</a></li>
+					href='<spring:url value="/category-list"/>'>Catalogo</a></li>
 
 				<!-- MENU A TENDINA VISTA ADMIN -->
 

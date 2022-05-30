@@ -32,8 +32,7 @@
 		type="text/css">
 </c:if>
 
-<link rel="icon" type="image/svg"
-	href="static/images/header/La-penna-d_oro.ico">
+<link rel="icon" type="image/svg" href='<c:url value="/static/images/header/La-penna-d_oro.ico"/>'>
 </head>
 <body class="d-flex flex-column">
 	<div class="container">
