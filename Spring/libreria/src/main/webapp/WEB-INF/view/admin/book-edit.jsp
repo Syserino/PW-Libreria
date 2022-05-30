@@ -14,11 +14,29 @@
 </div>
 
 <div class="row justify-content-center">
+	<c:if test="${hasImage}">
+		<div class="col-8 text-center">
+			<img class="img-thumbnail"
+				style="width: 180px; height: 250px; max-width: 180px; max-height: 250px;"
+				alt="Book Image"
+				src="<c:url value="/static/images/articles/${bookId}.png" />">
+		</div>
+	</c:if>
+	<div class="col-6 text-center">
+		<form action="upload" method="POST" enctype="multipart/form-data">
+			<h6>Seleziona e salva copertina</h6>
+			<input type="hidden" id="fileName" name="fileName" value="${bookId}">
+			<input type="file" class="form-control mt-2" id="image" name="image">
+			<input type="submit" class="btn btn-primary mt-3"
+				value="Salva Immagine">
+		</form>
+	</div>
+
 	<div class="col-8">
 		<form:form method="POST" modelAttribute="book"
 			acceptCharset="ISO-8859-1">
 			<form:errors path="*" cssClass="alert alert-danger" element="div"
-				id="generalAlert" />
+				id="generalAlert" enctype="multipart/form-data" />
 
 			<div class="row">
 				<div class="col-6">
@@ -38,14 +56,12 @@
 			<div class="row">
 				<div class="col-6">
 					<label for="isbnSp">ISBN-10:</label>
-					<form:textarea path="isbn" id="isbnSp"
-						cssClass="form-control" rows="3" style="resize:none;"
-						required="required" />
-					<form:errors path="isbn" id="isbnSpError"
-						cssClass="text-danger" />
+					<form:textarea path="isbn" id="isbnSp" cssClass="form-control"
+						rows="3" style="resize:none;" required="required" />
+					<form:errors path="isbn" id="isbnSpError" cssClass="text-danger" />
 				</div>
-				
-			
+
+
 				<div class="col-6">
 					<label for="descriptionSp">Descrizione:</label>
 					<form:textarea path="description" id="descriptionSp"
@@ -55,7 +71,7 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-6">
 					<label for="shortDeschSp">Breve descrizione:</label>
@@ -65,7 +81,7 @@
 					<form:errors path="shortDesch" id="shortDeschSpError"
 						cssClass="text-danger" />
 				</div>
-				
+
 				<div class="col-6">
 					<label for="publicYearSp">Anno di pubblicazione:</label>
 					<form:input path="publicYear" id="publicYearSp" type="number"
@@ -101,39 +117,47 @@
 						cssClass="form-control" required="required" />
 					<form:errors path="eBook" id="eBookSpError" cssClass="text-danger" />
 				</div>
-				
-			<div class="col-6">
+
+				<div class="col-6">
 					<label for="codeEBookSp">Codice e-Book:</label>
 					<form:textarea path="codeEBook" id="codeEBookSp"
 						cssClass="form-control" rows="3" style="resize:none;"
 						required="required" />
 					<form:errors path="codeEBook" id="codeEBookSpError"
 						cssClass="text-danger" />
-				</div>	
-				
-			<div class="row">
-				<div class="col-6">
-					<label for="quantitySp">Disponibilità in magazzino:</label>
-					<form:input path="quantity" id="quantitySp" type="number"
-						step="any" cssClass="form-control" required="required" />
-					<form:errors path="quantity" id="quantitySpError"
-						cssClass="text-danger" />
 				</div>
 
-				<div class="col-6">
-					<br> <label for="categorySp">Categoria:</label>
-					
-					<form:select class="selectpicker form-control select-di" path="category.id" id="east-order" isChanged="false">
-		                 <form:option value="1" selected="${category.id =='1'? 'selected' : ''}">Avventura</form:option>
-		                 <form:option value="2" selected="${category.id =='2'? 'selected' : ''}">Storico</form:option>
-		                 <form:option value="3" selected="${category.id =='3'? 'selected' : ''}">Fantasy</form:option>
-		                 <form:option value="4" selected="${category.id =='4'? 'selected' : ''}">Horror</form:option>
-		                 <form:option value="5" selected="${category.id =='5'? 'selected' : ''}">Saggistica</form:option>
-		                 <form:option value="6" selected="${category.id =='6'? 'selected' : ''}">Romantico</form:option>
-		              </form:select>
-				</div>	
+				<div class="row">
+					<div class="col-6">
+						<label for="quantitySp">Disponibilità in magazzino:</label>
+						<form:input path="quantity" id="quantitySp" type="number"
+							step="any" cssClass="form-control" required="required" />
+						<form:errors path="quantity" id="quantitySpError"
+							cssClass="text-danger" />
+					</div>
+
+					<div class="col-6">
+						<br> <label for="categorySp">Categoria:</label>
+
+						<form:select class="selectpicker form-control select-di"
+							path="category.id" id="east-order" isChanged="false">
+							<form:option value="1"
+								selected="${category.id =='1'? 'selected' : ''}">Avventura</form:option>
+							<form:option value="2"
+								selected="${category.id =='2'? 'selected' : ''}">Storico</form:option>
+							<form:option value="3"
+								selected="${category.id =='3'? 'selected' : ''}">Fantasy</form:option>
+							<form:option value="4"
+								selected="${category.id =='4'? 'selected' : ''}">Horror</form:option>
+							<form:option value="5"
+								selected="${category.id =='5'? 'selected' : ''}">Saggistica</form:option>
+							<form:option value="6"
+								selected="${category.id =='6'? 'selected' : ''}">Romantico</form:option>
+						</form:select>
+					</div>
 				</div>
 			</div>
+
 			<div class="col-6 text-center">
 				<input type="submit" value="Registra Libro"
 					class="btn btn-primary mt-4">

@@ -1,6 +1,10 @@
 package it.libreria.controller;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
@@ -62,21 +68,54 @@ public class AdminPanelController {
 
 		return "book-list";
 	}
-
+	
 	@GetMapping("/book-edit")
-	public String bookEdit(Model model, HttpServletRequest request) {
+	public String bookEdit(Model model, @RequestParam("id") int id, HttpSession session, HttpServletRequest request) {
+		boolean hasImage = false;
+
+		try {
+			String rootDir = session.getServletContext().getRealPath("/");
+			String filePath = rootDir + "static\\images\\articles\\" + String.valueOf(id) + ".png";
+			File file = new File(filePath);
+			hasImage = file.exists();
+		} catch (Exception e) {
+			hasImage = false;
+		}
+
 		if (request.getParameter("id") == null)
 			model.addAttribute(new Book());
 		else
 			model.addAttribute("book", bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		model.addAttribute("hasImage", hasImage);
+		
+		model.addAttribute("bookId", String.valueOf(id));
 		model.addAttribute("login", new User());
 
 		return "book-edit";
 	}
-	
+
+
+	@PostMapping("/upload")
+	public String imageUpload(@RequestParam("image") MultipartFile image, @RequestParam("fileName") String fileName,
+			HttpSession session) {
+		if (image != null && !image.isEmpty()) {
+			String rootDir = session.getServletContext().getRealPath("/");
+			String filePath = rootDir + "static\\images\\articles\\" + fileName + ".png";
+			try {
+				image.transferTo(new File(filePath));
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return "redirect:/admin-panel/book-edit?id=" + Integer.parseInt(fileName);
+	}
+
 
 	@PostMapping("/book-edit")
-	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book, BindingResult result) {
+	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book,
+			BindingResult result) {
 		if (result.hasErrors())
 			return "book-edit";
 		model.addAttribute("login", new User());
@@ -102,7 +141,7 @@ public class AdminPanelController {
 
 		return "redirect:/admin-panel/book-list";
 	}
-	
+
 	@GetMapping("/order-remove")
 	public String orderRemove(Model model, HttpServletRequest request) {
 		if (request.getParameter("id") != null)

@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 @Table(name = "books")
 public class Book implements Serializable {
@@ -58,6 +60,7 @@ public class Book implements Serializable {
 	@JoinColumn(name = "category_id", referencedColumnName = "id")
 	private Category category;
 
+	
 	public String getCodeEBook() {
 		return codeEBook;
 	}

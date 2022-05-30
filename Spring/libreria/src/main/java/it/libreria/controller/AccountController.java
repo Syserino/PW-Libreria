@@ -37,7 +37,7 @@ public class AccountController {
 	AnagraphicDao anagraphicDao;
 	@Autowired
 	CartDao cartDao;
-	
+
 	private boolean errLogin = false;
 
 	@GetMapping
@@ -80,7 +80,8 @@ public class AccountController {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 		if (session.getAttribute("username") != null)
-			model.addAttribute("orders", orderDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")))); 
+			model.addAttribute("orders",
+					orderDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username"))));
 		else {
 			model.addAttribute("orders", null);
 		}
@@ -93,8 +94,15 @@ public class AccountController {
 			return "redirect:/register";
 		model.addAttribute("login", new User());
 
-		model.addAttribute("cart", cartDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username"))));
-		
+		List<Cart> cartList = cartDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
+
+		double total = 0;
+		for (Cart c : cartList)
+			total += c.getPrice();
+
+		model.addAttribute("cart", cartList);
+		model.addAttribute("sum", total);
+
 		if (session.getAttribute("username") != null) {
 			User u = userDao.findByUsername((String) session.getAttribute("username"));
 			model.addAttribute("user", u);
@@ -105,8 +113,10 @@ public class AccountController {
 	}
 
 	@PostMapping("/checkout")
-	public String checkoutData(Model model, @Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-		List<Cart> order_list = cartDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
+	public String checkoutData(Model model, @Valid @ModelAttribute("user") User user, BindingResult result,
+			HttpSession session) {
+		List<Cart> order_list = cartDao
+				.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
 
 		Order order;
 		order = new Order();
@@ -114,7 +124,7 @@ public class AccountController {
 		order.setStatus("Da spedire");
 
 		for (int i = 0; i < order_list.size(); i++) {
-			
+
 			orderDao.save(order);
 		}
 		session.removeAttribute("cart");
@@ -135,9 +145,10 @@ public class AccountController {
 		model.addAttribute("anagraphic", a);
 		return "profile";
 	}
-	
+
 	@PostMapping("/profile")
-	public String updateProfile(Model model, @Valid @ModelAttribute("anagraphic") Anagraphic anagraphic, BindingResult result, HttpSession session) {
+	public String updateProfile(Model model, @Valid @ModelAttribute("anagraphic") Anagraphic anagraphic,
+			BindingResult result, HttpSession session) {
 		if (result.hasErrors())
 			return "profile";
 		model.addAttribute("login", new User());
@@ -147,7 +158,7 @@ public class AccountController {
 		a.setSurname(anagraphic.getSurname());
 		a.setGender(anagraphic.getGender());
 		a.setStreet(anagraphic.getName());
-		
+
 		anagraphicDao.save(a);
 
 		return "redirect:/account/profile";

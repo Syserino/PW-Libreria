@@ -27,26 +27,16 @@
 									</div>
 								</div>
 								<div class="col-md-6 col-lg-6 col-xl-6">
-									<h5>${order.book.title}</h5>
+									<h5>#${order.id}</h5>
 									<div class="d-flex flex-row">
 										<div class="text-danger mb-1 me-2">
 											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 												class="fa fa-star"></i> <i class="fa fa-star"></i>
 										</div>
-										<span>${order.book.category.name}</span>
 									</div>
-									<div class="mt-1 mb-0 text-muted small">
-										<span>${order.book.author}</span> <span class="text-primary"> •
-										</span> <span>${order.book.publicYear}</span> <span class="text-primary">
-											<br /></span>
-									</div>
-									<p class="text-truncate mb-4 mb-md-0">${order.book.shortDesch}</p>
 								</div>
 								<div
 									class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-									<div class="d-flex flex-row align-items-center mb-1">
-										<h4 class="mb-1 me-1">${order.book.priceFlexibleCover}€</h4>
-									</div>
 									<h6 class="text-success">Stato ordine: ${order.status}</h6>
 									<div class="d-flex flex-column mt-4">
 										<button class="btn btn-primary btn-sm" type="button">Visualizza ordine</button>
