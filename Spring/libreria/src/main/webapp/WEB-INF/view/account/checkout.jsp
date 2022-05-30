@@ -120,7 +120,7 @@
 
                     <div class="col-sm-6">
                         <label for="surnameSp">Provincia:</label>
-                        <form:input path="anagraphic.city" id="nameSp" type="text"
+                        <form:input path="anagraphic.town" id="nameSp" type="text"
                                     cssClass="form-control" required="required"/>
                         <form:errors path="anagraphic.town" id="nameSpError"
                                      cssClass="text-danger"/>
@@ -128,7 +128,7 @@
 
                     <div class="col-sm-6">
                         <label for="surnameSp">Comune:</label>
-                        <form:input path="anagraphic.town"  id="nameSp" type="text"
+                        <form:input path="anagraphic.city"  id="nameSp" type="text"
                                     cssClass="form-control" required="required"/>
                         <form:errors  id="nameSpError"
                                      cssClass="text-danger"/>
