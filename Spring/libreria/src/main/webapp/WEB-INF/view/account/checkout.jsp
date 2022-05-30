@@ -23,7 +23,14 @@
                                     <h6 class="my-0">${c.book.title}</h6>
                                     <small class="text-muted">Tipo di cover: ${c.cover}</small>
                                 </div>
-                                <span class="text-muted">${c.price}</span>
+                                <span class="text-muted"> <fmt:formatNumber 
+                                value="${c.price}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></span>
                             </li>
                         </c:forEach>
                         <li

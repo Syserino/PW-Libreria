@@ -6,16 +6,16 @@
 <footer class="alert-danger text-center">
     <div class="container p-4">
         <section class="mb-4">
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank">
+            <a class="btn btn-outline-light btn-floating m-1" href='<c:url value="https://it-it.facebook.com/"/>' role="button" target="_blank">
               <img class="navbar-toggler-icon" src='<c:url value="/static/images/fb_icona.png"/>'/></a>
                                                   
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
+            <a class="btn btn-outline-light btn-floating m-1" href='<c:url value="https://twitter.com/?lang=it"/>' role="button" target="_blank"
             ><img class="navbar-toggler-icon" src='<c:url value="/static/images/twitter_icona.png"/>'/></a>
 
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
+            <a class="btn btn-outline-light btn-floating m-1" href='<c:url value="https://www.youtube.com/"/>' role="button" target="_blank"
             ><img class="navbar-toggler-icon" src='<c:url value="/static/images/youtube_icona.png"/>'/></a>
 
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank"
+            <a class="btn btn-outline-light btn-floating m-1" href='<c:url value="https://www.instagram.com/"/>' role="button" target="_blank"
             ><img class="navbar-toggler-icon" src='<c:url value="/static/images/ig_icona.png"/>'/></a>
         </section>
         <section class="mb-4">
