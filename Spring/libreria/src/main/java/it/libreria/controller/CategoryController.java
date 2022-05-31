@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.libreria.dao.BookDao;
 import it.libreria.dao.CategoryDao;
 import it.libreria.model.User;
 
@@ -16,6 +17,8 @@ import it.libreria.model.User;
 public class CategoryController {
 	@Autowired
 	CategoryDao categoryDao;
+	@Autowired
+	BookDao bookDao;
 	
 	@GetMapping
 	public String getPage(Model model, HttpServletRequest request) 
@@ -25,4 +28,16 @@ public class CategoryController {
 
 		return "category-list";
 	}
+	
+	@GetMapping("/category")
+	public String category(Model model, HttpServletRequest request) {
+		if (request.getParameter("id") == null)
+			return "redirect:/home";
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		model.addAttribute("books", bookDao.findAllByCategoryId(id));
+
+		return "category";
+	}
+
 }

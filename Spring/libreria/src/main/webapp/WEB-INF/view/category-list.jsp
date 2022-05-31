@@ -24,15 +24,16 @@
 					<div class="col">
 						<h2>${category.name}</h2>
 					</div>
-					<div class="col text-right">
-						<a href="#"> <i class="fa fa-heart-o"></i>
-						</a>
-					</div>
 				</div>
-				<p>${category.description}</p>		 
-            <button class="btn btn-danger">Scopri di piu'</button>
+				<p>${category.description}</p>
+				<a
+					href='<spring:url value="/category-list/category?id=${category.id}"/>'
+					style="text-decoration: none"><button
+						class="btn-sm btn-group btn-danger " type="submit">Scopri
+						di piu</button></a>
+
 			</div>
-		
+
 		</div>
 	</div>
 </c:forEach>

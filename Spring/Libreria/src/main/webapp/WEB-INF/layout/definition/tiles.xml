@@ -121,10 +121,10 @@
 			value="/WEB-INF/view/book-card.jsp" />
 	</definition>
 	
-	<definition name="category_view" extends="baseLayout">
-		<put-attribute name="title" value="Lista categorie" />
+	<definition name="category" extends="baseLayout">
+		<put-attribute name="title" value="Categoria" />
 		<put-attribute name="content"
-			value="/WEB-INF/view/category_view.jsp" />
+			value="/WEB-INF/view/category.jsp" />
 	</definition>
 
 </tiles-definitions>
