@@ -198,6 +198,7 @@ public class AccountController {
 		a.setGender(anagraphic.getGender());
 		a.setStreet(anagraphic.getName());
 		a.setCity(anagraphic.getCity());
+		a.setCity(anagraphic.getCodiceFiscale());
 
 		anagraphicDao.save(a);
 
