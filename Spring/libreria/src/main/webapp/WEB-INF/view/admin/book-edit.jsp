@@ -56,8 +56,8 @@
 			<div class="row">
 				<div class="col-6">
 					<label for="isbnSp">ISBN-10:</label>
-					<form:textarea path="isbn" id="isbnSp" cssClass="form-control"
-						rows="3" style="resize:none;" required="required" />
+					<form:input path="isbn" id="isbnSp" cssClass="form-control"
+						type="text";" required="required" />
 					<form:errors path="isbn" id="isbnSpError" cssClass="text-danger" />
 				</div>
 
