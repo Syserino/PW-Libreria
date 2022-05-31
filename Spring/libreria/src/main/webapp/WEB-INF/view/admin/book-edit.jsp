@@ -120,8 +120,8 @@
 
 				<div class="col-6">
 					<label for="codeEBookSp">Codice e-Book:</label>
-					<form:textarea path="codeEBook" id="codeEBookSp"
-						cssClass="form-control" rows="3" style="resize:none;"
+					<form:input path="codeEBook" id="codeEBookSp"
+						cssClass="form-control" type="text"
 						required="required" />
 					<form:errors path="codeEBook" id="codeEBookSpError"
 						cssClass="text-danger" />
