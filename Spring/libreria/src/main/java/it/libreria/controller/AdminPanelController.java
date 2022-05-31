@@ -68,45 +68,42 @@ public class AdminPanelController {
 
 		return "book-list";
 	}
-	
+
 	@GetMapping("/book-edit")
-	public String bookEdit(Model model, @RequestParam(name="id", required=false) String id, HttpSession session, HttpServletRequest request) {
+	public String bookEdit(Model model, @RequestParam(name = "id", required = false) String id, @RequestParam(name = "imgId", required = false) String imgId, HttpSession session,
+			HttpServletRequest request) {
 		boolean hasImage = false;
 
 		try {
 			String rootDir = session.getServletContext().getRealPath("/");
-			String filePath = rootDir + "static\\images\\articles\\book" + String.valueOf(id) + ".png";
+			String filePath = rootDir + "static\\images\\articles\\book" + String.valueOf(request.getParameter("imgId") == null ? id : imgId)  + ".png";
 			File file = new File(filePath);
 			hasImage = file.exists();
 		} catch (Exception e) {
 			hasImage = false;
 		}
 
-		if (request.getParameter("id") == null)
-		{
+		if (request.getParameter("id") == null) {
 			model.addAttribute(new Book());
 			model.addAttribute("bookId", 0);
-		}
-		else
-		{
+		} else {
 			model.addAttribute("book", bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 			model.addAttribute("bookId", String.valueOf(id));
 
 		}
 		model.addAttribute("hasImage", hasImage);
-		
+
 		model.addAttribute("login", new User());
 
 		return "book-edit";
 	}
-
 
 	@PostMapping("/upload")
 	public String imageUpload(@RequestParam("image") MultipartFile image, @RequestParam("fileName") String fileName,
 			HttpSession session) {
 		if (image != null && !image.isEmpty()) {
 			String rootDir = session.getServletContext().getRealPath("/");
-			String filePath = rootDir + "static\\images\\articles\\" + fileName + ".png";
+			String filePath = rootDir + "static\\images\\articles\\book" + fileName + ".png";
 			try {
 				image.transferTo(new File(filePath));
 			} catch (IllegalStateException e) {
@@ -115,13 +112,11 @@ public class AdminPanelController {
 				e.printStackTrace();
 			}
 		}
-		return "redirect:/admin-panel/book-edit?id=" + Integer.parseInt(fileName);
+		return "redirect:/admin-panel/book-edit?imgId=" + Integer.parseInt(fileName);
 	}
 
-
 	@PostMapping("/book-edit")
-	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book,
-			BindingResult result) {
+	public String registraLibro(Model model, @Valid @ModelAttribute("book") Book book, BindingResult result) {
 		if (result.hasErrors())
 			return "book-edit";
 		model.addAttribute("login", new User());
@@ -150,9 +145,13 @@ public class AdminPanelController {
 
 	@GetMapping("/order-remove")
 	public String orderRemove(Model model, HttpServletRequest request) {
-		if (request.getParameter("id") != null)
-			orderDao.delete(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		try {
+			if (request.getParameter("id") != null)
+				orderDao.delete(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
-		return "redirect:/admin-panel/order-list";
+		return "redirect:/account/order-history";
 	}
 }

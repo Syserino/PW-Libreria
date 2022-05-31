@@ -10,46 +10,39 @@ import it.libreria.dao.BookDao;
 import it.libreria.model.Book;
 
 @Service
-public class BookServiceImpl implements BookService 
-{
+public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookDao bookDao;
-	
+
 	@Override
-	public List<Book> getBooksFromTitle(String searchBy) 
-	{
+	public List<Book> getBooksFromTitle(String searchBy) {
 		List<Book> list = (List<Book>) bookDao.findAll();
-		
-		if (!searchBy.isEmpty())
-		{
-			list = list
-					.stream()
-					.filter(b -> b.getTitle().toLowerCase().contains(searchBy.toLowerCase()))
+
+		if (!searchBy.isEmpty()) {
+			list = list.stream().filter(b -> b.getTitle().toLowerCase().contains(searchBy.toLowerCase()))
 					.collect(Collectors.toList());
-		}
-		
+		} else
+			list = list.stream().limit(10).collect(Collectors.toList());
+
 		return list;
 	}
-	
+
 	@Override
-	public List<Book> getBooksFromAuthor(String searchBy) 
-	{
+	public List<Book> getBooksFromAuthor(String searchBy) {
 		List<Book> list = (List<Book>) bookDao.findAll();
-		
-		if (!searchBy.isEmpty())
-		{
-			list = list
-					.stream()
+
+		if (!searchBy.isEmpty()) {
+			list = list.stream()
+
 					.filter(b -> b.getAuthor().toLowerCase().contains(searchBy.toLowerCase()))
 					.collect(Collectors.toList());
-		}
-		
+		} else
+			list = list.stream().limit(10).collect(Collectors.toList());
 		return list;
 	}
 
 	@Override
 	public List<Book> getBooksInOrder(int id) {
-
 
 		return null;
 	}
