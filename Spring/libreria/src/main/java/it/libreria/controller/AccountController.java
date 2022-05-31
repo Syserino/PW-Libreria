@@ -1,5 +1,7 @@
 package it.libreria.controller;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +45,7 @@ public class AccountController {
 	CartDao cartDao;
 	@Autowired
 	BookInOrderDao bookInOrderDao;
-	
+
 	private boolean errLogin = false;
 
 	@GetMapping
@@ -82,10 +84,17 @@ public class AccountController {
 	}
 
 	@GetMapping("/order-history")
-	public String orderHistory(Model model, HttpSession session) {
+	public String orderHistory(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
-		if (session.getAttribute("username") != null)
+		model.addAttribute("login", new User());
+
+		if (request.getParameter("admin") != null) {
+			if (session.getAttribute("isAdmin") == null)
+				return "redirect:/home";
+			model.addAttribute("orders", orderDao.findAll());
+			model.addAttribute("adminMode", true);
+		} else if (session.getAttribute("username") != null)
 			model.addAttribute("orders",
 					orderDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username"))));
 		else {
@@ -93,21 +102,20 @@ public class AccountController {
 		}
 		return "order-history";
 	}
-	
+
 	@GetMapping("/order-list")
 	public String orderList(Model model, HttpSession session, HttpServletRequest request) {
-		if (session.getAttribute("loginSuccess") == null)
+		if (session.getAttribute("loginSuccess") == null || request.getParameter("id") == null)
 			return "redirect:/home";
-		
-		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
-		System.out.println(listOrder.size());
+
+		int id = Integer.parseInt(request.getParameter("id"));
+
+		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAllByOrder(orderDao.findById(id).get());
+
 		model.addAttribute("orders", listOrder);
-		model.addAttribute("totalPrice", orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
-//		if (request.getParameter("id") != null)
-//			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
-//		else {
-//			model.addAttribute("orders", null);
-//		}
+		model.addAttribute("totalPrice", orderDao.findById(id).get().getPrice());
+		model.addAttribute("login", new User());
+		
 		return "order-list";
 	}
 
@@ -141,18 +149,24 @@ public class AccountController {
 		List<Cart> order_list = cartDao
 				.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
 
+		double total = 0;
+		for (Cart c : order_list)
+			total += c.getPrice();
+
 		Order order;
 		order = new Order();
 		order.setUser(userDao.findByUsername((String) session.getAttribute("username")));
 		order.setStatus("Da spedire");
+		order.setStartDate(Date.valueOf(LocalDate.now()));
+		order.setEnDate(Date.valueOf(LocalDate.now().plusDays(7)));
+		order.setPrice(total);
 
 		for (int i = 0; i < order_list.size(); i++) {
 			orderDao.save(order);
 		}
-		
+
 		BookInOrder tmpBookInOrder;
-		for (Cart c : order_list)
-		{
+		for (Cart c : order_list) {
 			tmpBookInOrder = new BookInOrder();
 			tmpBookInOrder.setBook(c.getBook());
 			tmpBookInOrder.setCover(c.getCover());
@@ -161,10 +175,10 @@ public class AccountController {
 			tmpBookInOrder.setQuantity(c.getQuantity());
 			bookInOrderDao.save(tmpBookInOrder);
 			cartDao.delete(c);
-			
+
 		}
-		
-		// pulisco 
+
+		// pulisco
 		session.removeAttribute("cart");
 		session.removeAttribute("cartNum");
 
@@ -172,12 +186,15 @@ public class AccountController {
 	}
 
 	@GetMapping("/profile")
-	public String profile(Model model, HttpSession session) {
+	public String profile(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 
 		model.addAttribute("login", new User());
 		model.addAttribute("username", (String) session.getAttribute("username"));
+
+		if (request.getParameter("firstLogin") != null)
+			model.addAttribute("firstLogin", true);
 
 		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
 

@@ -155,11 +155,4 @@ public class AdminPanelController {
 
 		return "redirect:/admin-panel/order-list";
 	}
-
-	@GetMapping("/order-list")
-	public String orderList(Model model) {
-		model.addAttribute("orders", orderDao.findAll());
-
-		return "order-list";
-	}
 }

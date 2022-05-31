@@ -56,7 +56,7 @@ public class BookCardController {
 		
 		session.setAttribute("cartNum", cartDao.countByUser(cart.getUser()));
 		
-		return "redirect:/home";
+		return "redirect:/home?orderAdded=" + book.getId();
 	}
 
 }
