@@ -33,25 +33,10 @@
                             /></span>
                             </li>
                         </c:forEach>
-                        <li
-                                class="list-group-item d-flex justify-content-between bg-light">
-                            <div class="text-success">
-                                <h6 class="my-0">Codice Promo</h6>
-                                <small>EXAMPLECODE</small>
-                            </div>
-                            <span class="text-success">Importo sconto</span>
-                        </li>
+                   
                         <li class="list-group-item d-flex justify-content-between"><span>Totale:</span>
                             <strong>${sum}</strong></li>
-                        <form class="card p-2">
-                            <div class="input-group">
-                                <input type="text" class="form-control"
-                                       placeholder="Inserisci il tuo codice sconto...">
-                                <button type="submit" class="btn btn-secondary">Applica
-                                    coupon
-                                </button>
-                            </div>
-                        </form>
+                      
 
                     </c:when>
                     <c:otherwise>
@@ -92,6 +77,13 @@
                     <div class="col-sm-6">
                         <label for="surnameSp">Codice Fiscale:</label>
                         <form:input path="anagraphic.codiceFiscale"  id="nameSp" type="text"
+                                    cssClass="form-control" required="required"/>
+                        <form:errors  id="nameSpError"
+                                     cssClass="text-danger"/>
+                    </div>
+                       <div class="col-sm-6">
+                        <label for="surnameSp">Numero di Cellulare:</label>
+                        <form:input path="anagraphic.phone"  id="nameSp" type="text"
                                     cssClass="form-control" required="required"/>
                         <form:errors  id="nameSpError"
                                      cssClass="text-danger"/>
