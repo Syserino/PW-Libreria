@@ -87,6 +87,7 @@ public class AccountController {
 	public String orderHistory(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
+		model.addAttribute("login", new User());
 
 		if (request.getParameter("admin") != null) {
 			if (session.getAttribute("isAdmin") == null)
@@ -104,15 +105,17 @@ public class AccountController {
 
 	@GetMapping("/order-list")
 	public String orderList(Model model, HttpSession session, HttpServletRequest request) {
-		if (session.getAttribute("loginSuccess") == null)
+		if (session.getAttribute("loginSuccess") == null || request.getParameter("id") == null)
 			return "redirect:/home";
 
-		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao
-				.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		int id = Integer.parseInt(request.getParameter("id"));
+
+		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAllByOrder(orderDao.findById(id).get());
 
 		model.addAttribute("orders", listOrder);
-		model.addAttribute("totalPrice",
-				orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
+		model.addAttribute("totalPrice", orderDao.findById(id).get().getPrice());
+		model.addAttribute("login", new User());
+		
 		return "order-list";
 	}
 
@@ -145,7 +148,7 @@ public class AccountController {
 			HttpSession session) {
 		List<Cart> order_list = cartDao
 				.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
-		
+
 		double total = 0;
 		for (Cart c : order_list)
 			total += c.getPrice();
@@ -157,7 +160,7 @@ public class AccountController {
 		order.setStartDate(Date.valueOf(LocalDate.now()));
 		order.setEnDate(Date.valueOf(LocalDate.now().plusDays(7)));
 		order.setPrice(total);
-		
+
 		for (int i = 0; i < order_list.size(); i++) {
 			orderDao.save(order);
 		}
@@ -189,7 +192,7 @@ public class AccountController {
 
 		model.addAttribute("login", new User());
 		model.addAttribute("username", (String) session.getAttribute("username"));
-		
+
 		if (request.getParameter("firstLogin") != null)
 			model.addAttribute("firstLogin", true);
 
