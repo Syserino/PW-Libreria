@@ -5,6 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<c:if test="${firstLogin}"><h3 class="d-flex justify-content-center">Manca poco! Inserisci i tuoi dati anagrafici</h3></c:if>
 <div class="container rounded bg-white mt-5 mb-5">
 	<div class="row">
 		<div class="col-md-3 border-right">

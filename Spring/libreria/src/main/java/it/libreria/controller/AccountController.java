@@ -179,13 +179,15 @@ public class AccountController {
 	}
 
 	@GetMapping("/profile")
-	public String profile(Model model, HttpSession session) {
+	public String profile(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
 
 		model.addAttribute("login", new User());
 		model.addAttribute("username", (String) session.getAttribute("username"));
-		model.addAttribute("firstLogin", true);
+		
+		if (request.getParameter("firstLogin") != null)
+			model.addAttribute("firstLogin", true);
 
 		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
 
