@@ -10,8 +10,7 @@
     <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-primary">Il tuo carrello</span> <span
-                    class="badge bg-primary rounded-pill">#</span>
+                <span class="text-primary">Il tuo carrello</span>
             </h4>
             <ul class="list-group mb-3">
 
@@ -35,7 +34,14 @@
                         </c:forEach>
                    
                         <li class="list-group-item d-flex justify-content-between"><span>Totale:</span>
-                            <strong>${sum}</strong></li>
+                            <strong><fmt:formatNumber 
+                                value="${sum}" 
+                                maxFractionDigits="2" 
+                                minFractionDigits="2"
+                                type="currency"
+                                currencyCode="EUR"
+                                currencySymbol="€"
+                            /></strong></li>
                       
 
                     </c:when>
@@ -134,7 +140,7 @@
                                      cssClass="text-danger"/>
                     </div>
                     <div class="custom-control">
-                        <input type="radio" name="spedizione" value="standard">Spedizione
+                        <input id="standard" type="radio" name="spedizione" value="standard">Spedizione
                         standard 3-5 giorni lavorativi, costo: <fmt:formatNumber 
                                 value="4.99" 
                                 maxFractionDigits="2" 
@@ -142,8 +148,7 @@
                                 type="currency"
                                 currencyCode="EUR"
                                 currencySymbol="€"
-                            /> <br> <input type="radio"
-                                                                   name="spedizione" value="premium" checked>Spedizione
+                            /> <br> <input id="premium" type="radio" name="spedizione" value="premium" checked>Spedizione
                         premium 1-2 giorni lavorativi, costo: <fmt:formatNumber 
                                 value="9.99" 
                                 maxFractionDigits="2" 
@@ -167,3 +172,4 @@
             </form:form>
         </div>
     </div>
+<script></script>
