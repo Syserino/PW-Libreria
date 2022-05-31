@@ -1,5 +1,7 @@
 package it.libreria.controller;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -107,15 +109,10 @@ public class AccountController {
 
 		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao
 				.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
-		System.out.println(listOrder.size());
+
 		model.addAttribute("orders", listOrder);
 		model.addAttribute("totalPrice",
 				orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
-//		if (request.getParameter("id") != null)
-//			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
-//		else {
-//			model.addAttribute("orders", null);
-//		}
 		return "order-list";
 	}
 
@@ -148,12 +145,19 @@ public class AccountController {
 			HttpSession session) {
 		List<Cart> order_list = cartDao
 				.findAllByUser(userDao.findByUsername((String) session.getAttribute("username")));
+		
+		double total = 0;
+		for (Cart c : order_list)
+			total += c.getPrice();
 
 		Order order;
 		order = new Order();
 		order.setUser(userDao.findByUsername((String) session.getAttribute("username")));
 		order.setStatus("Da spedire");
-
+		order.setStartDate(Date.valueOf(LocalDate.now()));
+		order.setEnDate(Date.valueOf(LocalDate.now().plusDays(7)));
+		order.setPrice(total);
+		
 		for (int i = 0; i < order_list.size(); i++) {
 			orderDao.save(order);
 		}
