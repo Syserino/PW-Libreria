@@ -75,7 +75,7 @@ public class AdminPanelController {
 
 		try {
 			String rootDir = session.getServletContext().getRealPath("/");
-			String filePath = rootDir + "static\\images\\articles\\" + String.valueOf(id) + ".png";
+			String filePath = rootDir + "static\\images\\articles\\book" + String.valueOf(id) + ".png";
 			File file = new File(filePath);
 			hasImage = file.exists();
 		} catch (Exception e) {

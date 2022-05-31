@@ -19,7 +19,7 @@
 			<img class="img-thumbnail"
 				style="width: 180px; height: 250px; max-width: 180px; max-height: 250px;"
 				alt="Book Image"
-				src="<c:url value="/static/images/articles/${bookId}.png" />">
+				src="<c:url value="/static/images/articles/book${bookId}.png" />">
 		</div>
 	</c:if>
 	
