@@ -53,6 +53,14 @@ public class AccountController {
 		return "redirect:/home";
 	}
 
+	@GetMapping("/thanks")
+	public String thanks(Model model, HttpSession session) {
+		model.addAttribute("login", new User());
+
+		return "thanks";
+	}
+
+	
 	@GetMapping("/login")
 	public String login(Model model, HttpSession session) {
 		model.addAttribute("login", new User());

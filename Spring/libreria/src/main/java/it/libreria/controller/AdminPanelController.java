@@ -46,9 +46,11 @@ public class AdminPanelController {
 	}
 
 	@GetMapping("/user-list")
-	public String userList(Model model) {
+	public String userList(Model model, HttpServletRequest request) {
 		model.addAttribute("users", userDao.findAll());
 		model.addAttribute("login", new User());
+		if (request.getParameter("error") != null)
+			model.addAttribute("error", true);
 
 		return "user-list";
 	}
@@ -132,8 +134,12 @@ public class AdminPanelController {
 
 	@GetMapping("/user-remove")
 	public String userRemove(Model model, HttpServletRequest request) {
-		if (request.getParameter("id") != null)
-			userDao.delete(userDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		try {
+			if (request.getParameter("id") != null)
+				userDao.delete(userDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		} catch (Exception e) {
+			return "redirect:/admin-panel/user-list?error";
+		}
 
 		return "redirect:/admin-panel/user-list";
 	}

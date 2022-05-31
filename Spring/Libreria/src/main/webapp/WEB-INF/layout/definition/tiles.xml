@@ -126,5 +126,10 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/category.jsp" />
 	</definition>
+	<definition name="thanks" extends="baseLayout">
+		<put-attribute name="title" value="Categoria" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/account/thanks.jsp" />
+	</definition>
 
 </tiles-definitions>
