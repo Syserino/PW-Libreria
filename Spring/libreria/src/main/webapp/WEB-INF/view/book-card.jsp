@@ -61,38 +61,7 @@
 								class="fa fa-star checked"></span> <span
 								class="fa fa-star-half-full"></span> <a>160 recensioni</a>
 
-							<div class="row type">
-								<label class="radio"> <input type="radio"
-									name="bookType" value="fisica"> <span>
-										<div class="row">
-											<big><b>Copia fisica</b></big>
-										</div>
-										<div class="row">
-											Da
-											<fmt:formatNumber value="${book.priceFlexibleCover}"
-												maxFractionDigits="2" minFractionDigits="2" type="currency"
-												currencyCode="EUR" currencySymbol="€" />
-											a
-											<fmt:formatNumber value="${book.priceHardCover}"
-												maxFractionDigits="2" minFractionDigits="2" type="currency"
-												currencyCode="EUR" currencySymbol="€" />
-
-										</div>
-								</span>
-								</label> <label class="radio"> <input type="radio"
-									name="bookType" value="ebook"> <span>
-										<div class="row">
-											<big><b>Formato e-Book</b></big>
-										</div>
-										<div class="row">
-											<fmt:formatNumber value="${book.eBook}" maxFractionDigits="2"
-												minFractionDigits="2" type="currency" currencyCode="EUR"
-												currencySymbol="€" />
-										</div>
-								</span>
-
-								</label>
-							</div>
+							
 
 							<div class="row price">
 								<label class="radio"> <input name="cover" type="radio"
@@ -117,6 +86,19 @@
 												currencyCode="EUR" currencySymbol="€" />
 										</div>
 								</span>
+								</label>
+								 <label class="radio"> <input type="radio"
+									name="cover" value="ebook"> <span>
+										<div class="row">
+											<big><b>Formato e-Book</b></big>
+										</div>
+										<div class="row">
+											<fmt:formatNumber value="${book.eBook}" maxFractionDigits="2"
+												minFractionDigits="2" type="currency" currencyCode="EUR"
+												currencySymbol="€" />
+										</div>
+								</span>
+
 								</label>
 							</div>
 						</div>
