@@ -48,7 +48,7 @@
 				<div class="row mt-3">
 						<div class="col-md-12">
 						<label class="labels">Codice Fiscale:</label><input type="text"
-							class="form-control" value="${anagraphic.codiceFiscale}">
+							class="form-control" value="${user.anagraphic.codiceFiscale}">
 							</div>
 					</div>
 				<div class="row mt-3">
@@ -82,7 +82,7 @@
 				<div class="row mt-3">
 						<div class="col-md-12">
 							<label class="labels">Comune:</label><input type="text"
-								class="form-control" value="${anagraphic.city}">
+								class="form-control" value="${user.anagraphic.city}">
 						</div>
 						</div>
 				<div class="mt-5 text-center">
