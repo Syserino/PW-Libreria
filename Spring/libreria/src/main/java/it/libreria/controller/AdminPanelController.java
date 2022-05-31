@@ -62,10 +62,13 @@ public class AdminPanelController {
 	}
 
 	@GetMapping("/book-list")
-	public String bookList(Model model) {
+	public String bookList(Model model, HttpServletRequest request) {
 		model.addAttribute("books", bookDao.findAll());
 		model.addAttribute("login", new User());
 
+		if (request.getParameter("error") != null)
+			model.addAttribute("error", true);
+		
 		return "book-list";
 	}
 
@@ -137,8 +140,12 @@ public class AdminPanelController {
 
 	@GetMapping("/book-remove")
 	public String bookRemove(Model model, HttpServletRequest request) {
-		if (request.getParameter("id") != null)
-			bookDao.delete(bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		try {
+			if (request.getParameter("id") != null)
+				bookDao.delete(bookDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+		} catch (Exception e) {
+			return "redirect:/admin-panel/book-list?error";
+		}
 
 		return "redirect:/admin-panel/book-list";
 	}
@@ -149,9 +156,9 @@ public class AdminPanelController {
 			if (request.getParameter("id") != null)
 				orderDao.delete(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 		} catch (Exception e) {
-			// TODO: handle exception
+			return "redirect:/account/order-history?admin&error";
 		}
 
-		return "redirect:/account/order-history";
+		return "redirect:/account/order-history?admin";
 	}
 }
