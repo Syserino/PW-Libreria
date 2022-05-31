@@ -216,6 +216,11 @@ public class AccountController {
 		a.setStreet(anagraphic.getName());
 		a.setCity(anagraphic.getCity());
 		a.setCodiceFiscale(anagraphic.getCodiceFiscale());
+		a.setCap(anagraphic.getCap());
+		a.setCivicNumber(anagraphic.getCivicNumber());
+		a.setMail(anagraphic.getMail());
+		a.setPhone(anagraphic.getPhone());
+		a.setTown(anagraphic.getTown());
 
 		anagraphicDao.save(a);
 
