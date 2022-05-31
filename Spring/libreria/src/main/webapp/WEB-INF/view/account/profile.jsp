@@ -22,8 +22,6 @@
 					<h4 class="text-right">Il Mio Profilo</h4>
 				</div>
 
-
-
 				<form:form method="POST" modelAttribute="anagraphic"
 					acceptCharset="ISO-8859-1">
 
