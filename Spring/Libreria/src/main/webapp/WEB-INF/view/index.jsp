@@ -29,7 +29,7 @@
 					<div class="card-body sin">
 						<h5 class="card-title">${book.title}</h5>
 						<h6>${book.category.name}</h6>
-						<p class="card-text">${book.shortDesch}</p>
+						
 					</div>
 				</a>
 			</div>
@@ -45,7 +45,7 @@
 							<div class="row">
 								<div class="col-6">
 									<img class="card-img-bottom"
-										src=<c:url value="/static/images/articles/harrypotter.jpg"/>
+										src='<c:url value="/static/images/articles/book${book.id}.png"/>'
 										alt="Questo messaggio appare perché non ci sta ancora un immagine">
 								</div>
 								<div class="col-6">
@@ -75,7 +75,7 @@
 					<div class="card-body des">
 						<h5 class="card-title">${book.title}</h5>
 						<h6>${book.category.name}</h6>
-						<p class="card-text">${book.shortDesch}</p>
+						
 					</div>
 				</a>
 			</div>
@@ -96,7 +96,7 @@
 					<div class="card-body des">
 						<h5 class="card-title">${book.title}</h5>
 						<h6>${book.category.name}</h6>
-						<p class="card-text">${book.shortDesch}</p>
+						
 					</div>
 				</a>
 			</div>
@@ -114,8 +114,7 @@
 				<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 					<div class="card-body sin">
 						<h5 class="card-title">${book.title}</h5>
-						<h6>${book.category.name}</h6>
-						<p class="card-text">${book.shortDesch}</p>
+						<h6>Genere: ${book.category.name}</h6>
 					</div>
 				</a>
 			</div>
