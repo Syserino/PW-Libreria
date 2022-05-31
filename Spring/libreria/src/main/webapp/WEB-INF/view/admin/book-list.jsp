@@ -4,6 +4,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+<c:if test="${error}">
+	<div>
+		<div id="errorAlert" class="alert alert-danger alert-dismissible mt-4"
+			role="alert">Non puoi cancellare questo libro al momento.</div>
+	</div>
+</c:if>
+
 <table class="table table-hover alert-warning">
 	<thead>
 		<tr>
@@ -37,10 +45,12 @@
 				<td>${book.isbn}</td>
 				<td>${book.category.name}</td>
 				<td><a
-					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>' style="text-decoration: none"><button
+					href='<spring:url value="/admin-panel/book-edit?id=${book.id}"/>'
+					style="text-decoration: none"><button
 							class="btn-sm btn-group btn-danger " type="submit">Modifica</button></a>&nbsp;&nbsp;&nbsp;
 					<a
-					href='<spring:url value="/admin-panel/book-remove?id=${book.id}"/>' style="text-decoration: none"><button
+					href='<spring:url value="/admin-panel/book-remove?id=${book.id}"/>'
+					style="text-decoration: none"><button
 							class="btn-sm btn-group btn-danger " type="submit">Elimina</button></a>
 			</tr>
 		</c:forEach>

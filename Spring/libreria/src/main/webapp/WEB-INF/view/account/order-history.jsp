@@ -5,6 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+
 <h3>${adminMode == null ? 'Lista dei tuoi ordini' : 'Lista degli ordini di tutti gli utenti'}</h3>
 <table class="table table-sm table-bordered">
 	<thead>
@@ -35,6 +36,8 @@
 				<td><fmt:formatNumber value="${order.price}"
 						maxFractionDigits="2" minFractionDigits="2" type="currency"
 						currencyCode="EUR" currencySymbol="€" /></td>
+						
+						
 				<td>${order.status}</td>
 				<td><a
 					href='<spring:url value="/account/order-list?id=${order.id}"/>'><button
