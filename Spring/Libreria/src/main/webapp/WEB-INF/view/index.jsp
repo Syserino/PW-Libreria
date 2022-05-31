@@ -28,6 +28,7 @@
 				<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 					<div class="card-body sin">
 						<h5 class="card-title">${book.title}</h5>
+						<small class="text-muted">${book.author}</small>
 						<h6>${book.category.name}</h6>
 						
 					</div>
@@ -50,6 +51,7 @@
 								</div>
 								<div class="col-6">
 									<h5 class="card-title">${book.title}</h5>
+									<small class="text-muted">${book.author}</small>
 									<h6>${book.category.name}</h6>
 									<p class="card-text">${book.shortDesch}</p>
 									<p class="card-text">
@@ -74,6 +76,7 @@
 				<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 					<div class="card-body des">
 						<h5 class="card-title">${book.title}</h5>
+						<small class="text-muted">${book.author}</small>
 						<h6>${book.category.name}</h6>
 						
 					</div>
@@ -95,6 +98,7 @@
 				<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 					<div class="card-body des">
 						<h5 class="card-title">${book.title}</h5>
+						<small class="text-muted">${book.author}</small>
 						<h6>${book.category.name}</h6>
 						
 					</div>
@@ -114,6 +118,7 @@
 				<a href=<c:url value="/book-card?idProd=${book.id}"/>>
 					<div class="card-body sin">
 						<h5 class="card-title">${book.title}</h5>
+						<small class="text-muted">${book.author}</small>
 						<h6>Genere: ${book.category.name}</h6>
 					</div>
 				</a>

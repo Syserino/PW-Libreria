@@ -18,8 +18,10 @@
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
-						<h5 class="card-title">${book.title}</h5>
+						<h4 class="card-title">${book.title}</h4>
+						<small class="text-muted">${book.author}</small>
 						<p class="card-text">${book.shortDesch}</p>
+						
 						<p class="card-text">
 							<small class="text-muted">Prezzo: da €
 								${book.priceFlexibleCover} a € ${book.priceHardCover}</small><br><small

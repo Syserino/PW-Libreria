@@ -22,11 +22,11 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{4,25}", message = "{form.error.username}")
+	@Pattern(regexp = "[a-zA-Z0-9._-]{4,25}", message = "{form.error.username}")
 	@Column(name = "username", length = 255, nullable = false)
 	private String username;
 
-	@Pattern(regexp = "[a-zA-Z0-9/.-]{4,20}", message = "La password deve avere tra 4 e 20 caratteri.")
+	@Pattern(regexp = "[a-zA-Z0-9!?.-]{4,20}", message = "La password deve avere tra 4 e 20 caratteri.")
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
 

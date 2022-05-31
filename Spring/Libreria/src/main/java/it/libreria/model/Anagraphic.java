@@ -42,7 +42,7 @@ public class Anagraphic implements Serializable {
 	@Column(name = "cn", length = 10, nullable = true)
 	private String civicNumber;
 
-	@Pattern(regexp = "[a-zA-Z0-9/.-]{1,10}", message = "{customer.form.error.general}")
+	@Pattern(regexp = "[0-9+-]{10,14}", message = "{customer.form.error.general}")
 	@Column(name = "phone", length = 15, nullable = true)
 	private String phone;
 
@@ -58,7 +58,7 @@ public class Anagraphic implements Serializable {
 	@Column(name = "city", length = 255, nullable = true)
 	private String city;
 
-	@Pattern(regexp = "[a-zA-Z0-9s'.-]{1,255}", message = "{customer.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z0-9]{16}", message = "{customer.form.error.general}")
 	@Column(name = "codice_fiscale", length = 16, nullable = true)
 	private String codiceFiscale;
 
