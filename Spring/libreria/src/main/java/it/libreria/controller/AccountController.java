@@ -43,7 +43,7 @@ public class AccountController {
 	CartDao cartDao;
 	@Autowired
 	BookInOrderDao bookInOrderDao;
-	
+
 	private boolean errLogin = false;
 
 	@GetMapping
@@ -82,10 +82,16 @@ public class AccountController {
 	}
 
 	@GetMapping("/order-history")
-	public String orderHistory(Model model, HttpSession session) {
+	public String orderHistory(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
-		if (session.getAttribute("username") != null)
+
+		if (request.getParameter("admin") != null) {
+			if (session.getAttribute("isAdmin") == null)
+				return "redirect:/home";
+			model.addAttribute("orders", orderDao.findAll());
+			model.addAttribute("adminMode", true);
+		} else if (session.getAttribute("username") != null)
 			model.addAttribute("orders",
 					orderDao.findAllByUser(userDao.findByUsername((String) session.getAttribute("username"))));
 		else {
@@ -93,16 +99,18 @@ public class AccountController {
 		}
 		return "order-history";
 	}
-	
+
 	@GetMapping("/order-list")
 	public String orderList(Model model, HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("loginSuccess") == null)
 			return "redirect:/home";
-		
-		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
+
+		List<BookInOrder> listOrder = (List<BookInOrder>) bookInOrderDao
+				.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get());
 		System.out.println(listOrder.size());
 		model.addAttribute("orders", listOrder);
-		model.addAttribute("totalPrice", orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
+		model.addAttribute("totalPrice",
+				orderDao.findById(Integer.parseInt(request.getParameter("id"))).get().getPrice());
 //		if (request.getParameter("id") != null)
 //			model.addAttribute("orders", bookInOrderDao.findAllByOrder(orderDao.findById(Integer.parseInt(request.getParameter("id"))).get()));
 //		else {
@@ -149,10 +157,9 @@ public class AccountController {
 		for (int i = 0; i < order_list.size(); i++) {
 			orderDao.save(order);
 		}
-		
+
 		BookInOrder tmpBookInOrder;
-		for (Cart c : order_list)
-		{
+		for (Cart c : order_list) {
 			tmpBookInOrder = new BookInOrder();
 			tmpBookInOrder.setBook(c.getBook());
 			tmpBookInOrder.setCover(c.getCover());
@@ -161,10 +168,10 @@ public class AccountController {
 			tmpBookInOrder.setQuantity(c.getQuantity());
 			bookInOrderDao.save(tmpBookInOrder);
 			cartDao.delete(c);
-			
+
 		}
-		
-		// pulisco 
+
+		// pulisco
 		session.removeAttribute("cart");
 		session.removeAttribute("cartNum");
 
@@ -178,6 +185,7 @@ public class AccountController {
 
 		model.addAttribute("login", new User());
 		model.addAttribute("username", (String) session.getAttribute("username"));
+		model.addAttribute("firstLogin", true);
 
 		Anagraphic a = userDao.findByUsername((String) session.getAttribute("username")).getAnagraphic();
 

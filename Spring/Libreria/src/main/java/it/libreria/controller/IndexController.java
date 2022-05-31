@@ -30,15 +30,22 @@ public class IndexController {
 	CartDao cartDao;
 	@Autowired
 	UserDao userDao;
+
 	@GetMapping
-	public String getPage(Model model, HttpSession session, @RequestParam(name = "type", required = false) String searchType,
-			@RequestParam(name = "text", required = false) String searchText) {
+	public String getPage(Model model, HttpSession session,
+			@RequestParam(name = "type", required = false) String searchType,
+			@RequestParam(name = "text", required = false) String searchText,
+			@RequestParam(name = "orderAdded", required = false) String orderAdded) {
 		String searchBy = "";
 
 		if (searchText != null && !searchText.isEmpty()) {
 			searchBy = searchText;
 		}
 		User u = userDao.findByUsername((String) session.getAttribute("username"));
+
+		if (orderAdded != null && !orderAdded.isEmpty()) {
+			model.addAttribute("orderAdded", bookDao.findById(Integer.parseInt(orderAdded)).get().getTitle());
+		}
 
 		session.setAttribute("cartNum", cartDao.countByUser(u));
 
@@ -49,7 +56,8 @@ public class IndexController {
 	}
 
 	private List<Book> getBooks(String searchBy, String searchType) {
-		return searchType.contains("title") ? bookService.getBooksFromTitle(searchBy) : bookService.getBooksFromAuthor(searchBy);
+		return searchType.contains("title") ? bookService.getBooksFromTitle(searchBy)
+				: bookService.getBooksFromAuthor(searchBy);
 	}
 
 }

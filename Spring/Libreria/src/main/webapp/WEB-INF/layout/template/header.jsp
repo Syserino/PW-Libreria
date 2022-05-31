@@ -74,7 +74,7 @@
 								href='<spring:url value="/admin-panel/book-list"/>'>Lista
 									libri</a></li>
 							<li><a class="dropdown-item"
-								href='<spring:url value="/admin-panel/order-list"/>'>Lista
+								href='<spring:url value="/account/order-history?admin"/>'>Lista
 									ordini</a></li>
 						</ul></li>
 				</c:if>
