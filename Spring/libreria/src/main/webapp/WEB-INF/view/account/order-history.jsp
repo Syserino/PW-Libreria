@@ -37,10 +37,10 @@
 						currencyCode="EUR" currencySymbol="€" /></td>
 				<td>${order.status}</td>
 				<td><a
-					href='<spring:url value="/account/order-list?id=${order.id}"/>'><button
+					href='<spring:url value="/account/order-list?id=${order.id}"/>' style="text-decoration: none"><button
 							class="btn-sm btn-group btn-danger" type="submit">Visualizza
 							ordine</button></a> <a
-					href='<spring:url value="/admin-panel/order-remove?id=${order.id}"/>'><button
+					href='<spring:url value="/admin-panel/order-remove?id=${order.id}"/>' style="text-decoration: none"><button
 							class="btn-sm btn-group btn-danger" type="submit">Cancella</button></a>
 
 				</td>

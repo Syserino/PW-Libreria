@@ -159,22 +159,23 @@
                             />
                     </div>
                 </div>
-                <br>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="salvaIndirizzo">
-                    <label class="form-check-label" for="salvaIndirizzo">Salva
-                        questo indirizzo per la prossima spedizione</label>
-                </div>
+                
+                
 
                 <hr class="my-4">
+                <div class="row mt-4">
+                
+                <div class="col-6">
                 <input type="submit" value="Acquista su Paypal" class="btn btn-primary mt-4">
+            	</div>
+            	<div class="col-6">
             </form:form>
             				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 				<input type="hidden" name="cmd" value="_xclick">
-				<input type="hidden" name="business" value="prova@gmail.com">
+				<input type="hidden" name="business" value="libreria@gmail.com">
 				<input type="hidden" name="lc" value="US">
 				<input type="hidden" name="item_name" value="ssss">
-				<input type="hidden" name="amount" value="222">
+				<input type="hidden" name="amount" value="${sum}">
 				<input type="hidden" name="currency_code" value="EUR">
 				<input type="hidden" name="button_subtype" value="services">
 				<input type="hidden" name="no_note" value="0">
@@ -184,7 +185,8 @@
 				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" 
 				width="1" height="1">
 				</form>
-            
+				</div>
+            </div>
         </div>
     </div>
 <script></script>
