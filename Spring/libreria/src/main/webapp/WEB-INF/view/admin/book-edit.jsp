@@ -22,15 +22,7 @@
 				src="<c:url value="/static/images/articles/${bookId}.png" />">
 		</div>
 	</c:if>
-	<div class="col-6 text-center">
-		<form action="upload" method="POST" enctype="multipart/form-data">
-			<h6>Seleziona e salva copertina</h6>
-			<input type="hidden" id="fileName" name="fileName" value="${bookId}">
-			<input type="file" class="form-control mt-2" id="image" name="image">
-			<input type="submit" class="btn btn-primary mt-3"
-				value="Salva Immagine">
-		</form>
-	</div>
+	
 
 	<div class="col-8">
 		<form:form method="POST" modelAttribute="book"
@@ -38,7 +30,7 @@
 			<form:errors path="*" cssClass="alert alert-danger" element="div"
 				id="generalAlert" enctype="multipart/form-data" />
 
-			<div class="row">
+			<div class="row mt-3">
 				<div class="col-6">
 					<label for="titleSp">Titolo:</label>
 					<form:input path="title" id="titleSp" type="text"
@@ -53,35 +45,14 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mt-3">
 				<div class="col-6">
 					<label for="isbnSp">ISBN-10:</label>
 					<form:input path="isbn" id="isbnSp" cssClass="form-control"
 						type="text" required="required" />
 					<form:errors path="isbn" id="isbnSpError" cssClass="text-danger" />
 				</div>
-
-
-				<div class="col-6">
-					<label for="descriptionSp">Descrizione:</label>
-					<form:textarea path="description" id="descriptionSp"
-						cssClass="form-control" rows="3" style="resize:none;"
-						required="required" />
-					<form:errors path="description" id="descriptionSpError"
-						cssClass="text-danger" />
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-6">
-					<label for="shortDeschSp">Breve descrizione:</label>
-					<form:textarea path="shortDesch" id="shortDeschSp"
-						cssClass="form-control" rows="3" style="resize:none;"
-						required="required" />
-					<form:errors path="shortDesch" id="shortDeschSpError"
-						cssClass="text-danger" />
-				</div>
-
+				
 				<div class="col-6">
 					<label for="publicYearSp">Anno di pubblicazione:</label>
 					<form:input path="publicYear" id="publicYearSp" type="number"
@@ -91,7 +62,31 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-			<div class="row">
+
+				
+
+			<div class="row mt-3">
+				<div class="col-6">
+					<label for="shortDeschSp">Breve descrizione:</label>
+					<form:textarea path="shortDesch" id="shortDeschSp"
+						cssClass="form-control" rows="3" style="resize:none;"
+						required="required" />
+					<form:errors path="shortDesch" id="shortDeschSpError"
+						cssClass="text-danger" />
+				</div>
+				
+				
+				<div class="col-6">
+					<label for="descriptionSp">Descrizione:</label>
+					<form:textarea path="description" id="descriptionSp"
+						cssClass="form-control" rows="3" style="resize:none;"
+						required="required" />
+					<form:errors path="description" id="descriptionSpError"
+						cssClass="text-danger" />
+				</div>
+			</div>
+				
+			<div class="row mt-3">
 				<div class="col-6">
 					<label for="priceFlexibleCoverSp">Prezzo copertina
 						flessibile:</label>
@@ -110,7 +105,8 @@
 						cssClass="text-danger" />
 				</div>
 			</div>
-			<div class="row">
+			
+			<div class="row mt-3">
 				<div class="col-6">
 					<label for="eBookSp">Prezzo formato e-Book:</label>
 					<form:input path="eBook" id="eBookSp" type="number" step="any"
@@ -120,14 +116,16 @@
 
 				<div class="col-6">
 					<label for="codeEBookSp">Codice e-Book:</label>
-					<form:textarea path="codeEBook" id="codeEBookSp"
-						cssClass="form-control" rows="3" style="resize:none;"
+					<form:input path="codeEBook" id="codeEBookSp"
+						cssClass="form-control" type="text"
 						required="required" />
 					<form:errors path="codeEBook" id="codeEBookSpError"
 						cssClass="text-danger" />
 				</div>
-
-				<div class="row">
+				
+				</div>
+				
+				<div class="row mt-3">
 					<div class="col-6">
 						<label for="quantitySp">Disponibilità in magazzino:</label>
 						<form:input path="quantity" id="quantitySp" type="number"
@@ -156,9 +154,23 @@
 						</form:select>
 					</div>
 				</div>
+			
+			
+			<div class="row mt-3">
+			<div class="col-12 text-end">
+		<form action="upload" method="POST" enctype="multipart/form-data">
+			<h6>Seleziona e salva copertina</h6>
+			<input type="hidden" id="fileName" name="fileName" value="${bookId}">
+			<input type="file" class="form-control mt-2" id="image" name="image">
+			<input type="submit" class="btn btn-primary mt-3"
+				value="Salva Immagine">
+		</form>
 			</div>
-
-			<div class="col-6 text-center">
+			</div>
+			
+			
+			
+			<div class="col-12 text-center">
 				<input type="submit" value="Registra Libro"
 					class="btn btn-primary mt-4">
 			</div>

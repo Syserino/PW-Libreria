@@ -35,7 +35,7 @@
                             /></td>
                  <td>${order.status}</td>
                 <td>
-                    <a href='<spring:url value="/account/order-list?id=${order.id}"/>'><button
+                    <a href='<spring:url value="/account/order-list?id=${order.id}"/>' style="text-decoration: none"><button
                             class="btn-sm btn-group btn-danger" type="submit">Visualizza ordine</button></a>
                             </td>
             </tr>
