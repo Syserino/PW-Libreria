@@ -23,8 +23,18 @@
 		</div>
 	</c:if>
 	
+	<div class="row mt-3">
+			<div class="col-12 text-center">
+		<form action="upload" method="POST" enctype="multipart/form-data">
+			<h6>Seleziona e salva copertina</h6>
+			<input type="hidden" id="fileName" name="fileName" value="${bookId}">
+			<input type="file" class="form-control mt-2" id="image" name="image">
+			<input type="submit" class="btn btn-primary mt-3"
+				value="Salva Immagine">
+		</form>
+			</div>
+			</div>
 
-	<div class="col-8">
 		<form:form method="POST" modelAttribute="book"
 			acceptCharset="ISO-8859-1">
 			<form:errors path="*" cssClass="alert alert-danger" element="div"
@@ -156,17 +166,7 @@
 				</div>
 			
 			
-			<div class="row mt-3">
-			<div class="col-12 text-end">
-		<form action="upload" method="POST" enctype="multipart/form-data">
-			<h6>Seleziona e salva copertina</h6>
-			<input type="hidden" id="fileName" name="fileName" value="${bookId}">
-			<input type="file" class="form-control mt-2" id="image" name="image">
-			<input type="submit" class="btn btn-primary mt-3"
-				value="Salva Immagine">
-		</form>
-			</div>
-			</div>
+			
 			
 			
 			
@@ -176,4 +176,3 @@
 			</div>
 		</form:form>
 	</div>
-</div>
