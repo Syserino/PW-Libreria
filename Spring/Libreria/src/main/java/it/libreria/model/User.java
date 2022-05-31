@@ -22,7 +22,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Pattern(regexp = "[a-zA-Z0-9._-]{4,25}", message = "{form.error.username}")
+	@Pattern(regexp = "[a-zA-Z0-9]{4,25}", message = "{form.error.username}")
 	@Column(name = "username", length = 255, nullable = false)
 	private String username;
 
