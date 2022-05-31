@@ -14,6 +14,7 @@ import it.libreria.dao.CartDao;
 import it.libreria.dao.UserDao;
 import it.libreria.model.Book;
 import it.libreria.model.Cart;
+import it.libreria.model.User;
 
 @Controller
 @RequestMapping("/book-card")
@@ -33,6 +34,7 @@ public class BookCardController {
 		model.addAttribute("isBookCard", true);
 		if (session.getAttribute("loginSuccess") != null)
 			model.addAttribute("isLogged", true);
+		model.addAttribute("login", new User());
 
 		return "book-card";
 	}
