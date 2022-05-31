@@ -3,6 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<c:if test="${error}">
+	<div>
+		<div id="errorAlert" class="alert alert-danger alert-dismissible mt-4"
+			role="alert">Non puoi cancellare questo utente.</div>
+	</div>
+</c:if>
 
 <table class="table table-hover alert-warning">
 	<thead>
