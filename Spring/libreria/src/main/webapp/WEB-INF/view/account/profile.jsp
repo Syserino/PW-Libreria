@@ -45,11 +45,11 @@
 					<br>
 
 					<div class="form-group col-md-12">
-						<label>Genere: </label> Maschio |
+						<label>Genere: </label> Maschio
 						<form:radiobutton path="Gender" value="Maschio" />
-						Femmina |
+						| Femmina 
 						<form:radiobutton path="Gender" value="Femmina" />
-						Altro
+						| Altro
 						<form:radiobutton path="Gender" value="Altro" />
 					</div>
 
