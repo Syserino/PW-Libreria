@@ -35,10 +35,12 @@
 				<form action="/libreria/book-card/addArticle" method="GET">
 
 					<div class="row">
-						<div class="col-md-6 text-center align-self-center">
-							<img class="img-fluid"
-								src='<c:url value="/static/images/articles/book${book.id}.png"/>'>
+						<div class="col-md-5 text-left">
+							<img
+								src='<c:url value="/static/images/articles/book${book.id}.png"/>'
+								alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
 						</div>
+
 						<div class="col-md-6 info">
 							<div class="row title">
 								<div class="col">
@@ -61,7 +63,7 @@
 								class="fa fa-star checked"></span> <span
 								class="fa fa-star-half-full"></span> <a>160 recensioni</a>
 
-							
+
 
 							<div class="row price">
 								<label class="radio"> <input name="cover" type="radio"
@@ -86,9 +88,8 @@
 												currencyCode="EUR" currencySymbol="€" />
 										</div>
 								</span>
-								</label>
-								 <label class="radio"> <input type="radio"
-									name="cover" value="ebook"> <span>
+								</label> <label class="radio"> <input type="radio" name="cover"
+									value="ebook"> <span>
 										<div class="row">
 											<big><b>Formato e-Book</b></big>
 										</div>
@@ -108,7 +109,7 @@
 
 							<button id="btnSave" name="idProd" value="${book.id}"
 								class="btn btn-primary">Aggiungi al carrello</button>
-								</div>
+						</div>
 					</c:if>
 
 				</form>

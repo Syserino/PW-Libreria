@@ -29,7 +29,7 @@
 								<td data-th="Product">
 									<div class="row">
 										<div class="col-md-3 text-left">
-											<img src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
+											<img src='<c:url value="/static/images/articles/book${o.book.id}.png"/>'
 												alt=""
 												class="img-fluid d-none d-md-block rounded mb-2 shadow ">
 										</div>
