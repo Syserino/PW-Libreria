@@ -50,7 +50,7 @@ public class RegisterController {
 			session.setAttribute("loginSuccess", true);
 			session.setAttribute("username", user.getUsername());
 			
-			return "redirect:/account/profile";
+			return "redirect:/account/profile?firstLogin";
 		}
 		model.addAttribute("errUsername", errUsername);
 
