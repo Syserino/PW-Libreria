@@ -12,28 +12,30 @@
 	href='<spring:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>'
 	rel="stylesheet">
 </head>
+<div class="row row-cols-1 row-cols-md-2 g-4">
 <c:forEach items="${category}" var="category">
-	<div class="card">
-		<div class="row">
-			<div class="col-md-6 text-center align-self-center">
-				<img class="img-fluid"
+	<div class="card mb-3" style="max-width: 540px;">
+		<div class="row g-0">
+			<div class="col-md-4">
+				<img class="img-fluid rounded-start"
 					src='<c:url value="/static/images/categories/${category.name}.png"/>'>
 			</div>
-			<div class="col-md-6 info">
-				<div class="row title">
-					<div class="col">
-						<h2>${category.name}</h2>
-					</div>
-				</div>
-				<p>${category.description}</p>
-				<a
-					href='<spring:url value="/category-list/category?id=${category.id}"/>'
-					style="text-decoration: none"><button
-						class="btn-sm btn-group btn-danger " type="submit">Scopri
-						di piu</button></a>
+			<div class="col-md-8">
+				<div class="card-body">
 
+					<h2 class="card-title">${category.name}</h2>
+
+
+					<p class="card-text">${category.description}</p>
+					<a
+						href='<spring:url value="/category-list/category?id=${category.id}"/>'
+						style="text-decoration: none"><button
+							class="btn-sm btn-group btn-danger " type="submit">Scopri
+							di piu</button></a>
+				</div>
 			</div>
 
 		</div>
 	</div>
 </c:forEach>
+</div>

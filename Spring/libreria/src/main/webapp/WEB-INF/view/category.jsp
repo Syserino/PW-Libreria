@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
 
@@ -23,8 +24,12 @@
 						<p class="card-text">${book.shortDesch}</p>
 						
 						<p class="card-text">
-							<small class="text-muted">Prezzo: da €
-								${book.priceFlexibleCover} a € ${book.priceHardCover}</small><br><small
+							<small class="text-muted">Prezzo: da <fmt:formatNumber value="${book.priceFlexibleCover}"
+											maxFractionDigits="2" minFractionDigits="2" type="currency"
+											currencyCode="EUR" currencySymbol="€" />
+							 a  <fmt:formatNumber value="${book.priceHardCover}"
+											maxFractionDigits="2" minFractionDigits="2" type="currency"
+											currencyCode="EUR" currencySymbol="€" /> </small><br><small
 								class="text-muted">Versione e-book: ${book.eBook}</small>
 						</p>
 						<a
