@@ -51,7 +51,13 @@ public class BookCardController {
 		Book book = bookDao.findById(idProd).get();
 		cart.setUser(userDao.findByUsername((String) session.getAttribute("username")));
 		cart.setBook(book);
-		cart.setPrice(cover.contains("flex") ? book.getPriceFlexibleCover() : book.getPriceHardCover());
+		if (cover.contains("flex"))
+			cart.setPrice(book.getPriceFlexibleCover());
+		else if (cover.contains("hard"))
+			cart.setPrice(book.getPriceHardCover());
+		else 
+			cart.setPrice(book.geteBook());
+		
 		cart.setCover(cover);
 		cart.setQuantity(1);
 		cartDao.save(cart);

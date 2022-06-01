@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,7 +29,7 @@ public class Book implements Serializable {
 
 	@Column(name = "author", length = 255, nullable = false)
 	private String author;
-
+	
 	@Column(name = "description", length = 255, nullable = false)
 	private String description;
 
